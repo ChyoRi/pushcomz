@@ -160,8 +160,7 @@ em {
 #main #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
 }
 #main #sec01 .text_box_frame {
@@ -345,10 +344,11 @@ em {
   background: url("../img/partners-bg.jpg") repeat center;
 }
 #main #sec04 .partners_frame {
-  max-width: 1250px;
-  margin: 0 auto;
+  position: relative;
 }
 #main #sec04 .partners_frame .partners_wrap {
+  max-width: 1250px;
+  margin: 0 auto;
   padding: 138px 0 407px;
 }
 #main #sec04 .partners_frame .partners_wrap h3 {
@@ -366,4 +366,55 @@ em {
   font-family: "GmarketSans";
   font-size: 14px;
   font-weight: 400;
+}
+#main #sec04 .partners_frame .partners-logo-frame {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  width: 100%;
+}
+#main #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition-timing-function: linear;
+}
+#main #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap .swiper-slide {
+  max-width: 260px;
+}
+#main #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap .swiper-slide a img {
+  max-width: 260px;
+}
+#main #sec05 {
+  background-color: #fd4750;
+  padding: 48px 0;
+}
+#main #sec05 .go_ask_frame {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+#main #sec05 .go_ask_frame .go_ask_text {
+  width: 50%;
+  line-height: 38.565px;
+  padding: 20px 0 10px;
+  font-size: 38.565px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+#main #sec05 .go_ask_frame .arrow_box_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 16px 0 6.3px;
+}
+#main #sec05 .go_ask_frame .arrow_box_wrap .arrow_box {
+  max-width: 305.75px;
+}
+#main #sec05 .go_ask_frame .arrow_box_wrap .arrow_box img {
+  width: 100%;
 }

@@ -258,9 +258,10 @@
   #sec04 {
     background: url('../img/partners-bg.jpg') repeat center;
     .partners_frame {
-      max-width: 1250px;
-      margin: 0 auto;
+      position: relative;
       .partners_wrap {
+        max-width: 1250px;
+        margin: 0 auto;
         padding: 138px 0 407px;
         h3 {
           line-height: 105.6px;
@@ -277,6 +278,54 @@
           font-family: "GmarketSans";
           font-size: 14px;
           font-weight: 400;
+        }
+      }
+      .partners-logo-frame {
+        position: absolute;
+        top: 55%;
+        left: 0;
+        width: 100%;
+        .partners-logo-wrap {
+          @include flex(center, flex-start);
+          transition-timing-function: linear;
+          .swiper-slide {
+            max-width: 260px;
+            a {
+              img {
+                max-width: 260px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #sec05 {
+    background-color: map-get($color, red-01);
+    padding: 48px 0;
+    .go_ask_frame {
+      @include flex(center, flex-start);
+      max-width: 1280px;
+      margin: 0 auto;
+      .go_ask_text {
+        width: 50%;
+        line-height: 38.565px;
+        padding: 20px 0 10px;
+        font-size: 38.565px;
+        font-weight: 700;
+        color: map-get($color, white-01);
+        letter-spacing: -1px;
+      }
+      .arrow_box_wrap {
+        @include flex(center, center);
+        width: 50%;
+        padding: 16px 0 6.3px;
+        .arrow_box {
+          max-width: 305.75px;
+          img {
+            width: 100%;
+          }
         }
       }
     }
