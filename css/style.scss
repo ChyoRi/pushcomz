@@ -3,189 +3,196 @@
 @import './mixin.scss';
 @import './reset.scss';
 @import './common.scss';
-
-#header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 30px;
-  z-index: 999;
-  background-color: map-get($color, white-01);
-  .default_header {
-    @include flex(center, space-between);
-    height: 85px;
-    #logo {
-      width: 94px;
-      height: 100%;
-      a {
-        @include flex(center, center);
-        width: 100%;
-        height: 100%;
-        img {
-          width: 100%;
-          vertical-align: middle;
-        }
-      }
-    }
-
-    #nav {
-      height: 100%;
-      ul {
-        @include flex(center, center);
-        height: 100%;
-        li {
-          height: 100%;
-          a {
-            @include flex(center, center);
-            position: relative;
-            height: 100%;
-            line-height: 28.8px;
-            padding: 0 20px;
-            font-family: 'GmarketSans';
-            font-size: 18px;
-            font-weight: 700;
-            color: map-get($color, black-01);
-            letter-spacing: 0;
-            vertical-align: middle;
-          }
-          &.active span {
-            padding-bottom: 4px;
-            border-bottom: 3px solid map-get($color, red-01);
-          }
-        }
-      }
-    }
-
-    div {
-      width: 94px;
-      height: 100%;
-    }
-  }
-}
+@import './header.scss';
+@import './footer.scss';
 
 #main {
-  #sec01 {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    .video_wrap {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-      }
-    }
-    .text_box_frame {
+  &.company_infomation {
+    #sec01 {
       position: relative;
-      max-width: 1250px;
-      margin: 0 auto;
-      padding-top: 85px;
-      z-index: 2;
-      .text_box_wrap {
-        @include flex(flex-start, space-between);
-        padding: 230px 0 222px;
-        .video_logo {
-          max-width: 520.83px;
-          height: 130px;
-          padding: 0 12.05px;
-          img {
-            width: 100%;
-          }
+      overflow: hidden;
+      width: 100%;
+      .video_wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
         }
-        .text_box {
-          width: 50%;
-          border-top: 3px solid map-get($color, white-01);
-          .hangle_text {
-            line-height: 36px;
-            padding: 73px 0 42px;
-            font-family: "GmarketSans";
-            font-size: 30px;
+      }
+      .text_box_frame {
+        position: relative;
+        max-width: 1250px;
+        margin: 0 auto;
+        padding-top: 85px;
+        z-index: 2;
+        .text_box_wrap {
+          @include flex(flex-start, space-between);
+          padding: 230px 0 222px;
+          .video_logo {
+            max-width: 520.83px;
+            height: 130px;
+            padding: 0 12.05px;
+            img {
+              width: 100%;
+            }
+          }
+          .text_box {
+            width: 50%;
+            border-top: 3px solid map-get($color, white-01);
+            .hangle_text {
+              line-height: 36px;
+              padding: 73px 0 42px;
+              font-family: "GmarketSans";
+              font-size: 30px;
+              font-weight: 400;
+              color: map-get($color, white-01);
+            }
+          }
+          .english_text {
+            line-height: 63.25px;
+            font-family: "Changa", sans-serif;
+            font-size: 55px;
             font-weight: 400;
             color: map-get($color, white-01);
           }
         }
-        .english_text {
-          line-height: 63.25px;
-          font-family: "Changa", sans-serif;
-          font-size: 55px;
-          font-weight: 400;
-          color: map-get($color, white-01);
-        }
       }
     }
-  }
-
-  #sec02 {
-    background-color: map-get($color, gray-01);
-    .attitude_frame {
-      max-width: 1280px;
-      margin: 0 auto;
-      .attitude_wrap {
-        padding: 146px 0 116px;
-        h3 {
-          height: 144px;
-          line-height: 136px;
-          border-bottom: 2px solid map-get($color, black-01);
-          font-family: "Changa", sans-serif;
-          font-size: 48px;
-          font-weight: 400;
-          text-align: center;
-          color: map-get($color, black-01);
-          letter-spacing: -1px;
-        }
-        .attitude_list {
-          @include flex(flex-start, flex-start);
-          margin-top: 31px;
-          .attitude_item {
-            flex: 1;
-            padding: 8px 8px 0 8px;
-            .attitude_title_box {
-              @include flex(flex-start, flex-start);
-              flex-direction: column;
-              padding: 15px 5px 23px 5px;
-              border-bottom: 1px solid rgb(0, 0, 0, 0.15);
-              .small_title {
-                position: relative;
-                line-height: 11.5px;
-                padding-left: 10.84px;
-                font-family: "GmarketSans";
-                font-size: 15px;
-                font-weight: 400;
-                color: map-get($color, black-01);
-                &::before {
-                  content: '';
-                  position: absolute;
-                  bottom: 1px;
-                  left: 0px;
-                  width: 7px;
-                  height: 7px;
-                  border-radius: 50%;
-                  background-color: map-get($color, red-01);
+  
+    #sec02 {
+      background-color: map-get($color, gray-01);
+      .attitude_frame {
+        max-width: 1280px;
+        margin: 0 auto;
+        .attitude_wrap {
+          padding: 146px 0 116px;
+          h3 {
+            height: 144px;
+            line-height: 136px;
+            border-bottom: 2px solid map-get($color, black-01);
+            font-family: "Changa", sans-serif;
+            font-size: 48px;
+            font-weight: 400;
+            text-align: center;
+            color: map-get($color, black-01);
+            letter-spacing: -1px;
+          }
+          .attitude_list {
+            @include flex(flex-start, flex-start);
+            margin-top: 31px;
+            .attitude_item {
+              flex: 1;
+              padding: 8px 8px 0 8px;
+              .attitude_title_box {
+                @include flex(flex-start, flex-start);
+                flex-direction: column;
+                padding: 15px 5px 23px 5px;
+                border-bottom: 1px solid rgb(0, 0, 0, 0.15);
+                .small_title {
+                  position: relative;
+                  line-height: 11.5px;
+                  padding-left: 10.84px;
+                  font-family: "GmarketSans";
+                  font-size: 15px;
+                  font-weight: 400;
+                  color: map-get($color, black-01);
+                  &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 1px;
+                    left: 0px;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: map-get($color, red-01);
+                  }
+                }
+                .attitude_title {
+                  line-height: 56px;
+                  font-family: "Changa", sans-serif;
+                  font-size: 40px;
+                  font-weight: 400;
+                  color: map-get($color, black-01);
                 }
               }
-              .attitude_title {
-                line-height: 56px;
-                font-family: "Changa", sans-serif;
-                font-size: 40px;
+              .attitude_desc_box {
+                padding: 18px 8px 30px 8px;
+                .attitude_desc {
+                  line-height: 24px;
+                  padding: 15px 25px 15px 5px;
+                  font-family: "GmarketSans";
+                  font-size: 14px;
+                  font-weight: 400;
+                  color: map-get($color, black-01);
+                }
+              }
+            }
+          }
+        }
+      }
+      .top_box_wrap {
+        padding: 8px;
+      }
+    }
+  
+    #sec03 {
+      .works_frame {
+        max-width: 1280px;
+        margin: 0 auto;
+        .works_wrap {
+          @include flex(flex-start, space-between);
+          padding: 126px 0 92px;
+          .works_img_box {
+            max-width: 533.33px;
+            height: 1158px;
+            padding-top: 24px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .works_text_box {
+            width: 50%;
+            h3 {
+              font-family: "Changa", sans-serif;
+              line-height: 103.5px;
+              font-size: 90px;
+              font-weight: 400;
+              color: map-get($color, black-01);
+              letter-spacing: -2px;
+            }
+            p {
+              line-height: 22.4px;
+              padding: 21px 0 35px;
+              border-bottom: 2px solid map-get($color, black-03);
+              font-family: "GmarketSans";
+              font-size: 14px;
+              font-weight: 400;
+              color: map-get($color, black-01);
+            }
+            .works_item {
+              @include flex(center, space-between);
+              padding: 15px 0;
+              border-bottom: 2px solid map-get($color, black-03);
+              .works_title, .works_schedule {
+                line-height: 16px;
+                font-family: "GmarketSans";
+                font-size: 16px;
                 font-weight: 400;
                 color: map-get($color, black-01);
               }
-            }
-            .attitude_desc_box {
-              padding: 18px 8px 30px 8px;
-              .attitude_desc {
-                line-height: 24px;
-                padding: 15px 25px 15px 5px;
+              &:last-of-type {
+                line-height: 14px;
+                border-bottom: 0;
                 font-family: "GmarketSans";
                 font-size: 14px;
-                font-weight: 400;
+                font-weight: 300;
                 color: map-get($color, black-01);
               }
             }
@@ -193,138 +200,187 @@
         }
       }
     }
-  }
-
-  #sec03 {
-    .works_frame {
-      max-width: 1280px;
-      margin: 0 auto;
-      .works_wrap {
-        @include flex(flex-start, space-between);
-        padding: 126px 0 92px;
-        .works_img_box {
-          max-width: 533.33px;
-          height: 1158px;
-          padding-top: 24px;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .works_text_box {
-          width: 50%;
+  
+    #sec04 {
+      background: url('../img/partners-bg.jpg') repeat center;
+      .partners_frame {
+        position: relative;
+        .partners_wrap {
+          max-width: 1250px;
+          margin: 0 auto;
+          padding: 138px 0 407px;
           h3 {
+            line-height: 105.6px;
+            padding: 15px 0;
             font-family: "Changa", sans-serif;
-            line-height: 103.5px;
-            font-size: 90px;
+            font-size: 96px;
             font-weight: 400;
             color: map-get($color, black-01);
             letter-spacing: -2px;
           }
           p {
             line-height: 22.4px;
-            padding: 21px 0 35px;
-            border-bottom: 2px solid map-get($color, black-03);
+            padding: 15px 0;
             font-family: "GmarketSans";
             font-size: 14px;
             font-weight: 400;
-            color: map-get($color, black-01);
-          }
-          .works_item {
-            @include flex(center, space-between);
-            padding: 15px 0;
-            border-bottom: 2px solid map-get($color, black-03);
-            .works_title, .works_schedule {
-              line-height: 16px;
-              font-family: "GmarketSans";
-              font-size: 16px;
-              font-weight: 400;
-              color: map-get($color, black-01);
-            }
-            &:last-of-type {
-              line-height: 14px;
-              border-bottom: 0;
-              font-family: "GmarketSans";
-              font-size: 14px;
-              font-weight: 300;
-              color: map-get($color, black-01);
-            }
           }
         }
-      }
-    }
-  }
-
-  #sec04 {
-    background: url('../img/partners-bg.jpg') repeat center;
-    .partners_frame {
-      position: relative;
-      .partners_wrap {
-        max-width: 1250px;
-        margin: 0 auto;
-        padding: 138px 0 407px;
-        h3 {
-          line-height: 105.6px;
-          padding: 15px 0;
-          font-family: "Changa", sans-serif;
-          font-size: 96px;
-          font-weight: 400;
-          color: map-get($color, black-01);
-          letter-spacing: -2px;
-        }
-        p {
-          line-height: 22.4px;
-          padding: 15px 0;
-          font-family: "GmarketSans";
-          font-size: 14px;
-          font-weight: 400;
-        }
-      }
-      .partners-logo-frame {
-        position: absolute;
-        top: 55%;
-        left: 0;
-        width: 100%;
-        .partners-logo-wrap {
-          @include flex(center, flex-start);
-          transition-timing-function: linear;
-          .swiper-slide {
-            max-width: 260px;
-            a {
-              img {
-                max-width: 260px;
+        .partners-logo-frame {
+          position: absolute;
+          top: 55%;
+          left: 0;
+          width: 100%;
+          .partners-logo-wrap {
+            @include flex(center, flex-start);
+            transition-timing-function: linear;
+            .swiper-slide {
+              max-width: 260px;
+              a {
+                img {
+                  max-width: 260px;
+                }
               }
             }
           }
         }
       }
     }
-  }
-
-  #sec05 {
-    background-color: map-get($color, red-01);
-    padding: 48px 0;
-    .go_ask_frame {
-      @include flex(center, flex-start);
-      max-width: 1280px;
-      margin: 0 auto;
-      .go_ask_text {
-        width: 50%;
-        line-height: 38.565px;
-        padding: 20px 0 10px;
-        font-size: 38.565px;
-        font-weight: 700;
-        color: map-get($color, white-01);
-        letter-spacing: -1px;
+  
+    #sec05 {
+      background-color: map-get($color, red-01);
+      padding: 48px 0;
+      .go_ask_frame {
+        @include flex(center, flex-start);
+        max-width: 1280px;
+        margin: 0 auto;
+        .go_ask_text {
+          width: 50%;
+          line-height: 38.565px;
+          padding: 20px 0 10px;
+          font-size: 38.565px;
+          font-weight: 700;
+          color: map-get($color, white-01);
+          letter-spacing: -1px;
+        }
+        .arrow_box_wrap {
+          @include flex(center, center);
+          width: 50%;
+          padding: 16px 0 6.3px;
+          .arrow_box {
+            max-width: 305.75px;
+            img {
+              width: 100%;
+            }
+          }
+        }
       }
-      .arrow_box_wrap {
-        @include flex(center, center);
-        width: 50%;
-        padding: 16px 0 6.3px;
-        .arrow_box {
-          max-width: 305.75px;
-          img {
-            width: 100%;
+    }
+  }
+  
+  &.inquiry {
+    #sec01 {
+      background-color: map-get($color, red-01);
+      color: map-get($color, white-01);
+      .mail_form_frame {
+        max-width: 1250px;
+        margin: 0 auto;
+        padding-top: 85px;
+        .mail_form_wrap {
+          padding: 117px 0 124px;
+          border-bottom: 3px solid map-get($color, white-01);
+          .mail_form_title_wrap {
+            @include flex(flex-start, flex-start);
+            margin-bottom: 30px;
+            .title_box {
+              width: 41.67%;
+              p {
+                line-height: 78px;
+                padding-top: 20px;
+                font-family: "GmarketSans";
+                font-size: 60px;
+                font-weight: 700;
+                letter-spacing: -1px;
+              }
+            }
+            .english_desc_box {
+              flex-grow: 1;
+              margin-top: auto;
+              p {
+                padding-bottom: 12.41px;
+                line-height: 28.8px;
+                font-family: "Changa", sans-serif;
+                font-size: 24px;
+                font-weight: 400;
+              }
+            }
+          }
+          .mail_form {
+            width: 58.33%;
+            margin-left: auto;
+            .name_box, .contact_box, .content_box {
+              @include flex(flex-start, flex-start);
+              flex-direction: column;
+              label {
+                margin-bottom: 5px;
+                line-height: 24px;
+                font-family: "GmarketSans";
+                font-size: 15px;
+                font-weight: 400;
+              }
+
+              input, textarea {
+                width: 100%;
+                margin-bottom: 15px;
+                padding: 7.5px 12px;
+                border: 1px solid map-get($color, white-01);
+                font-family: "GmarketSans";
+                font-size: 15px;
+                color: map-get($color, white-01);
+                caret-color: map-get($color, white-01);
+              }
+
+              textarea {
+                line-height: 1.4285714;
+              }
+            }
+
+            button {
+              display: block;
+              line-height: 17.1429px;
+              margin-left: auto;
+              padding: 11px 20px;
+              background-color: map-get($color, black-04);
+              font-family: "Montserrat", serif;
+              font-size: 12px;
+              font-weight: 600;
+              color: map-get($color, white-01);
+              letter-spacing: 1px;
+            }
+          }
+        }
+        .project_inquiry_wrap {
+          padding: 79px 0 57px;
+          .project_inquiry_list {
+            @include flex(flex-start, flex-start);
+            .project_inquiry_item {
+              @include flex(flex-start, flex-start);
+              flex-direction: column;
+              flex: 1;
+              padding: 10px 0 30px;
+              .project_inquiry_title {
+                line-height: 38.574px;
+                font-family: "GmarketSans";
+                font-size: 32.145px;
+                font-weight: 700;
+              }
+              .project_inquiry_desc {
+                line-height: 39.2px;
+                font-family: "Changa", sans-serif;
+                font-size: 28px;
+                font-weight: 400;
+              }
+            }
           }
         }
       }

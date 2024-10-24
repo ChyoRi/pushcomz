@@ -1,0 +1,65 @@
+#footer {
+  background-color: map-get($color, white-01);
+  .footer_inner {
+    @include flex(flex-start, flex-start);
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px 0;
+    .company_info_wrap {
+      width: 50%;
+      .copyright_box {
+        padding-bottom: 33.38px;
+        .copyright {
+          line-height: 19.2px;
+          font-family: "Montserrat", serif;
+          font-size: 12px;
+          font-weight: 700;
+          color: map-get($color, black-01);
+        }
+      }
+      .company_info_box {
+        margin-bottom: 10px;
+      }
+      .company_address {
+        padding-bottom: 39.19px;
+      }
+      .company_info_box, .company_address {
+        li {
+          line-height: 19.2px;
+          font-family: "GmarketSans";
+          font-size: 12px;
+          font-weight: 400;
+          color: map-get($color, black-01);
+        }
+      }
+    }
+    .footer_nav_wrap {
+      width: 19.19%;
+      li {
+        padding: 3px 15px;
+        a {
+          line-height: 19.2px;
+          font-family: "GmarketSans";
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+    .footer_terms_wrap {
+      flex-grow: 1;
+      li {
+        padding: 3px 15px;
+        a {
+          line-height: 19.2px;
+          font-family: "GmarketSans";
+          font-size: 12px;
+          font-weight: 400;
+
+          &.privacy_policy {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

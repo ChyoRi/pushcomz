@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: "GmarketSans";
   src: url("../font/GmarketSansTTFBold.ttf") format("truetype");
   font-weight: 700;
@@ -49,6 +43,7 @@ img {
 
 a {
   display: block;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -56,15 +51,33 @@ em {
   font-style: normal;
 }
 
-.top_box_wrap {
-  padding: 8px;
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
-.top_box_wrap .top_box {
+
+input, textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+fieldset {
+  border: none;
+}
+
+.top_box {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 0 15px;
 }
-.top_box_wrap .top_box a {
+.top_box .top_btn {
   display: inline-block;
   padding: 15px 20px;
   line-height: 18.6667px;
@@ -74,13 +87,29 @@ em {
   letter-spacing: 1px;
   color: #000000;
 }
-.top_box_wrap .top_box a i {
+.top_box .top_btn i {
   margin-right: 10px;
   font-size: 15px;
 }
 
+.blind {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 1px;
+  height: 1px;
+  margin-top: -1px;
+  margin-left: -1px;
+  font-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  clip: ract(0, 0, 0, 0);
+}
+
 #header {
-  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   top: 0;
   left: 0;
   width: 100%;
@@ -88,107 +117,198 @@ em {
   z-index: 999;
   background-color: #ffffff;
 }
-#header .default_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 85px;
-}
-#header .default_header #logo {
-  width: 94px;
+#header #logo {
   height: 100%;
 }
-#header .default_header #logo a {
+#header #logo a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
-#header .default_header #logo a img {
+#header #logo a img {
   width: 100%;
-  vertical-align: middle;
 }
-#header .default_header #nav {
+#header #nav {
   height: 100%;
 }
-#header .default_header #nav ul {
+#header #nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
-#header .default_header #nav ul li {
+#header #nav ul li {
   height: 100%;
 }
-#header .default_header #nav ul li a {
+#header #nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   height: 100%;
-  line-height: 28.8px;
   padding: 0 20px;
+}
+#header #nav ul li a span {
+  position: relative;
   font-family: "GmarketSans";
-  font-size: 18px;
   font-weight: 700;
   color: #212121;
-  letter-spacing: 0;
-  vertical-align: middle;
 }
-#header .default_header #nav ul li.active span {
-  padding-bottom: 4px;
-  border-bottom: 3px solid #fd4750;
+#header #nav ul li.active span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fd4750;
 }
-#header .default_header div {
+#header.default {
+  position: absolute;
+  height: 85px;
+}
+#header.default #logo {
   width: 94px;
+}
+#header.default #nav ul li a span {
+  line-height: 28.8px;
+  font-size: 18px;
+}
+#header.default div {
+  width: 94px;
+  height: 100%;
+}
+#header.fixed {
+  position: fixed;
+  height: 60px;
+}
+#header.fixed #logo {
+  width: 78px;
+}
+#header.fixed #nav ul li a span {
+  line-height: 24px;
+  font-size: 15px;
+}
+#header.fixed #nav ul li.active span::after {
+  bottom: -5px;
+}
+#header.fixed div {
+  width: 78px;
   height: 100%;
 }
 
-#main #sec01 {
+#footer {
+  background-color: #ffffff;
+}
+#footer .footer_inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+#footer .footer_inner .company_info_wrap {
+  width: 50%;
+}
+#footer .footer_inner .company_info_wrap .copyright_box {
+  padding-bottom: 33.38px;
+}
+#footer .footer_inner .company_info_wrap .copyright_box .copyright {
+  line-height: 19.2px;
+  font-family: "Montserrat", serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #212121;
+}
+#footer .footer_inner .company_info_wrap .company_info_box {
+  margin-bottom: 10px;
+}
+#footer .footer_inner .company_info_wrap .company_address {
+  padding-bottom: 39.19px;
+}
+#footer .footer_inner .company_info_wrap .company_info_box li, #footer .footer_inner .company_info_wrap .company_address li {
+  line-height: 19.2px;
+  font-family: "GmarketSans";
+  font-size: 12px;
+  font-weight: 400;
+  color: #212121;
+}
+#footer .footer_inner .footer_nav_wrap {
+  width: 19.19%;
+}
+#footer .footer_inner .footer_nav_wrap li {
+  padding: 3px 15px;
+}
+#footer .footer_inner .footer_nav_wrap li a {
+  line-height: 19.2px;
+  font-family: "GmarketSans";
+  font-size: 12px;
+  font-weight: 400;
+}
+#footer .footer_inner .footer_terms_wrap {
+  flex-grow: 1;
+}
+#footer .footer_inner .footer_terms_wrap li {
+  padding: 3px 15px;
+}
+#footer .footer_inner .footer_terms_wrap li a {
+  line-height: 19.2px;
+  font-family: "GmarketSans";
+  font-size: 12px;
+  font-weight: 400;
+}
+#footer .footer_inner .footer_terms_wrap li a.privacy_policy {
+  font-weight: 700;
+}
+
+#main.company_infomation #sec01 {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
-#main #sec01 .video_wrap {
+#main.company_infomation #sec01 .video_wrap {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
-#main #sec01 .video_wrap video {
+#main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
-#main #sec01 .text_box_frame {
+#main.company_infomation #sec01 .text_box_frame {
   position: relative;
   max-width: 1250px;
   margin: 0 auto;
   padding-top: 85px;
   z-index: 2;
 }
-#main #sec01 .text_box_frame .text_box_wrap {
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 230px 0 222px;
 }
-#main #sec01 .text_box_frame .text_box_wrap .video_logo {
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo {
   max-width: 520.83px;
   height: 130px;
   padding: 0 12.05px;
 }
-#main #sec01 .text_box_frame .text_box_wrap .video_logo img {
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo img {
   width: 100%;
 }
-#main #sec01 .text_box_frame .text_box_wrap .text_box {
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap .text_box {
   width: 50%;
   border-top: 3px solid #ffffff;
 }
-#main #sec01 .text_box_frame .text_box_wrap .text_box .hangle_text {
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap .text_box .hangle_text {
   line-height: 36px;
   padding: 73px 0 42px;
   font-family: "GmarketSans";
@@ -196,24 +316,24 @@ em {
   font-weight: 400;
   color: #ffffff;
 }
-#main #sec01 .text_box_frame .text_box_wrap .english_text {
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap .english_text {
   line-height: 63.25px;
   font-family: "Changa", sans-serif;
   font-size: 55px;
   font-weight: 400;
   color: #ffffff;
 }
-#main #sec02 {
+#main.company_infomation #sec02 {
   background-color: #dfe8f0;
 }
-#main #sec02 .attitude_frame {
+#main.company_infomation #sec02 .attitude_frame {
   max-width: 1280px;
   margin: 0 auto;
 }
-#main #sec02 .attitude_frame .attitude_wrap {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap {
   padding: 146px 0 116px;
 }
-#main #sec02 .attitude_frame .attitude_wrap h3 {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap h3 {
   height: 144px;
   line-height: 136px;
   border-bottom: 2px solid #212121;
@@ -224,17 +344,17 @@ em {
   color: #212121;
   letter-spacing: -1px;
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   margin-top: 31px;
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item {
   flex: 1;
   padding: 8px 8px 0 8px;
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -242,7 +362,7 @@ em {
   padding: 15px 5px 23px 5px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .small_title {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .small_title {
   position: relative;
   line-height: 11.5px;
   padding-left: 10.84px;
@@ -251,7 +371,7 @@ em {
   font-weight: 400;
   color: #212121;
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .small_title::before {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .small_title::before {
   content: "";
   position: absolute;
   bottom: 1px;
@@ -261,17 +381,17 @@ em {
   border-radius: 50%;
   background-color: #fd4750;
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .attitude_title {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .attitude_title {
   line-height: 56px;
   font-family: "Changa", sans-serif;
   font-size: 40px;
   font-weight: 400;
   color: #212121;
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_desc_box {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_desc_box {
   padding: 18px 8px 30px 8px;
 }
-#main #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_desc_box .attitude_desc {
+#main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_desc_box .attitude_desc {
   line-height: 24px;
   padding: 15px 25px 15px 5px;
   font-family: "GmarketSans";
@@ -279,29 +399,32 @@ em {
   font-weight: 400;
   color: #212121;
 }
-#main #sec03 .works_frame {
+#main.company_infomation #sec02 .top_box_wrap {
+  padding: 8px;
+}
+#main.company_infomation #sec03 .works_frame {
   max-width: 1280px;
   margin: 0 auto;
 }
-#main #sec03 .works_frame .works_wrap {
+#main.company_infomation #sec03 .works_frame .works_wrap {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 126px 0 92px;
 }
-#main #sec03 .works_frame .works_wrap .works_img_box {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_img_box {
   max-width: 533.33px;
   height: 1158px;
   padding-top: 24px;
 }
-#main #sec03 .works_frame .works_wrap .works_img_box img {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_img_box img {
   width: 100%;
   height: 100%;
 }
-#main #sec03 .works_frame .works_wrap .works_text_box {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_text_box {
   width: 50%;
 }
-#main #sec03 .works_frame .works_wrap .works_text_box h3 {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_text_box h3 {
   font-family: "Changa", sans-serif;
   line-height: 103.5px;
   font-size: 90px;
@@ -309,7 +432,7 @@ em {
   color: #212121;
   letter-spacing: -2px;
 }
-#main #sec03 .works_frame .works_wrap .works_text_box p {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_text_box p {
   line-height: 22.4px;
   padding: 21px 0 35px;
   border-bottom: 2px solid #111111;
@@ -318,21 +441,21 @@ em {
   font-weight: 400;
   color: #212121;
 }
-#main #sec03 .works_frame .works_wrap .works_text_box .works_item {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 0;
   border-bottom: 2px solid #111111;
 }
-#main #sec03 .works_frame .works_wrap .works_text_box .works_item .works_title, #main #sec03 .works_frame .works_wrap .works_text_box .works_item .works_schedule {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item .works_title, #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item .works_schedule {
   line-height: 16px;
   font-family: "GmarketSans";
   font-size: 16px;
   font-weight: 400;
   color: #212121;
 }
-#main #sec03 .works_frame .works_wrap .works_text_box .works_item:last-of-type {
+#main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item:last-of-type {
   line-height: 14px;
   border-bottom: 0;
   font-family: "GmarketSans";
@@ -340,18 +463,18 @@ em {
   font-weight: 300;
   color: #212121;
 }
-#main #sec04 {
+#main.company_infomation #sec04 {
   background: url("../img/partners-bg.jpg") repeat center;
 }
-#main #sec04 .partners_frame {
+#main.company_infomation #sec04 .partners_frame {
   position: relative;
 }
-#main #sec04 .partners_frame .partners_wrap {
+#main.company_infomation #sec04 .partners_frame .partners_wrap {
   max-width: 1250px;
   margin: 0 auto;
   padding: 138px 0 407px;
 }
-#main #sec04 .partners_frame .partners_wrap h3 {
+#main.company_infomation #sec04 .partners_frame .partners_wrap h3 {
   line-height: 105.6px;
   padding: 15px 0;
   font-family: "Changa", sans-serif;
@@ -360,43 +483,43 @@ em {
   color: #212121;
   letter-spacing: -2px;
 }
-#main #sec04 .partners_frame .partners_wrap p {
+#main.company_infomation #sec04 .partners_frame .partners_wrap p {
   line-height: 22.4px;
   padding: 15px 0;
   font-family: "GmarketSans";
   font-size: 14px;
   font-weight: 400;
 }
-#main #sec04 .partners_frame .partners-logo-frame {
+#main.company_infomation #sec04 .partners_frame .partners-logo-frame {
   position: absolute;
   top: 55%;
   left: 0;
   width: 100%;
 }
-#main #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap {
+#main.company_infomation #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   transition-timing-function: linear;
 }
-#main #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap .swiper-slide {
+#main.company_infomation #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap .swiper-slide {
   max-width: 260px;
 }
-#main #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap .swiper-slide a img {
+#main.company_infomation #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap .swiper-slide a img {
   max-width: 260px;
 }
-#main #sec05 {
+#main.company_infomation #sec05 {
   background-color: #fd4750;
   padding: 48px 0;
 }
-#main #sec05 .go_ask_frame {
+#main.company_infomation #sec05 .go_ask_frame {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   max-width: 1280px;
   margin: 0 auto;
 }
-#main #sec05 .go_ask_frame .go_ask_text {
+#main.company_infomation #sec05 .go_ask_frame .go_ask_text {
   width: 50%;
   line-height: 38.565px;
   padding: 20px 0 10px;
@@ -405,16 +528,127 @@ em {
   color: #ffffff;
   letter-spacing: -1px;
 }
-#main #sec05 .go_ask_frame .arrow_box_wrap {
+#main.company_infomation #sec05 .go_ask_frame .arrow_box_wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50%;
   padding: 16px 0 6.3px;
 }
-#main #sec05 .go_ask_frame .arrow_box_wrap .arrow_box {
+#main.company_infomation #sec05 .go_ask_frame .arrow_box_wrap .arrow_box {
   max-width: 305.75px;
 }
-#main #sec05 .go_ask_frame .arrow_box_wrap .arrow_box img {
+#main.company_infomation #sec05 .go_ask_frame .arrow_box_wrap .arrow_box img {
   width: 100%;
+}
+#main.inquiry #sec01 {
+  background-color: #fd4750;
+  color: #ffffff;
+}
+#main.inquiry #sec01 .mail_form_frame {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-top: 85px;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap {
+  padding: 117px 0 124px;
+  border-bottom: 3px solid #ffffff;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .title_box {
+  width: 41.67%;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .title_box p {
+  line-height: 78px;
+  padding-top: 20px;
+  font-family: "GmarketSans";
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .english_desc_box {
+  flex-grow: 1;
+  margin-top: auto;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .english_desc_box p {
+  padding-bottom: 12.41px;
+  line-height: 28.8px;
+  font-family: "Changa", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form {
+  width: 58.33%;
+  margin-left: auto;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .name_box, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .contact_box, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .content_box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .name_box label, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .contact_box label, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .content_box label {
+  margin-bottom: 5px;
+  line-height: 24px;
+  font-family: "GmarketSans";
+  font-size: 15px;
+  font-weight: 400;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .name_box input, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .name_box textarea, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .contact_box input, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .contact_box textarea, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .content_box input, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .content_box textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 7.5px 12px;
+  border: 1px solid #ffffff;
+  font-family: "GmarketSans";
+  font-size: 15px;
+  color: #ffffff;
+  caret-color: #ffffff;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .name_box textarea, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .contact_box textarea, #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form .content_box textarea {
+  line-height: 1.4285714;
+}
+#main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form button {
+  display: block;
+  line-height: 17.1429px;
+  margin-left: auto;
+  padding: 11px 20px;
+  background-color: #363636;
+  font-family: "Montserrat", serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+#main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap {
+  padding: 79px 0 57px;
+}
+#main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list .project_inquiry_item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px 0 30px;
+}
+#main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list .project_inquiry_item .project_inquiry_title {
+  line-height: 38.574px;
+  font-family: "GmarketSans";
+  font-size: 32.145px;
+  font-weight: 700;
+}
+#main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list .project_inquiry_item .project_inquiry_desc {
+  line-height: 39.2px;
+  font-family: "Changa", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
 }

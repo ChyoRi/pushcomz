@@ -14,15 +14,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const defaultHaeder = document.querySelector('.default_header');
-const fixedHeader = document.querySelector('.fixed_header');
+const header = document.querySelector('#header');
+const headerLogoImg = document.querySelector('#logo > a > img');
+const topBtn = document.querySelectorAll('.top_btn');
 
-const header = () => {
+// 스크롤시 상단 헤더 고정
+const headerFixed = () => {
   const pageScrollTop = window.scrollY;
-  console.log(pageScrollTop);
+
   if(pageScrollTop >= 100) {
-    fixedHeader
+    header.classList.remove('default');
+    header.classList.add('fixed');
+    headerLogoImg.src = './img/pc-header-fixed.png';
+  } else {
+    header.classList.remove('fixed');
+    header.classList.add('default');
+    headerLogoImg.src = './img/pc-header-default.png';
   }
 }
 
-window.addEventListener('scroll', header);
+// 탑버튼 클릭시 상단 이동
+const goTop = e => {
+  e.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+window.addEventListener('scroll', headerFixed);
+topBtn.forEach(item => {
+  item.addEventListener('click', goTop);
+});

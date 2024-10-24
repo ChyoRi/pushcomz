@@ -1,20 +1,32 @@
-.top_box_wrap {
-  padding: 8px;
-  .top_box {
-    @include flex(center, flex-end);
-    a {
-      display: inline-block;
-      padding: 15px 20px;
-      line-height: 18.6667px;
-      font-family: "Montserrat", serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: map-get($color, black-02);
-      i {
-        margin-right: 10px;
-        font-size: 15px;
-      }
+.top_box {
+  @include flex(center, flex-end);
+  padding: 0 15px;
+  .top_btn {
+    display: inline-block;
+    padding: 15px 20px;
+    line-height: 18.6667px;
+    font-family: "Montserrat", serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: map-get($color, black-02);
+    i {
+      margin-right: 10px;
+      font-size: 15px;
     }
   }
+}
+
+.blind {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 1px;
+  height: 1px;
+  margin-top: -1px;
+  margin-left: -1px;
+  font-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  clip: ract(0, 0, 0, 0);
 }
