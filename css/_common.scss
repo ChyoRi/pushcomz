@@ -17,6 +17,45 @@
   }
 }
 
+.go_ask_frame {
+  background-color: map-get($color, red-01);
+  padding: 48px 0;
+  .go_ask_wrap {
+    @include flex(center, flex-start);
+    max-width: 1280px;
+    margin: 0 auto;
+    .go_ask_text {
+      width: 50%;
+      padding: 20px 0 10px;
+      font-family: "GmarketSans";
+      font-size: 38.565px;
+      font-weight: 700;
+      color: map-get($color, white-01);
+      letter-spacing: -1px;
+    }
+    .arrow_box {
+      @include flex(center, center);
+      width: 50%;
+      padding: 16px 0 6.3px;
+      .inquiry_link {
+        max-width: 305.75px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.project_title {
+  line-height: 46.278px;
+  text-align: center;
+  font-family: "Changa", sans-serif;
+  font-size: 38.565px;
+  font-weight: 500;
+  color: map-get($color, black-01);
+}
+
 .blind {
   position: relative;
   top: 1px;

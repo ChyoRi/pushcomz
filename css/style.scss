@@ -246,32 +246,57 @@
         }
       }
     }
-  
-    #sec05 {
-      background-color: map-get($color, red-01);
-      padding: 48px 0;
-      .go_ask_frame {
-        @include flex(center, flex-start);
-        max-width: 1280px;
-        margin: 0 auto;
-        .go_ask_text {
-          width: 50%;
-          line-height: 38.565px;
-          padding: 20px 0 10px;
-          font-size: 38.565px;
-          font-weight: 700;
-          color: map-get($color, white-01);
-          letter-spacing: -1px;
+  }
+
+  &.project {
+    padding-top: 123.56px;
+    #sec01 {
+      padding: 10px 0 111px;
+      .project_title {
+        @extend .project_title;
+        padding: 20px 32px 10px;
+      }
+      .ui_ux_design_wrap {
+        li {
+          margin-bottom: 20px;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          img {
+            width: 100%;
+          }
         }
-        .arrow_box_wrap {
-          @include flex(center, center);
-          width: 50%;
-          padding: 16px 0 6.3px;
-          .arrow_box {
-            max-width: 305.75px;
-            img {
-              width: 100%;
-            }
+      }
+    }
+    #sec02 {
+      padding-bottom: 152px;
+      .project_title {
+        padding: 20px 0 10px
+      }
+      .e_commerce_maintenance_wrap {
+        li {
+          margin-bottom: 20px;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    #sec03 {
+      .project_title {
+        padding: 20px 0 10px
+      }
+      .t_commerce_maintenance_wrap {
+        li {
+          margin-bottom: 20px;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          img {
+            width: 100%;
           }
         }
       }
@@ -279,13 +304,13 @@
   }
   
   &.inquiry {
+    padding-top: 85px;
     #sec01 {
       background-color: map-get($color, red-01);
       color: map-get($color, white-01);
       .mail_form_frame {
         max-width: 1250px;
         margin: 0 auto;
-        padding-top: 85px;
         .mail_form_wrap {
           padding: 117px 0 124px;
           border-bottom: 3px solid map-get($color, white-01);

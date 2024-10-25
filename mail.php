@@ -12,7 +12,7 @@
         $Contact=$_POST['contact'];
         $Contents =$_POST['content'];
 
-        $to='chyori_@naver.com';
+        $to='designpscz@gmail.com';
         // $subject=$Title;
         $msg="보낸사람:$Name\n"."연락처:$Contact\n"."메일내용:$Contents";
 

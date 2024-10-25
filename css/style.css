@@ -92,6 +92,49 @@ fieldset {
   font-size: 15px;
 }
 
+.go_ask_frame {
+  background-color: #fd4750;
+  padding: 48px 0;
+}
+.go_ask_frame .go_ask_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.go_ask_frame .go_ask_wrap .go_ask_text {
+  width: 50%;
+  padding: 20px 0 10px;
+  font-family: "GmarketSans";
+  font-size: 38.565px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+.go_ask_frame .go_ask_wrap .arrow_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 16px 0 6.3px;
+}
+.go_ask_frame .go_ask_wrap .arrow_box .inquiry_link {
+  max-width: 305.75px;
+}
+.go_ask_frame .go_ask_wrap .arrow_box .inquiry_link img {
+  width: 100%;
+}
+
+.project_title, #main.project #sec01 .project_title {
+  line-height: 46.278px;
+  text-align: center;
+  font-family: "Changa", sans-serif;
+  font-size: 38.565px;
+  font-weight: 500;
+  color: #212121;
+}
+
 .blind {
   position: relative;
   top: 1px;
@@ -164,6 +207,34 @@ fieldset {
   width: 100%;
   height: 3px;
   background-color: #fd4750;
+}
+#header #nav ul li.project_item {
+  position: relative;
+}
+#header #nav ul li.project_item .sub_menu_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: auto;
+  width: 100vw;
+  top: 100%;
+  left: 50%;
+  background-color: #e5e7eb;
+  gap: 5px;
+  transform: translateX(-50%);
+}
+#header #nav ul li.project_item .sub_menu_list li {
+  height: auto;
+}
+#header #nav ul li.project_item .sub_menu_list li a {
+  line-height: 18.5714px;
+  height: auto;
+  padding: 10px 12px;
+  font-family: "Montserrat", serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000000;
 }
 #header.default {
   position: absolute;
@@ -279,7 +350,8 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 #main.company_infomation #sec01 .text_box_frame {
@@ -507,38 +579,53 @@ fieldset {
 #main.company_infomation #sec04 .partners_frame .partners-logo-frame .partners-logo-wrap .swiper-slide a img {
   max-width: 260px;
 }
-#main.company_infomation #sec05 {
-  background-color: #fd4750;
-  padding: 48px 0;
+#main.project {
+  padding-top: 123.56px;
 }
-#main.company_infomation #sec05 .go_ask_frame {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  max-width: 1280px;
-  margin: 0 auto;
+#main.project #sec01 {
+  padding: 10px 0 111px;
 }
-#main.company_infomation #sec05 .go_ask_frame .go_ask_text {
-  width: 50%;
-  line-height: 38.565px;
-  padding: 20px 0 10px;
-  font-size: 38.565px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -1px;
+#main.project #sec01 .project_title {
+  padding: 20px 32px 10px;
 }
-#main.company_infomation #sec05 .go_ask_frame .arrow_box_wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  padding: 16px 0 6.3px;
+#main.project #sec01 .ui_ux_design_wrap li {
+  margin-bottom: 20px;
 }
-#main.company_infomation #sec05 .go_ask_frame .arrow_box_wrap .arrow_box {
-  max-width: 305.75px;
+#main.project #sec01 .ui_ux_design_wrap li:last-of-type {
+  margin-bottom: 0;
 }
-#main.company_infomation #sec05 .go_ask_frame .arrow_box_wrap .arrow_box img {
+#main.project #sec01 .ui_ux_design_wrap li img {
   width: 100%;
+}
+#main.project #sec02 {
+  padding-bottom: 152px;
+}
+#main.project #sec02 .project_title {
+  padding: 20px 0 10px;
+}
+#main.project #sec02 .e_commerce_maintenance_wrap li {
+  margin-bottom: 20px;
+}
+#main.project #sec02 .e_commerce_maintenance_wrap li:last-of-type {
+  margin-bottom: 0;
+}
+#main.project #sec02 .e_commerce_maintenance_wrap li img {
+  width: 100%;
+}
+#main.project #sec03 .project_title {
+  padding: 20px 0 10px;
+}
+#main.project #sec03 .t_commerce_maintenance_wrap li {
+  margin-bottom: 20px;
+}
+#main.project #sec03 .t_commerce_maintenance_wrap li:last-of-type {
+  margin-bottom: 0;
+}
+#main.project #sec03 .t_commerce_maintenance_wrap li img {
+  width: 100%;
+}
+#main.inquiry {
+  padding-top: 85px;
 }
 #main.inquiry #sec01 {
   background-color: #fd4750;
@@ -547,7 +634,6 @@ fieldset {
 #main.inquiry #sec01 .mail_form_frame {
   max-width: 1250px;
   margin: 0 auto;
-  padding-top: 85px;
 }
 #main.inquiry #sec01 .mail_form_frame .mail_form_wrap {
   padding: 117px 0 124px;
