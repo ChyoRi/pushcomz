@@ -251,7 +251,7 @@
   &.project {
     padding-top: 123.56px;
     #sec01 {
-      padding: 10px 0 111px;
+      padding-top: 10px;
       .project_title {
         @extend .project_title;
         padding: 20px 32px 10px;
@@ -269,7 +269,7 @@
       }
     }
     #sec02 {
-      padding-bottom: 152px;
+      padding-top: 111px;
       .project_title {
         padding: 20px 0 10px
       }
@@ -286,6 +286,7 @@
       }
     }
     #sec03 {
+      padding-top: 152px;
       .project_title {
         padding: 20px 0 10px
       }
@@ -413,6 +414,9 @@
     #sec02 {
       .google_map {
         height: 465px;
+        .company_title {
+          font-size: 15px;
+        }
       }
     }
   }
