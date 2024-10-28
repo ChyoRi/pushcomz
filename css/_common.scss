@@ -30,6 +30,7 @@
     @include flex(center, flex-start);
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 15px;
     .go_ask_text {
       width: 50%;
       padding: 20px 0 10px;

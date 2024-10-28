@@ -14,23 +14,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const header = document.querySelector('#header');
-const headerLogoImg = document.querySelector('#logo > a > img');
+const pcHeader = document.querySelector('.pc_header');
+const pcHeaderLogoImg = document.querySelector('#logo > a > img');
+const mobileNavDim = document.querySelector('.mobile_nav_dim');
+const mobileNav = document.querySelector('.mobile_nav');
+const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
+const hambergerBtn = document.querySelector('.hamberger_btn');
 const topBtnWrap = document.querySelector('.top_btn_wrap');
 const topBtn = document.querySelector('.top_btn')
 
 // 스크롤시 상단 헤더 고정
-const headerFixed = () => {
+const pcHeaderFixed = () => {
   const pageScrollTop = window.scrollY;
 
   if(pageScrollTop >= 100) {
-    header.classList.remove('default');
-    header.classList.add('fixed');
-    headerLogoImg.src = './img/pc-header-fixed.png';
+    pcHeader.classList.remove('default');
+    pcHeader.classList.add('fixed');
+    pcHeaderLogoImg.src = './img/pc-header-fixed.png';
   } else {
-    header.classList.remove('fixed');
-    header.classList.add('default');
-    headerLogoImg.src = './img/pc-header-default.png';
+    pcHeader.classList.remove('fixed');
+    pcHeader.classList.add('default');
+    pcHeaderLogoImg.src = './img/pc-header-default.png';
   }
 
   if(pageScrollTop >= 500) {
@@ -47,5 +51,28 @@ const goTop = e => {
   window.scrollTo({top: 0});
 }
 
-window.addEventListener('scroll', headerFixed);
+// 모바일 햄버거 버튼 누를시 네비 active
+const mobileNavMenu = () => {
+  mobileNavDim.classList.add('active');
+  mobileNav.classList.add('active');
+}
+
+// 모바일 X버튼 누를시 네비 default
+const mobileNavClose = () => {
+  mobileNavDim.classList.remove('active');
+  mobileNav.classList.remove('active');
+}
+
+// resize시 PC Size로 넘어갔을경우 네비 default
+const resizeNavClose = () => {
+  if(window.innerWidth >= 992) {
+    mobileNavDim.classList.remove('active');
+    mobileNav.classList.remove('active');
+  }
+}
+
+window.addEventListener('scroll', pcHeaderFixed);
+window.addEventListener('resize', resizeNavClose);
+hambergerBtn.addEventListener('click', mobileNavMenu);
+mobileNavCloseBtn.addEventListener('click', mobileNavClose);
 topBtn.addEventListener('click', goTop);

@@ -9,46 +9,48 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <header id="header" class="default">
-    <h1 id="logo">
-      <a href="#">
-        <img src="./img/pc-header-default.png" alt="기본 로고">
-      </a>
-    </h1>
-    <nav id="nav">
-      <ul>
-        <li>
-          <a href="index.html">
-            <span>회사소개</span>
-          </a>
-        </li>
-        <li class="project_item active">
-          <a href="project.html">
-            <span>프로젝트</span>
-          </a>
-          <ul class="sub_menu_list">
-            <li>
-              <a href="#" class="ui_ux">UI/UX</a>
-            </li>
-            <li>
-              <a href="#sec02" class="e-commerce">e-Commerce</a>
-            </li>
-            <li>
-              <a href="#sec03" class="t-commerce">T-commerce</a>
-            </li>
-            <li>
-              <a href="#">Motion</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="inquiry.html">
-            <span>문의하기</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div></div>
+  <header id="header">
+    <div class="pc_header default">
+      <h1 id="logo">
+        <a href="#">
+          <img src="./img/pc-header-default.png" alt="기본 로고">
+        </a>
+      </h1>
+      <nav id="nav">
+        <ul>
+          <li>
+            <a href="index.html">
+              <span>회사소개</span>
+            </a>
+          </li>
+          <li class="project_item active">
+            <a href="project.html">
+              <span>프로젝트</span>
+            </a>
+          </li>
+          <li>
+            <a href="inquiry.html">
+              <span>문의하기</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div></div>
+    </div>
+    <div class="mobile_header">
+      <div class="hamberger_menu_wrap">
+        <span class="blind">메뉴 열기 버튼</span>
+        <button type="button">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <h1 id="logo">
+        <a href="#">
+          <img src="./img/mobile-main-logo.png" alt="모바일 헤더 로고">
+        </a>
+      </h1>
+      <div></div>
+    </div>
   </header>
   <main id="main" class="project">
     <section id="sec01">
@@ -177,8 +179,8 @@
       </div>
       <div class="footer_terms_wrap">
         <ul>
-          <li><a href="#" class="terms">이용약관</a></li>
-          <li><a href="#" class="privacy_policy">개인정보처리방침</a></li>
+          <li><span>이용약관</span></li>
+          <li><span class="privacy_policy">개인정보처리방침</span></li>
         </ul>
       </div>
     </div>

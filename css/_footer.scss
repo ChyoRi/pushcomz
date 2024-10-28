@@ -49,7 +49,8 @@
       flex-grow: 1;
       li {
         padding: 3px 15px;
-        a {
+        a, span {
+          display: block;
           line-height: 19.2px;
           font-family: "GmarketSans";
           font-size: 12px;

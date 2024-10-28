@@ -27,15 +27,15 @@
       }
       .text_box_frame {
         position: relative;
-        max-width: 1250px;
+        max-width: 1280px;
         margin: 0 auto;
-        padding-top: 85px;
+        padding: 85px 15px 0;
         z-index: 2;
         .text_box_wrap {
           @include flex(flex-start, space-between);
           padding: 230px 0 222px;
           .video_logo {
-            max-width: 520.83px;
+            width: 41.67%;
             height: 130px;
             padding: 0 12.05px;
             img {
@@ -145,11 +145,12 @@
       .works_frame {
         max-width: 1280px;
         margin: 0 auto;
+        padding: 0 15px;
         .works_wrap {
           @include flex(flex-start, space-between);
           padding: 126px 0 92px;
           .works_img_box {
-            max-width: 533.33px;
+            width: 41.67%;
             height: 1158px;
             padding-top: 24px;
             img {
@@ -206,9 +207,9 @@
       .partners_frame {
         position: relative;
         .partners_wrap {
-          max-width: 1250px;
+          max-width: 1280px;
           margin: 0 auto;
-          padding: 138px 0 407px;
+          padding: 138px 15px 407px;
           h3 {
             line-height: 105.6px;
             padding: 15px 0;
@@ -421,3 +422,5 @@
     }
   }
 }
+
+@import './media.scss';

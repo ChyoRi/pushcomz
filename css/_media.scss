@@ -1,0 +1,26 @@
+@media (max-width: 1270px) {
+  #main {
+    &.company_infomation {
+      #sec01 {
+        .text_box_frame {
+          .text_box_wrap {
+            .video_logo {
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #header {
+    .pc_header {
+      display: none;
+    }
+    .mobile_header {
+      display: flex;
+    }
+  }
+}
