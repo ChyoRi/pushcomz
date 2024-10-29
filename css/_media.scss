@@ -35,6 +35,7 @@
             padding: 117.3px 0 137.39px;
             .video_logo {
               width: 24.35%;
+              min-width: 175px;
               height: 86px;
               order: 2;
             }
@@ -64,12 +65,83 @@
             h3 {
               height: auto;
               line-height: 26.6px;
-              padding: 43.52px 0;
+              padding: 43.52px 0 50.315px;
               font-size: 25px;
+              border-bottom: 2px solid rgba(33, 33, 33, 0.5);
             }
             .attitude_list {
               flex-direction: column;
+              margin-top: 26.325px;
+              .attitude_item {
+                width: 100%;
+                padding: 0;
+                .attitude_title_box {
+                  padding: 20px 5px 15px;
+                  border-bottom: 0;
+                  .small_title {
+                    font-size: 11px;
+                    &::before {
+                      bottom: 3px;
+                    }
+                  }
+                  .attitude_title {
+                    line-height: 49px;
+                    font-size: 33px;
+                    letter-spacing: -1px;
+                  }
+                }
+                .attitude_desc_box {
+                  padding: 0 20px 20px 0;
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+                  .attitude_desc {
+                    padding: 0 5px;
+                    font-size: 13px;
+                  }
+                }
+                &:last-of-type {
+                  .attitude_desc_box {
+                    border-bottom: 0;
+                  }
+                }
+              }
             }
+          }
+        }
+      }
+
+      #sec03 {
+        .works_frame {
+          .works_wrap {
+            padding: 107px 0 78.19px;
+            .works_img_box {
+              display: none;
+            }
+            .works_text_box {
+              width: 100%;
+              h3 {
+                font-size: 80px;
+              }
+              p {
+                font-size: 13px;
+              }
+              .works_item {
+                padding: 10px 0;
+                .works_title, .works_schedule {
+                  font-size: 12px;
+                }
+                &:last-of-type {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #sec04 {
+        .partners_frame {
+          .partners_wrap {
+            padding: 117.3px 0 416.38px;
           }
         }
       }

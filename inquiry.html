@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="./css/style.css">
 <body>
   <header id="header">
-    <div class="pc_header default">
+    <div class="pc_header">
       <h1 id="logo">
         <a href="#">
           <img src="./img/pc-header-default.png" alt="기본 로고">
         </a>
       </h1>
-      <nav id="nav">
+      <nav class="pc_nav">
         <ul>
           <li>
             <a href="index.html">
@@ -26,20 +26,6 @@
             <a href="project.html">
               <span>프로젝트</span>
             </a>
-            <ul class="sub_menu_list">
-              <li>
-                <a href="#" class="ui_ux">UI/UX</a>
-              </li>
-              <li>
-                <a href="#sec02" class="e-commerce">e-Commerce</a>
-              </li>
-              <li>
-                <a href="#sec03" class="t-commerce">T-commerce</a>
-              </li>
-              <li>
-                <a href="#">Motion</a>
-              </li>
-            </ul>
           </li>
           <li class="active">
             <a href="inquiry.html">
@@ -50,7 +36,33 @@
       </nav>
       <div></div>
     </div>
+    <div class="mobile_header">
+      <div class="hamberger_menu_wrap">
+        <span class="blind">메뉴 열기 버튼</span>
+        <button type="button" class="hamberger_btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <h1 id="logo">
+        <a href="#">
+          <img src="./img/mobile-logo.png" alt="모바일 헤더 로고">
+        </a>
+      </h1>
+      <div></div>
+    </div>
   </header>
+  <div class="mobile_nav_dim">
+    <nav class="mobile_nav">
+      <ul>
+        <li><a href="index.html">회사소개</a></li>
+        <li><a href="project.html">프로젝트</a></li>
+        <li class="active"><a href="inquiry.html">문의하기</a></li>
+      </ul>
+      <button class="mobile_nav_close_btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </nav>
+  </div>
   <main id="main" class="inquiry">
     <section id="sec01">
       <div class="mail_form_frame">

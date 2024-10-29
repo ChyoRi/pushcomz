@@ -2,9 +2,9 @@
   background-color: map-get($color, white-01);
   .footer_inner {
     @include flex(flex-start, flex-start);
-    max-width: 1250px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 15px;
     .company_info_wrap {
       width: 50%;
       .copyright_box {

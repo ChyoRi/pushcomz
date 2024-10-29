@@ -155,14 +155,17 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 85px;
   padding: 0 30px;
   z-index: 999;
   background-color: #ffffff;
 }
 #header .pc_header #logo {
+  width: 94px;
   height: 100%;
 }
 #header .pc_header #logo a {
@@ -196,7 +199,9 @@ fieldset {
 }
 #header .pc_header .pc_nav ul li a span {
   position: relative;
+  line-height: 28.8px;
   font-family: "GmarketSans";
+  font-size: 18px;
   font-weight: 700;
   color: #212121;
 }
@@ -218,10 +223,9 @@ fieldset {
   height: auto;
   width: 100%;
   top: 100%;
-  left: 50%;
+  left: 0;
   background-color: #e5e7eb;
   gap: 5px;
-  transform: translateX(-50%);
 }
 #header .pc_header .pc_nav ul li.project_item .sub_menu_list a {
   line-height: 18.5714px;
@@ -232,59 +236,22 @@ fieldset {
   font-weight: 500;
   color: #000000;
 }
-#header .pc_header.default {
-  position: absolute;
-  height: 85px;
-}
-#header .pc_header.default #logo {
-  width: 94px;
-}
-#header .pc_header.default #nav ul li a span {
-  line-height: 28.8px;
-  font-size: 18px;
-}
-#header .pc_header.default div {
+#header .pc_header div {
   width: 94px;
   height: 100%;
 }
 #header .pc_header.fixed {
   position: fixed;
   height: 60px;
-  background-color: transparent;
-}
-#header .pc_header.fixed::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  z-index: -1;
 }
 #header .pc_header.fixed #logo {
   width: 78px;
 }
-#header .pc_header.fixed #nav ul li a span {
+#header .pc_header.fixed .pc_nav ul li a span {
   line-height: 24px;
   font-size: 15px;
 }
-#header .pc_header.fixed #nav ul li .sub_menu_list {
-  background-color: transparent;
-}
-#header .pc_header.fixed #nav ul li .sub_menu_list::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.4);
-  z-index: -1;
-}
-#header .pc_header.fixed #nav ul li.active span::after {
+#header .pc_header.fixed .pc_nav ul li.active span::after {
   bottom: -5px;
 }
 #header .pc_header.fixed div {
@@ -295,8 +262,14 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 0 10px;
-  height: 41.8px;
+  height: 48px;
+  z-index: 10;
+  background-color: #ffffff;
 }
 #header .mobile_header .hamberger_menu_wrap {
   display: flex;
@@ -324,6 +297,9 @@ fieldset {
 #header .mobile_header div {
   width: 15.75px;
   height: 100%;
+}
+#header .mobile_header.fixed {
+  position: fixed;
 }
 
 .mobile_nav_dim {
@@ -389,9 +365,9 @@ fieldset {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 1250px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px 15px;
 }
 #footer .footer_inner .company_info_wrap {
   width: 50%;
@@ -463,7 +439,8 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 #main.company_infomation #sec01 .text_box_frame {
@@ -884,6 +861,7 @@ fieldset {
   }
   #main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo {
     width: 24.35%;
+    min-width: 175px;
     height: 86px;
     order: 2;
   }
@@ -908,10 +886,69 @@ fieldset {
   #main.company_infomation #sec02 .attitude_frame .attitude_wrap h3 {
     height: auto;
     line-height: 26.6px;
-    padding: 43.52px 0;
+    padding: 43.52px 0 50.315px;
     font-size: 25px;
+    border-bottom: 2px solid rgba(33, 33, 33, 0.5);
   }
   #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list {
     flex-direction: column;
+    margin-top: 26.325px;
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item {
+    width: 100%;
+    padding: 0;
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box {
+    padding: 20px 5px 15px;
+    border-bottom: 0;
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .small_title {
+    font-size: 11px;
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .small_title::before {
+    bottom: 3px;
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box .attitude_title {
+    line-height: 49px;
+    font-size: 33px;
+    letter-spacing: -1px;
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_desc_box {
+    padding: 0 20px 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_desc_box .attitude_desc {
+    padding: 0 5px;
+    font-size: 13px;
+  }
+  #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item:last-of-type .attitude_desc_box {
+    border-bottom: 0;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap {
+    padding: 107px 0 78.19px;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_img_box {
+    display: none;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box {
+    width: 100%;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box h3 {
+    font-size: 80px;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box p {
+    font-size: 13px;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item {
+    padding: 10px 0;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item .works_title, #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item .works_schedule {
+    font-size: 12px;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_item:last-of-type {
+    font-size: 12px;
+  }
+  #main.company_infomation #sec04 .partners_frame .partners_wrap {
+    padding: 117.3px 0 416.38px;
   }
 }
