@@ -20,7 +20,7 @@
       display: none;
     }
     .mobile_header {
-      display: flex;
+      display: block;
     }
   }
 
@@ -65,9 +65,10 @@
             h3 {
               height: auto;
               line-height: 26.6px;
-              padding: 43.52px 0 50.315px;
-              font-size: 25px;
+              padding: 100px 0 50px;
               border-bottom: 2px solid rgba(33, 33, 33, 0.5);
+              font-size: 80px;
+              text-align: left;
             }
             .attitude_list {
               flex-direction: column;
@@ -141,7 +142,67 @@
       #sec04 {
         .partners_frame {
           .partners_wrap {
-            padding: 117.3px 0 416.38px;
+            padding: 117.3px 15px 416.38px;
+            h3 {
+              font-size: 80px;
+            }
+          }
+        }
+      }
+    }
+
+    &.project {
+      padding-top: 84px;
+      #sec02 {
+        padding-top: 90px;
+      }
+      #sec03 {
+        padding-top: 90px;
+      }
+      .project_title {
+        padding: 20px 32px 10px;
+        font-size: 26px;
+      }
+    }
+
+    &.inquiry {
+      padding-top: 48px;
+      #sec01 {
+        .mail_form_frame {
+          .mail_form_wrap {
+            padding: 100px 0;
+            .mail_form_title_wrap {
+              flex-direction: column;
+              .title_box {
+                width: 100%;
+                p {
+                  line-height: 48px;
+                  font-size: 40px;
+                }
+              }
+              .english_desc_box {
+                margin-top: 50px;
+              }
+            }
+            .mail_form {
+              width: 100%;
+              margin-left: 0;
+            }
+          }
+          .project_inquiry_wrap {
+            padding: 65px 0;
+            .project_inquiry_list {
+              flex-direction: column;
+              .project_inquiry_item {
+                .project_inquiry_title {
+                  font-size: 26px;
+                }
+                .project_inquiry_desc {
+                  line-height: 25px;
+                  font-size: 20px;
+                }
+              }
+            }
           }
         }
       }

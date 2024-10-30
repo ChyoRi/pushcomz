@@ -40,18 +40,20 @@
       <div></div>
     </div>
     <div class="mobile_header">
-      <div class="hamberger_menu_wrap">
-        <span class="blind">메뉴 열기 버튼</span>
-        <button type="button" class="hamberger_btn">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+      <div class="mobile_header_top">
+        <div class="hamberger_menu_wrap">
+          <span class="blind">메뉴 열기 버튼</span>
+          <button type="button" class="hamberger_btn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <h1 id="logo">
+          <a href="#">
+            <img src="./img/mobile-logo.png" alt="모바일 헤더 로고">
+          </a>
+        </h1>
+        <div></div>
       </div>
-      <h1 id="logo">
-        <a href="#">
-          <img src="./img/mobile-logo.png" alt="모바일 헤더 로고">
-        </a>
-      </h1>
-      <div></div>
     </div>
   </header>
   <div class="mobile_nav_dim">
@@ -69,7 +71,9 @@
   <main id="main" class="company_infomation">
     <section id="sec01">
       <div class="video_wrap">
-        <video autoplay muted loop src="./video/main-video.mp4" type="video/mp4"></video>
+        <video autoplay muted playsinline loop>
+          <source src="./video/main-video.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="text_box_frame">
         <div class="text_box_wrap">

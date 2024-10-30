@@ -114,7 +114,7 @@ fieldset {
   width: 50%;
   padding: 20px 0 10px;
   font-family: "GmarketSans";
-  font-size: 38.565px;
+  font-size: 36px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -1px;
@@ -259,44 +259,63 @@ fieldset {
   height: 100%;
 }
 #header .mobile_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 10px;
   height: 48px;
   z-index: 10;
   background-color: #ffffff;
 }
-#header .mobile_header .hamberger_menu_wrap {
+#header .mobile_header .mobile_header_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+#header .mobile_header .mobile_header_top .hamberger_menu_wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-#header .mobile_header .hamberger_menu_wrap i {
+#header .mobile_header .mobile_header_top .hamberger_menu_wrap i {
   font-size: 18px;
+  color: #000000;
 }
-#header .mobile_header #logo {
+#header .mobile_header .mobile_header_top #logo {
   width: 89.42px;
   height: 100%;
 }
-#header .mobile_header #logo a {
+#header .mobile_header .mobile_header_top #logo a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
-#header .mobile_header #logo a img {
+#header .mobile_header .mobile_header_top #logo a img {
   width: 100%;
 }
-#header .mobile_header div {
+#header .mobile_header .mobile_header_top div {
   width: 15.75px;
   height: 100%;
+}
+#header .mobile_header .mobile_header_bottom {
+  background-color: #e5e7eb;
+}
+#header .mobile_header .mobile_header_bottom .sub_menu_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header .mobile_header .mobile_header_bottom .sub_menu_list li a {
+  padding: 10px 12px;
+  font-family: "Montserrat", serif;
+  font-size: 13px;
+  font-weight: 500;
 }
 #header .mobile_header.fixed {
   position: fixed;
@@ -725,8 +744,9 @@ fieldset {
   color: #ffffff;
 }
 #main.inquiry #sec01 .mail_form_frame {
-  max-width: 1250px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 #main.inquiry #sec01 .mail_form_frame .mail_form_wrap {
   padding: 117px 0 124px;
@@ -745,7 +765,7 @@ fieldset {
   line-height: 78px;
   padding-top: 20px;
   font-family: "GmarketSans";
-  font-size: 60px;
+  font-size: 55px;
   font-weight: 700;
   letter-spacing: -1px;
 }
@@ -827,7 +847,7 @@ fieldset {
 #main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list .project_inquiry_item .project_inquiry_desc {
   line-height: 39.2px;
   font-family: "Changa", sans-serif;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 400;
 }
 #main.inquiry #sec02 .google_map {
@@ -847,7 +867,7 @@ fieldset {
     display: none;
   }
   #header .mobile_header {
-    display: flex;
+    display: block;
   }
   #main.company_infomation #sec01 .text_box_frame {
     padding: 0 25px;
@@ -886,9 +906,10 @@ fieldset {
   #main.company_infomation #sec02 .attitude_frame .attitude_wrap h3 {
     height: auto;
     line-height: 26.6px;
-    padding: 43.52px 0 50.315px;
-    font-size: 25px;
+    padding: 100px 0 50px;
     border-bottom: 2px solid rgba(33, 33, 33, 0.5);
+    font-size: 80px;
+    text-align: left;
   }
   #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list {
     flex-direction: column;
@@ -949,6 +970,58 @@ fieldset {
     font-size: 12px;
   }
   #main.company_infomation #sec04 .partners_frame .partners_wrap {
-    padding: 117.3px 0 416.38px;
+    padding: 117.3px 15px 416.38px;
+  }
+  #main.company_infomation #sec04 .partners_frame .partners_wrap h3 {
+    font-size: 80px;
+  }
+  #main.project {
+    padding-top: 84px;
+  }
+  #main.project #sec02 {
+    padding-top: 90px;
+  }
+  #main.project #sec03 {
+    padding-top: 90px;
+  }
+  #main.project .project_title, #main.project #sec01 .project_title {
+    padding: 20px 32px 10px;
+    font-size: 26px;
+  }
+  #main.inquiry {
+    padding-top: 48px;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap {
+    padding: 100px 0;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap {
+    flex-direction: column;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .title_box {
+    width: 100%;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .title_box p {
+    line-height: 48px;
+    font-size: 40px;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .english_desc_box {
+    margin-top: 50px;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form {
+    width: 100%;
+    margin-left: 0;
+  }
+  #main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap {
+    padding: 65px 0;
+  }
+  #main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list {
+    flex-direction: column;
+  }
+  #main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list .project_inquiry_item .project_inquiry_title {
+    font-size: 26px;
+  }
+  #main.inquiry #sec01 .mail_form_frame .project_inquiry_wrap .project_inquiry_list .project_inquiry_item .project_inquiry_desc {
+    line-height: 25px;
+    font-size: 20px;
   }
 }
