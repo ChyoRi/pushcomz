@@ -25,15 +25,24 @@ const hambergerBtn = document.querySelector('.hamberger_btn');
 const mainTextBox = document.querySelector('.text_box');
 const mainHangleText = document.querySelector('.hangle_text');
 const mainEnglishText = document.querySelector('.english_text');
-const worksNewLine = document.querySelector('.works_newline');
+const firstSection = document.querySelector('#sec01');
+const footerInner = document.querySelector('.footer_inner');
+const companyInfoWrap = document.querySelector('.company_info_wrap');
+const footerNav = document.querySelector('.footer_nav_wrap');
 const topBtnWrap = document.querySelector('.top_btn_wrap');
 const topBtn = document.querySelector('.top_btn')
 
 // mobile 해상도로 진입시 mainvideo의 한글텍스트와 영문텍스트 순서를 변경
-// works section에서 p에 있는 <br> 요소 삭제
 if(window.innerWidth <= 991) {
   mainTextBox.insertBefore(mainEnglishText, mainHangleText);
-  worksNewLine.remove();
+} else {
+  mainTextBox.insertBefore(mainHangleText, mainEnglishText);
+}
+
+if(window.innerWidth <= 480) {
+  footerInner.insertBefore(footerNav, companyInfoWrap);
+} else {
+  footerInner.insertBefore(companyInfoWrap, footerNav);
 }
 
 // 스크롤시 상단 헤더 고정
@@ -93,7 +102,14 @@ const resizeNavClose = () => {
   // works section에서 p에 있는 <br> 요소 삭제
   if(window.innerWidth <= 991) {
     mainTextBox.insertBefore(mainEnglishText, mainHangleText);
-    worksNewLine.remove();
+  } else {
+    mainTextBox.insertBefore(mainHangleText, mainEnglishText);
+  }
+
+  if(window.innerWidth <= 480) {
+    footerInner.insertBefore(footerNav, companyInfoWrap);
+  } else {
+    footerInner.insertBefore(companyInfoWrap, footerNav);
   }
 }
 
@@ -104,9 +120,17 @@ const mobileNavCloseMove = () => {
   }
 }
 
+// ios 저전력모드일때 동영상 실행 함수
+const lowpowerMode = () => {
+  const mainVideo = document.querySelector('.main_video');
+  if (!mainVideo.play()) mainVideo.play();
+};
+
 // Event Listener
 window.addEventListener('scroll', headerFixed);
 window.addEventListener('resize', resizeNavClose);
+firstSection.addEventListener('click', lowpowerMode);
+firstSection.addEventListener('touchstart', lowpowerMode);
 hambergerBtn.addEventListener('click', mobileNavMenu);
 mobileNavCloseBtn.addEventListener('click', mobileNavClose);
 topBtn.addEventListener('click', goTop);

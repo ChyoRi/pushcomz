@@ -35,8 +35,17 @@ const mobileNavDim = document.querySelector('.mobile_nav_dim');
 const mobileNav = document.querySelector('.mobile_nav');
 const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
 const hambergerBtn = document.querySelector('.hamberger_btn');
+const footerInner = document.querySelector('.footer_inner');
+const companyInfoWrap = document.querySelector('.company_info_wrap');
+const footerNav = document.querySelector('.footer_nav_wrap');
 const topBtnWrap = document.querySelector('.top_btn_wrap');
-const topBtn = document.querySelector('.top_btn')
+const topBtn = document.querySelector('.top_btn');
+
+if(window.innerWidth <= 480) {
+  footerInner.insertBefore(footerNav, companyInfoWrap);
+} else {
+  footerInner.insertBefore(companyInfoWrap, footerNav);
+}
 
 // 스크롤시 상단 헤더 고정
 const headerFixed = () => {
@@ -82,6 +91,12 @@ const resizeNavClose = () => {
   if(window.innerWidth >= 992) {
     mobileNavDim.classList.remove('active');
     mobileNav.classList.remove('active');
+  }
+
+  if(window.innerWidth <= 480) {
+    footerInner.insertBefore(footerNav, companyInfoWrap);
+  } else {
+    footerInner.insertBefore(companyInfoWrap, footerNav);
   }
 }
 

@@ -422,7 +422,7 @@ fieldset {
 #footer .footer_inner .footer_nav_wrap li a {
   line-height: 19.2px;
   font-family: "GmarketSans";
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -431,18 +431,17 @@ fieldset {
   overflow: hidden;
   width: 100%;
 }
-#main.company_infomation #sec01 .iframe_wrap {
+#main.company_infomation #sec01 .video_wrap {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
-#main.company_infomation #sec01 .iframe_wrap iframe {
+#main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
 }
 #main.company_infomation #sec01 .text_box_frame {
@@ -841,6 +840,9 @@ fieldset {
 #main.inquiry #sec02 .google_map .company_title {
   font-size: 15px;
 }
+#main.motion {
+  padding-top: 123.56px;
+}
 
 @media (max-width: 1270px) {
   #main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo {
@@ -1009,8 +1011,15 @@ fieldset {
     line-height: 25px;
     font-size: 20px;
   }
+  #main.motion {
+    padding-top: 84px;
+  }
 }
 @media (max-width: 480px) {
+  #header .mobile_header .mobile_header_bottom .sub_menu_list li a {
+    font-size: 10px;
+    white-space: nowrap;
+  }
   #main.company_infomation #sec02 .attitude_frame .attitude_wrap h3 {
     height: auto;
     padding: 80px 0 50px;
@@ -1024,6 +1033,23 @@ fieldset {
   #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box h3 {
     font-size: 60px;
   }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_list .works_item {
+    flex-direction: column;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_list .works_item .works_title {
+    display: block;
+    margin-right: auto;
+    font-size: 10px;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_list .works_item .works_schedule {
+    display: block;
+    margin-left: auto;
+    font-size: 10px;
+  }
+  #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box .works_list .works_item:last-of-type {
+    justify-self: flex-start;
+    font-size: 10px;
+  }
   #main.company_infomation #sec04 .partners_frame .partners_wrap {
     padding: 80px 0 330px;
   }
@@ -1033,6 +1059,56 @@ fieldset {
   }
   #main.company_infomation #sec04 .partners_frame .partners_wrap p {
     font-size: 12px;
+  }
+  #main.project #sec01 {
+    padding-top: 0;
+  }
+  #main.project #sec02 {
+    padding-top: 50px;
+  }
+  #main.project #sec03 {
+    padding-top: 50px;
+  }
+  #main.inquiry {
+    padding-top: 48px;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap {
+    padding: 100px 0;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap {
+    flex-direction: column;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .title_box {
+    width: 100%;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .title_box p {
+    line-height: 42px;
+    font-size: 34px;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .english_desc_box {
+    margin-top: 40px;
+  }
+  #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .english_desc_box p {
+    line-height: 26px;
+    font-size: 21px;
+  }
+  #footer .footer_inner {
+    flex-direction: column;
+  }
+  #footer .footer_inner .company_info_wrap {
+    width: 100%;
+  }
+  #footer .footer_inner .company_info_wrap .copyright_box {
+    padding-bottom: 20px;
+  }
+  #footer .footer_inner .footer_nav_wrap {
+    width: 100%;
+  }
+  #footer .footer_inner .footer_nav_wrap ul > li {
+    padding: 3px 0;
+  }
+  #footer .footer_inner .footer_nav_wrap ul > li a {
+    font-size: 13px;
   }
   .go_ask_frame .go_ask_wrap {
     flex-direction: column;
