@@ -25,12 +25,11 @@
 
 .go_ask_frame {
   background-color: map-get($color, red-01);
-  padding: 48px 0;
+  padding: 48px 15px;
   .go_ask_wrap {
     @include flex(center, flex-start);
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 15px;
     .go_ask_text {
       width: 50%;
       padding: 20px 0 10px;

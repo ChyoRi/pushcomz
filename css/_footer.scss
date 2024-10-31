@@ -34,7 +34,7 @@
       }
     }
     .footer_nav_wrap {
-      width: 19.19%;
+      flex-grow: 1;
       li {
         padding: 3px 15px;
         a {
@@ -42,23 +42,6 @@
           font-family: "GmarketSans";
           font-size: 12px;
           font-weight: 400;
-        }
-      }
-    }
-    .footer_terms_wrap {
-      flex-grow: 1;
-      li {
-        padding: 3px 15px;
-        a, span {
-          display: block;
-          line-height: 19.2px;
-          font-family: "GmarketSans";
-          font-size: 12px;
-          font-weight: 400;
-
-          &.privacy_policy {
-            font-weight: 700;
-          }
         }
       }
     }

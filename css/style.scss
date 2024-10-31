@@ -12,13 +12,13 @@
       position: relative;
       overflow: hidden;
       width: 100%;
-      .video_wrap {
+      .iframe_wrap {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        video {
+        iframe {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -70,6 +70,7 @@
       .attitude_frame {
         max-width: 1280px;
         margin: 0 auto;
+        padding: 0 15px;
         .attitude_wrap {
           padding: 146px 0 116px;
           h3 {
@@ -206,10 +207,11 @@
       background: url('../img/partners-bg.jpg') repeat center;
       .partners_frame {
         position: relative;
+        padding: 0 15px;
         .partners_wrap {
           max-width: 1280px;
           margin: 0 auto;
-          padding: 138px 15px 407px;
+          padding: 138px 0 407px;
           h3 {
             line-height: 105.6px;
             padding: 15px 0;
@@ -237,10 +239,8 @@
             transition-timing-function: linear;
             .swiper-slide {
               max-width: 260px;
-              a {
-                img {
-                  max-width: 260px;
-                }
+              img {
+                max-width: 100%;
               }
             }
           }
