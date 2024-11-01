@@ -441,7 +441,8 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 #main.company_infomation #sec01 .text_box_frame {
@@ -842,6 +843,24 @@ fieldset {
 }
 #main.motion {
   padding-top: 123.56px;
+}
+#main.motion #sec01 .lottie_frame {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 15px;
+}
+#main.motion #sec01 .lottie_frame .lottie_card_list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#main.motion #sec01 .lottie_frame .lottie_card_list .lottie_card {
+  flex: 1;
+}
+#main.motion #sec01 .lottie_frame .lottie_card_list .lottie_card .lottie_card_link img {
+  width: 100%;
 }
 
 @media (max-width: 1270px) {

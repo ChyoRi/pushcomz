@@ -425,6 +425,24 @@
 
   &.motion {
     padding-top: 123.56px;
+    #sec01 {
+      .lottie_frame {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 100px 15px;
+        .lottie_card_list {
+          @include flex(flex-start, flex-start);
+          flex-wrap: wrap;
+          gap: 15px;
+          .lottie_card {
+            flex: 1;
+            .lottie_card_link img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
