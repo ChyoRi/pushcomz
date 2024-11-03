@@ -22,6 +22,8 @@ const mobileNavDim = document.querySelector('.mobile_nav_dim');
 const mobileNav = document.querySelector('.mobile_nav');
 const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
 const hambergerBtn = document.querySelector('.hamberger_btn');
+const mainVideo = document.querySelector('.main_video');
+const mainImg = document.querySelector('.main_image');
 const mainTextBox = document.querySelector('.text_box');
 const mainHangleText = document.querySelector('.hangle_text');
 const mainEnglishText = document.querySelector('.english_text');
@@ -44,6 +46,22 @@ if(window.innerWidth <= 480) {
 } else {
   footerInner.insertBefore(companyInfoWrap, footerNav);
 }
+
+// 사용자의 Device가 ios인지 확인 후 비디오가 멈춰 있으면 이미지로 대체
+// const loadVideo = () => {
+//   console.log(navigator.userAgent);
+  
+//   if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+//     console.log("iPhone")
+//     if(mainVideo.paused) {
+//       mainVideo.classList.add('inactive');
+//       mainImg.classList.add('active');
+//     } else {
+//       mainVideo.classList.remove('inactive');
+//       mainImg.classList.remove('active');
+//     }
+//   }
+// }
 
 // 스크롤시 상단 헤더 고정
 const headerFixed = () => {
@@ -129,6 +147,9 @@ const lowpowerMode = () => {
 // Event Listener
 window.addEventListener('scroll', headerFixed);
 window.addEventListener('resize', resizeNavClose);
+// document.addEventListener('DOMContentLoaded', () => {
+//   mainVideo.addEventListener('loadeddata', loadVideo);
+// });
 firstSection.addEventListener('click', lowpowerMode);
 firstSection.addEventListener('touchstart', lowpowerMode);
 hambergerBtn.addEventListener('click', mobileNavMenu);

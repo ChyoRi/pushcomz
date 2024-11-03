@@ -96,6 +96,7 @@ fieldset {
 .top_btn_wrap .top_btn i {
   font-size: 18px;
   vertical-align: middle;
+  color: #000000;
 }
 
 .go_ask_frame {
@@ -139,6 +140,49 @@ fieldset {
   font-size: 38.565px;
   font-weight: 500;
   color: #212121;
+}
+
+.modal_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.modal_wrap .ly_pop_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  max-width: 500px;
+  transform: translate(-50%, -50%);
+}
+.modal_wrap .ly_pop_wrap .ly_inner .ly_header {
+  padding: 8px 16px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #f6f6f6;
+}
+.modal_wrap .ly_pop_wrap .ly_inner .ly_header .ly_header_close {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+}
+.modal_wrap .ly_pop_wrap .ly_inner .ly_header .ly_header_close i {
+  font-size: 18px;
+  color: #000000;
+}
+.modal_wrap .ly_pop_wrap .ly_inner .ly_body {
+  padding: 20px 16px;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #ffffff;
+}
+.modal_wrap .ly_pop_wrap.active {
+  display: block;
+}
+.modal_wrap.active {
+  display: block;
 }
 
 .blind {
@@ -441,9 +485,20 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
+}
+#main.company_infomation #sec01 .video_wrap video.inactive {
+  display: none;
+}
+#main.company_infomation #sec01 .video_wrap .main_image {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#main.company_infomation #sec01 .video_wrap .main_image.active {
+  display: block;
 }
 #main.company_infomation #sec01 .text_box_frame {
   position: relative;
@@ -849,18 +904,13 @@ fieldset {
   margin: 0 auto;
   padding: 100px 15px;
 }
-#main.motion #sec01 .lottie_frame .lottie_card_list {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 15px;
+#main.motion #sec01 .lottie_frame .grid .grid-item {
+  margin-bottom: 15px;
+  width: calc((100% - 45px) / 4);
 }
-#main.motion #sec01 .lottie_frame .lottie_card_list .lottie_card {
-  flex: 1;
-}
-#main.motion #sec01 .lottie_frame .lottie_card_list .lottie_card .lottie_card_link img {
+#main.motion #sec01 .lottie_frame .grid .grid-item a img {
   width: 100%;
+  border-radius: 20px;
 }
 
 @media (max-width: 1270px) {
@@ -1033,6 +1083,17 @@ fieldset {
   #main.motion {
     padding-top: 84px;
   }
+  #main.motion #sec01 .lottie_frame {
+    padding: 50px 15px;
+  }
+  #main.motion #sec01 .lottie_frame .grid .grid-item {
+    margin-bottom: 15px;
+    width: calc((100% - 30px) / 3);
+  }
+  #main.motion #sec01 .lottie_frame .grid .grid-item a img {
+    width: 100%;
+    border-radius: 20px;
+  }
 }
 @media (max-width: 480px) {
   #header .mobile_header .mobile_header_bottom .sub_menu_list li a {
@@ -1110,6 +1171,20 @@ fieldset {
   #main.inquiry #sec01 .mail_form_frame .mail_form_wrap .mail_form_title_wrap .english_desc_box p {
     line-height: 26px;
     font-size: 21px;
+  }
+  #main.motion {
+    padding-top: 81px;
+  }
+  #main.motion #sec01 .lottie_frame {
+    padding: 50px 15px;
+  }
+  #main.motion #sec01 .lottie_frame .grid .grid-item {
+    margin-bottom: 15px;
+    width: calc((100% - 15px) / 2);
+  }
+  #main.motion #sec01 .lottie_frame .grid .grid-item a img {
+    width: 100%;
+    border-radius: 20px;
   }
   #footer .footer_inner {
     flex-direction: column;

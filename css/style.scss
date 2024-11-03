@@ -23,6 +23,18 @@
           height: 100%;
           object-fit: cover;
           z-index: 0;
+          &.inactive {
+            display: none;
+          }
+        }
+        .main_image {
+          display: none;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          &.active {
+            display: block;
+          }
         }
       }
       .text_box_frame {
@@ -430,14 +442,13 @@
         max-width: 1280px;
         margin: 0 auto;
         padding: 100px 15px;
-        .lottie_card_list {
-          @include flex(flex-start, flex-start);
-          flex-wrap: wrap;
-          gap: 15px;
-          .lottie_card {
-            flex: 1;
-            .lottie_card_link img {
+        .grid {
+          .grid-item {
+            margin-bottom: 15px;
+            width: calc((100% - 45px) / 4);
+            a img {
               width: 100%;
+              border-radius: 20px;
             }
           }
         }

@@ -210,6 +210,21 @@
 
     &.motion {
       padding-top: 84px;
+      #sec01 {
+        .lottie_frame {
+          padding: 50px 15px;
+          .grid {
+            .grid-item {
+              margin-bottom: 15px;
+              width: calc((100% - 30px) / 3);
+              a img {
+                width: 100%;
+                border-radius: 20px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -323,6 +338,25 @@
                   line-height: 26px;
                   font-size: 21px;
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.motion {
+      padding-top: 81px;
+      #sec01 {
+        .lottie_frame {
+          padding: 50px 15px;
+          .grid {
+            .grid-item {
+              margin-bottom: 15px;
+              width: calc((100% - 15px) / 2);
+              a img {
+                width: 100%;
+                border-radius: 20px;
               }
             }
           }

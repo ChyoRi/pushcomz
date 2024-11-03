@@ -5,9 +5,12 @@ const mobileNavDim = document.querySelector('.mobile_nav_dim');
 const mobileNav = document.querySelector('.mobile_nav');
 const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
 const hambergerBtn = document.querySelector('.hamberger_btn');
-const lottieCard = document.querySelectorAll('.lottie_card');
+const lotiieWrap = document.querySelector('.grid');
+const lottieCard = document.querySelectorAll('.grid-item');
 const lottieCardLink = document.querySelectorAll('.lottie_card_link');
+const modalWrap = document.querySelector('.modal_wrap');
 const lyPopWrap = document.querySelectorAll('.ly_pop_wrap');
+const lyPopCloseBtn = document.querySelectorAll('.ly_header_close');
 const footerInner = document.querySelector('.footer_inner');
 const companyInfoWrap = document.querySelector('.company_info_wrap');
 const footerNav = document.querySelector('.footer_nav_wrap');
@@ -90,7 +93,17 @@ const lyPopActive = e => {
     item.classList.remove('active');
   });
 
+  modalWrap.classList.add('active');
   lyPopWrap[cardIdx].classList.add('active');
+}
+
+// exit 버튼 누를시 motion modal close
+const lyPopClose = () => {
+  lyPopWrap.forEach(item => {
+    item.classList.remove('active');
+  });
+
+  modalWrap.classList.remove('active');
 }
 
 // 탑버튼 클릭시 상단 이동
@@ -100,6 +113,17 @@ const goTop = e => {
   window.scrollTo({top: 0});
 }
 
+// masonry JS 라이브러리 객체 선언
+const masonry = new Masonry(lotiieWrap, {
+  itemSelector: '.grid-item',
+  gutter: 15,
+  percentPosition: true
+});
+
+imagesLoaded(lotiieWrap, () => {
+  masonry.layout();
+});
+
 window.addEventListener('scroll', headerFixed);
 window.addEventListener('resize', resizeNavClose);
 hambergerBtn.addEventListener('click', mobileNavMenu);
@@ -108,4 +132,7 @@ mobileNav.addEventListener('transitionend', mobileNavCloseMove);
 lottieCardLink.forEach(item => {
   item.addEventListener('click', lyPopActive);
 });
+lyPopCloseBtn.forEach(item => {
+  item.addEventListener('click', lyPopClose);
+})
 topBtn.addEventListener('click', goTop);
