@@ -489,8 +489,7 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
 }
 #main.company_infomation #sec01 .img_wrap {
@@ -504,8 +503,7 @@ fieldset {
 #main.company_infomation #sec01 .img_wrap .main_image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #main.company_infomation #sec01 .img_wrap.inactive {
   display: none;
@@ -921,6 +919,62 @@ fieldset {
 #main.motion #sec01 .lottie_frame .grid .grid-item a img {
   width: 100%;
   border-radius: 20px;
+}
+#main.space {
+  padding-top: 85px;
+}
+#main.space .space_frame .space_icon_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 38px 0;
+}
+#main.space .space_frame .space_icon_box i {
+  font-size: 128px;
+  color: #e5e7eb;
+}
+#main.space .space_frame .space_text_box {
+  margin: 10px 0;
+}
+#main.space .space_frame .space_text_box .space_text {
+  line-height: 27px;
+  font-family: "GmarketSans";
+  font-size: 20px;
+  font-weight: 400;
+  color: #212121;
+  text-align: center;
+  opacity: 0.3;
+}
+#main.space .space_frame .space_password_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+}
+#main.space .space_frame .space_password_box form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#main.space .space_frame .space_password_box form input {
+  width: 200px;
+  height: 48px;
+  line-height: 20px;
+  margin-right: 15px;
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: "GmarketSans";
+  font-size: 14px;
+}
+#main.space .space_frame .space_password_box form button {
+  width: 74px;
+  height: 48px;
+  padding: 15px 0;
+  font-family: "GmarketSans";
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #212121;
 }
 
 @media (max-width: 1270px) {
