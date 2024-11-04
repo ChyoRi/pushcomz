@@ -27,6 +27,9 @@ html {
 body {
   width: 100%;
 }
+body.fixed {
+  overflow: hidden;
+}
 
 li {
   list-style: none;
@@ -149,13 +152,14 @@ fieldset {
   display: none;
   width: 100%;
   height: 100%;
+  z-index: 9999;
 }
 .modal_wrap .ly_pop_wrap {
   position: absolute;
   top: 50%;
   left: 50%;
   display: none;
-  max-width: 500px;
+  max-width: 400px;
   transform: translate(-50%, -50%);
 }
 .modal_wrap .ly_pop_wrap .ly_inner .ly_header {
@@ -485,20 +489,26 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
-#main.company_infomation #sec01 .video_wrap video.inactive {
-  display: none;
+#main.company_infomation #sec01 .img_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
-#main.company_infomation #sec01 .video_wrap .main_image {
-  display: none;
+#main.company_infomation #sec01 .img_wrap .main_image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-#main.company_infomation #sec01 .video_wrap .main_image.active {
-  display: block;
+#main.company_infomation #sec01 .img_wrap.inactive {
+  display: none;
 }
 #main.company_infomation #sec01 .text_box_frame {
   position: relative;
@@ -1094,6 +1104,9 @@ fieldset {
     width: 100%;
     border-radius: 20px;
   }
+  .modal_wrap .ly_pop_wrap {
+    max-width: 450px;
+  }
 }
 @media (max-width: 480px) {
   #header .mobile_header .mobile_header_bottom .sub_menu_list li a {
@@ -1216,5 +1229,8 @@ fieldset {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+  }
+  .modal_wrap .ly_pop_wrap {
+    width: 70%;
   }
 }

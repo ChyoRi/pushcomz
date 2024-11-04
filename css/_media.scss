@@ -227,6 +227,12 @@
       }
     }
   }
+
+  .modal_wrap{
+    .ly_pop_wrap {
+      max-width: 450px;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -397,6 +403,12 @@
         @include flex(center, flex-start);
         width: 100%;
       }
+    }
+  }
+
+  .modal_wrap{
+    .ly_pop_wrap {
+      width: 70%;
     }
   }
 }

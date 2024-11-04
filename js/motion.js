@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const pcHeader = document.querySelector('.pc_header');
 const pcHeaderLogoImg = document.querySelector('#logo > a > img');
 const mobileHeader = document.querySelector('.mobile_header');
@@ -93,6 +94,7 @@ const lyPopActive = e => {
     item.classList.remove('active');
   });
 
+  body.classList.add('fixed');
   modalWrap.classList.add('active');
   lyPopWrap[cardIdx].classList.add('active');
 }
@@ -103,6 +105,7 @@ const lyPopClose = () => {
     item.classList.remove('active');
   });
 
+  body.classList.remove('fixed');
   modalWrap.classList.remove('active');
 }
 

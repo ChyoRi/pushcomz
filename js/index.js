@@ -23,7 +23,7 @@ const mobileNav = document.querySelector('.mobile_nav');
 const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
 const hambergerBtn = document.querySelector('.hamberger_btn');
 const mainVideo = document.querySelector('.main_video');
-const mainImg = document.querySelector('.main_image');
+const mainImgWrap = document.querySelector('.img_wrap');
 const mainTextBox = document.querySelector('.text_box');
 const mainHangleText = document.querySelector('.hangle_text');
 const mainEnglishText = document.querySelector('.english_text');
@@ -32,7 +32,7 @@ const footerInner = document.querySelector('.footer_inner');
 const companyInfoWrap = document.querySelector('.company_info_wrap');
 const footerNav = document.querySelector('.footer_nav_wrap');
 const topBtnWrap = document.querySelector('.top_btn_wrap');
-const topBtn = document.querySelector('.top_btn')
+const topBtn = document.querySelector('.top_btn');
 
 // mobile 해상도로 진입시 mainvideo의 한글텍스트와 영문텍스트 순서를 변경
 if(window.innerWidth <= 991) {
@@ -46,22 +46,6 @@ if(window.innerWidth <= 480) {
 } else {
   footerInner.insertBefore(companyInfoWrap, footerNav);
 }
-
-// 사용자의 Device가 ios인지 확인 후 비디오가 멈춰 있으면 이미지로 대체
-// const loadVideo = () => {
-//   console.log(navigator.userAgent);
-  
-//   if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-//     console.log("iPhone")
-//     if(mainVideo.paused) {
-//       mainVideo.classList.add('inactive');
-//       mainImg.classList.add('active');
-//     } else {
-//       mainVideo.classList.remove('inactive');
-//       mainImg.classList.remove('active');
-//     }
-//   }
-// }
 
 // 스크롤시 상단 헤더 고정
 const headerFixed = () => {
@@ -117,7 +101,6 @@ const resizeNavClose = () => {
   }
 
   // mobile 해상도로 진입시 mainvideo의 한글텍스트와 영문텍스트 순서를 변경
-  // works section에서 p에 있는 <br> 요소 삭제
   if(window.innerWidth <= 991) {
     mainTextBox.insertBefore(mainEnglishText, mainHangleText);
   } else {
@@ -138,20 +121,12 @@ const mobileNavCloseMove = () => {
   }
 }
 
-// ios 저전력모드일때 동영상 실행 함수
-const lowpowerMode = () => {
-  const mainVideo = document.querySelector('.main_video');
-  if (!mainVideo.play()) mainVideo.play();
-};
-
 // Event Listener
 window.addEventListener('scroll', headerFixed);
 window.addEventListener('resize', resizeNavClose);
-// document.addEventListener('DOMContentLoaded', () => {
-//   mainVideo.addEventListener('loadeddata', loadVideo);
-// });
-firstSection.addEventListener('click', lowpowerMode);
-firstSection.addEventListener('touchstart', lowpowerMode);
+mainVideo.addEventListener('play', () => {
+  mainImgWrap.classList.add('inactive');
+});
 hambergerBtn.addEventListener('click', mobileNavMenu);
 mobileNavCloseBtn.addEventListener('click', mobileNavClose);
 topBtn.addEventListener('click', goTop);

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const lottieCardList = document.querySelectorAll('.lottie-card-link');
+  const lottieCardList = document.querySelectorAll('.lottie_card_link');
   const animations = [];
 
   const animationsConfig = [
