@@ -220,15 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0
     },
     {
-      path: './json/showty.json',
-      loop: false,
-      playOnceAndStop: false,
-      containerId: 'lottie_motion25',
-      playSegmentsOnce: [0, 19],
-      loopSegments: [15, 19],
-      delayTime: 3000,
-    },
-    {
       path: './json/0612_promo_pulmuone.json',
       loop: false,
       playOnceAndStop: false,
