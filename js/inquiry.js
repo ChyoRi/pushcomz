@@ -28,10 +28,11 @@ function initMap() {
   infoWindow.open(map, marker);
 }
 
+const body = document.querySelector('body');
 const pcHeader = document.querySelector('.pc_header');
 const pcHeaderLogoImg = document.querySelector('#logo > a > img');
 const mobileHeader = document.querySelector('.mobile_header');
-const mobileNavDim = document.querySelector('.mobile_nav_dim');
+const dimmed = document.querySelector('.dimmed');
 const mobileNav = document.querySelector('.mobile_nav');
 const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
 const hambergerBtn = document.querySelector('.hamberger_btn');
@@ -72,18 +73,20 @@ const headerFixed = () => {
   }
 }
 
-// 모바일 햄버거 버튼 누를시 네비와 dim의 active class를 추가
+// 모바일 햄버거 버튼 누를시 body에 fixed class와 네비, dimmed의 active class를 추가
 const mobileNavMenu = () => {
-  mobileNavDim.classList.add('active');
-  setTimeout(() => {
-    mobileNav.classList.add('active');
-  });
+  body.classList.add('fixed');
+  dimmed.classList.add('active');
+  mobileNav.classList.add('active');
 }
 
-// 모바일 X버튼 누를시 nav의 active class를 제거
+// 모바일 X버튼 누를시 nav의 body에 fixed class와 네비, dimmed의 active class를 추가
 const mobileNavClose = () => {
+  body.classList.remove('fixed');
+  dimmed.classList.remove('active');
   mobileNav.classList.remove('active');
 }
+
 
 // Resize Window Event
 const resizeNavClose = () => {
@@ -100,13 +103,6 @@ const resizeNavClose = () => {
   }
 }
 
-// nav의 transion이 끝난이후에 dim의 active class를 제거
-const mobileNavCloseMove = () => {
-  if (!mobileNav.classList.contains('active')) {
-    mobileNavDim.classList.remove('active');
-  }
-}
-
 // 탑버튼 클릭시 상단 이동
 const goTop = e => {
   e.preventDefault();
@@ -118,5 +114,4 @@ window.addEventListener('scroll', headerFixed);
 window.addEventListener('resize', resizeNavClose);
 hambergerBtn.addEventListener('click', mobileNavMenu);
 mobileNavCloseBtn.addEventListener('click', mobileNavClose);
-mobileNav.addEventListener('transitionend', mobileNavCloseMove);
 topBtn.addEventListener('click', goTop);
