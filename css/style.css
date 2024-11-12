@@ -753,7 +753,7 @@ fieldset {
   width: 100%;
 }
 #main.project #sec02 {
-  padding-top: 23.72px;
+  padding-top: 93.72px;
 }
 #main.project #sec02 .project_title {
   padding: 20px 0 10px;
@@ -768,7 +768,7 @@ fieldset {
   width: 100%;
 }
 #main.project #sec03 {
-  padding-top: 23.72px;
+  padding-top: 93.72px;
 }
 #main.project #sec03 .project_title {
   padding: 20px 0 10px;
@@ -1040,22 +1040,13 @@ fieldset {
   #main.project {
     padding-top: 84px;
   }
-  #main.project #sec01 {
-    padding-top: 3.72px;
-  }
   #main.project #sec01 .project_title {
     padding: 0 32px;
     font-size: 26px;
   }
-  #main.project #sec02 {
-    padding-top: 3.72px;
-  }
   #main.project #sec02 .project_title {
     padding: 0 32px;
     font-size: 26px;
-  }
-  #main.project #sec03 {
-    padding-top: 3.72px;
   }
   #main.project #sec03 .project_title {
     padding: 0 32px;
@@ -1164,10 +1155,10 @@ fieldset {
     padding-top: 0;
   }
   #main.project #sec02 {
-    padding-top: 50px;
+    padding-top: 80px;
   }
   #main.project #sec03 {
-    padding-top: 50px;
+    padding-top: 80px;
   }
   #main.inquiry {
     padding-top: 48px;
