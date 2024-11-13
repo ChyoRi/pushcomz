@@ -12,10 +12,8 @@
         $Contact=$_POST['contact'];
         $Contents =$_POST['content'];
         $currentDateTime = date('Y-m-d H:i');
-
         $to='chyori@pushcomz.com';
         $subject = '새 입력폼 응답이 접수되었습니다';
-        
         $msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
         <html xmlns='http://www.w3.org/1999/xhtml'>
         <head>
@@ -117,11 +115,9 @@
         </tfoot></table>
         </body>
         </html>";
-
-        $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-
+        $headers = "MIME-Version: 1.0"."\n";
+        $headers .= "Content-type:text/html;charset=UTF-8"."\n";
+        $headers .= "X-Mailer: PHP/".phpversion()."\n";
         $sendmail = mail($to, $subject, $msg, $headers);
     ?>
     
