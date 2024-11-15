@@ -17,15 +17,17 @@
   try {
     // SMTP 설정
     $mail->isSMTP();
-    $mail->Host = 'ezsmtp.bizmeka.com';
+    $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'pushcomz@pushcomz.com';
-    $mail->Password = 'skatks124';
+    $mail->Username = 'pushcomz04@gmail.com';
+    $mail->Password = 'ejgvgeypbhlpuvsv';
     $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;  
+    $mail->Port = 587;
+    $mail->CharSet = "utf-8";
+    $mail->SMTPDebug = 2;
 
     // 수신자 정보설정
-    $mail->setFrom('pushcomz@pushcomz.com', 'test');
+    $mail->setFrom('pushcomz04@gmail.com', 'test');
     $mail->addAddress('pushcomz@pushcomz.com');
 
     // 이메일 내용 설정
@@ -50,7 +52,7 @@
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tbody><tr><th height='40'></th></tr>
     <tr>
-    <td style='text-align:center;color:#757575;font-size:18px'>PUSH COMMUNICATIONS</td>
+    <td style='text-align:center;color:#757575;font-size:18px'>PUSHCOMMUNICATIONS</td>
     </tr>
     <tr><th height='20'></th></tr>
     <tr><td style='text-align:center;font-size:26px;color:#757575'><span style='color:#212121'>새 입력폼 응답이 접수</span>되었습니다.</td>
