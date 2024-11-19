@@ -4,66 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PUSH COMMUNICATIONS</title>
-  <link rel="icon" href="./img/pavicon.ico">
+  <link rel="icon" href="../img/pavicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 <body>
-  <header id="header">
-    <div class="pc_header">
-      <h1 id="logo">
-        <a href="index.html">
-          <img src="./img/pc-header-default.png" alt="기본 로고">
-        </a>
-      </h1>
-      <nav class="pc_nav">
-        <ul>
-          <li>
-            <a href="index.html">
-              <span>회사소개</span>
-            </a>
-          </li>
-          <li class="project_item">
-            <a href="project.html">
-              <span>프로젝트</span>
-            </a>
-          </li>
-          <li class="active">
-            <a href="inquiry.html">
-              <span>문의하기</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div></div>
-    </div>
-    <div class="mobile_header">
-      <div class="mobile_header_top">
-        <div class="hamberger_menu_wrap">
-          <span class="blind">메뉴 열기 버튼</span>
-          <button type="button" class="hamberger_btn">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
-        <h1 id="logo">
-          <a href="index.html">
-            <img src="./img/mobile-logo.png" alt="모바일 헤더 로고">
-          </a>
-        </h1>
-        <div></div>
-      </div>
-    </div>
-  </header>
-  <nav class="mobile_nav">
-    <ul>
-      <li><a href="index.html">회사소개</a></li>
-      <li><a href="project.html">프로젝트</a></li>
-      <li class="active"><a href="inquiry.html">문의하기</a></li>
-    </ul>
-    <button class="mobile_nav_close_btn">
-      <img src="./img/close-icon.svg" alt="모달창 닫기 버튼 이미지">
-    </button>
-  </nav>
-  <div class="dimmed"></div>
+  <div id="header"></div>
   <main id="main" class="inquiry">
     <section id="sec01">
       <div class="mail_form_frame">
@@ -83,7 +28,7 @@
               </p>
             </div>
           </div>
-          <form action="./mailer.php" method="post" name="mailForm" class="mail_form">
+          <form action="../mail.php" method="post" name="mailForm" class="mail_form">
             <fieldset>
               <legend class="blind">프로젝트 문의 메일 보내기</legend>
               <div class="name_box">
@@ -136,35 +81,7 @@
       <div class="google_map"></div>
     </section>
   </main>
-  <footer id="footer">
-    <div class="footer_inner">
-      <div class="company_info_wrap">
-        <div class="copyright_box">
-          <span class="copyright">COPYRIGHT (C) All RIGHTS RESERVED.</span>
-        </div>
-        <ul class="company_info_box">
-          <li>(주)푸시컴즈</li>
-          <li>대표 : 김휘광</li>
-          <li>사업자 번호 : 220-88-82021</li>
-        </ul>
-        <address class="company_address">
-          <ul>
-            <li>Tel: 02-6261-1777</li>
-            <li>Fax : 02-6261-1779</li>
-            <li>Email: pushcomz@pushcomz.com</li>
-            <li>Address :서울시 중구 다산로 58-1 남산124빌딩 5,6층 ㈜푸시컴즈</li>
-          </ul>
-        </address>
-      </div>
-      <div class="footer_nav_wrap">
-        <ul>
-          <li><a href="index.html">회사소개</a></li>
-          <li><a href="project.html">프로젝트</a></li>
-          <li><a href="inquiry.html">문의하기</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <div id="footer"></div>
   <div class="top_btn_wrap">
     <span class="blind">탑 버튼</span>
     <button class="top_btn">
@@ -173,5 +90,6 @@
   </div>
 </body>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ_MMw73znG3t8RlcizgTvZIZmNe7rNL4&callback=initMap"></script>
-<script src="./js/inquiry.js"></script>
+<script src="../js/map.js"></script>
+<script type="module" src="../js/inquiry.js"></script>
 </html>

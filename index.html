@@ -11,62 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-  <header id="header">
-    <div class="pc_header">
-      <h1 id="logo">
-        <a href="index.html">
-          <img src="./img/pc-header-default.png" alt="기본 로고">
-        </a>
-      </h1>
-      <nav class="pc_nav">
-        <ul>
-          <li class="active">
-            <a href="index.html">
-              <span>회사소개</span>
-            </a>
-          </li>
-          <li class="project_item">
-            <a href="project.html">
-              <span>프로젝트</span>
-            </a>
-          </li>
-          <li>
-            <a href="inquiry.html">
-              <span>문의하기</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div></div>
-    </div>
-    <div class="mobile_header">
-      <div class="mobile_header_top">
-        <div class="hamberger_menu_wrap">
-          <span class="blind">메뉴 열기 버튼</span>
-          <button type="button" class="hamberger_btn">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
-        <h1 id="logo">
-          <a href="index.html">
-            <img src="./img/mobile-logo.png" alt="모바일 헤더 로고">
-          </a>
-        </h1>
-        <div></div>
-      </div>
-    </div>
-  </header>
-  <nav class="mobile_nav">
-    <ul>
-      <li class="active"><a href="index.html">회사소개</a></li>
-      <li><a href="project.html">프로젝트</a></li>
-      <li><a href="inquiry.html">문의하기</a></li>
-    </ul>
-    <button class="mobile_nav_close_btn">
-      <img src="./img/close-icon.svg" alt="모달창 닫기 버튼 이미지">
-    </button>
-  </nav>
-  <div class="dimmed"></div>
+  <div id="header"></div>
   <main id="main" class="company_infomation">
     <section id="sec01">
       <div class="video_wrap">
@@ -382,42 +327,14 @@
           빛나는 디자인,
         </p>
         <div class="arrow_box">
-          <a href="inquiry.html" class="inquiry_link">
+          <a href="/html/inquiry.html" class="inquiry_link">
             <img src="./img/right-arrow.png" alt="오른쪽 화살표 이미지">
           </a>
         </div>
       </div>
     </div>
   </main>
-  <footer id="footer">
-    <div class="footer_inner">
-      <div class="company_info_wrap">
-        <div class="copyright_box">
-          <span class="copyright">COPYRIGHT (C) All RIGHTS RESERVED.</span>
-        </div>
-        <ul class="company_info_box">
-          <li>(주)푸시컴즈</li>
-          <li>대표 : 김휘광</li>
-          <li>사업자 번호 : 220-88-82021</li>
-        </ul>
-        <address class="company_address">
-          <ul>
-            <li>Tel: 02-6261-1777</li>
-            <li>Fax : 02-6261-1779</li>
-            <li>Email: pushcomz@pushcomz.com</li>
-            <li>Address :서울시 중구 다산로 58-1 남산124빌딩 5,6층 ㈜푸시컴즈</li>
-          </ul>
-        </address>
-      </div>
-      <div class="footer_nav_wrap">
-        <ul>
-          <li><a href="index.html">회사소개</a></li>
-          <li><a href="project.html">프로젝트</a></li>
-          <li><a href="inquiry.html">문의하기</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <div id="footer"></div>
   <div class="top_btn_wrap">
     <span class="blind">탑 버튼</span>
     <button class="top_btn">
@@ -425,5 +342,5 @@
     </button>
   </div>
 </body>
-<script src="./js/index.js"></script>
+<script type="module" src="./js/index.js"></script>
 </html>

@@ -147,7 +147,7 @@ fieldset {
   display: none;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  z-index: 99999;
 }
 .modal_wrap .ly_pop_wrap {
   position: absolute;
@@ -248,6 +248,30 @@ fieldset {
   font-weight: 700;
   color: #212121;
 }
+#header .pc_header .pc_nav ul li .sub_menu_list {
+  display: none;
+  position: absolute;
+  height: auto;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: #e5e7eb;
+  gap: 5px;
+}
+#header .pc_header .pc_nav ul li .sub_menu_list a {
+  line-height: 18.5714px;
+  height: auto;
+  padding: 10px 12px;
+  font-family: "Montserrat", serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000000;
+}
+#header .pc_header .pc_nav ul li .sub_menu_list.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #header .pc_header .pc_nav ul li.active span::after {
   content: "";
   position: absolute;
@@ -257,27 +281,6 @@ fieldset {
   width: 100%;
   height: 3px;
   background-color: #fd4750;
-}
-#header .pc_header .pc_nav ul li.project_item .sub_menu_list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  height: auto;
-  width: 100%;
-  top: 100%;
-  left: 0;
-  background-color: #e5e7eb;
-  gap: 5px;
-}
-#header .pc_header .pc_nav ul li.project_item .sub_menu_list a {
-  line-height: 18.5714px;
-  height: auto;
-  padding: 10px 12px;
-  font-family: "Montserrat", serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: #000000;
 }
 #header .pc_header div {
   width: 94px;

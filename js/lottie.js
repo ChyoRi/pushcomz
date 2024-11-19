@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const animationsConfig = [
     {
-      path: './json/0729_promo_egg.json',
+      path: '../json/0729_promo_egg.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion1',
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/today_card_fortune.json',
+      path: '../json/today_card_fortune.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion2',
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/0926_promo_fruit.json',
+      path: '../json/0926_promo_fruit.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion3',
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/are_you_having_fun.json',
+      path: '../json/are_you_having_fun.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion4',
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 1000,
     },
     {
-      path: './json/0311_promo_ssd.json',
+      path: '../json/0311_promo_ssd.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion5',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/0103_promo_amorepacific.json',
+      path: '../json/0103_promo_amorepacific.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion6',
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/0905_promo_Chuseok.json',
+      path: '../json/0905_promo_Chuseok.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion7',
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/1104_promo_peperoday.json',
+      path: '../json/1104_promo_peperoday.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion8',
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 1500,
     },
     {
-      path: './json/0307_promo_WhiteDay.json',
+      path: '../json/0307_promo_WhiteDay.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion9',
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 1500,
     },
     {
-      path: './json/0525_promo_end.json',
+      path: '../json/0525_promo_end.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion10',
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/0308_promo_agricultural.json',
+      path: '../json/0308_promo_agricultural.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion11',
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/0206_promo_sul.json',
+      path: '../json/0206_promo_sul.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion12',
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/nt_weekend_coupon.json',
+      path: '../json/nt_weekend_coupon.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion13',
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/nt_customer_monitering.json',
+      path: '../json/nt_customer_monitering.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion14',
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 3000,
     },
     {
-      path: './json/gangsale.json',
+      path: '../json/gangsale.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion15',
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/spring_sale.json',
+      path: '../json/spring_sale.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion16',
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/summer02.json',
+      path: '../json/summer02.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion17',
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/0221_promo_socks.json',
+      path: '../json/0221_promo_socks.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion18',
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/card_point_benefit.json',
+      path: '../json/card_point_benefit.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion19',
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 2000,
     },
     {
-      path: './json/1218_promo_winterfood.json',
+      path: '../json/1218_promo_winterfood.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion20',
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/nt_new_join_event_top.json',
+      path: '../json/nt_new_join_event_top.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion21',
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/0731_promo_frosted-fruits.json',
+      path: '../json/0731_promo_frosted-fruits.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion22',
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/0903_promo_camping.json',
+      path: '../json/0903_promo_camping.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion23',
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0,
     },
     {
-      path: './json/giftbox.json',
+      path: '../json/giftbox.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion24',
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 0
     },
     {
-      path: './json/0612_promo_pulmuone.json',
+      path: '../json/0612_promo_pulmuone.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion25',
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delayTime: 3000,
     },
     {
-      path: './json/0529_promo_diet.json',
+      path: '../json/0529_promo_diet.json',
       loop: false,
       playOnceAndStop: false,
       containerId: 'lottie_motion26',
@@ -282,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       anim.stop();
       anim.goToAndStop(0, true);
-      console.log(element);
 
       playAnimationWithDelay(anim, config);
     });
