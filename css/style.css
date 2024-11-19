@@ -305,6 +305,7 @@ fieldset {
   height: 100%;
 }
 #header .mobile_header {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -350,6 +351,7 @@ fieldset {
   height: 100%;
 }
 #header .mobile_header .mobile_header_bottom {
+  display: none;
   background-color: #e5e7eb;
 }
 #header .mobile_header .mobile_header_bottom .sub_menu_list {
@@ -362,6 +364,9 @@ fieldset {
   font-family: "Montserrat", serif;
   font-size: 13px;
   font-weight: 500;
+}
+#header .mobile_header .mobile_header_bottom.active {
+  display: block;
 }
 #header .mobile_header.fixed {
   position: fixed;
@@ -467,6 +472,8 @@ fieldset {
   padding: 3px 15px;
 }
 #footer .footer_inner .footer_nav_wrap li a {
+  width: -moz-fit-content;
+  width: fit-content;
   line-height: 19.2px;
   font-family: "GmarketSans";
   font-size: 13px;
@@ -1043,13 +1050,22 @@ fieldset {
   #main.project {
     padding-top: 84px;
   }
+  #main.project #sec01 {
+    padding-top: 3.72px;
+  }
   #main.project #sec01 .project_title {
     padding: 0 32px;
     font-size: 26px;
   }
+  #main.project #sec02 {
+    padding-top: 83.72px;
+  }
   #main.project #sec02 .project_title {
     padding: 0 32px;
     font-size: 26px;
+  }
+  #main.project #sec03 {
+    padding-top: 83.72px;
   }
   #main.project #sec03 .project_title {
     padding: 0 32px;

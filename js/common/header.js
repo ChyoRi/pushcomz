@@ -8,27 +8,37 @@ export const header = () => {
   const dimmed = document.querySelector('.dimmed');
   const mobileNav = document.querySelector('.mobile_nav');
   const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
+  const mobileSubNav = document.querySelector('.mobile_header_bottom');
   const hambergerBtn = document.querySelector('.hamberger_btn');
   const motionAnchor = document.querySelector('.motion_anchor');
   const motionParent = motionAnchor.closest('.main_list_item');
   const currentUrl = window.location.href;
   
-  // nav의 list를 돌면서 현재 url과 자식 a의 href가 같다면 active class 추가
+  // nav의 list를 돌면서 active클래스를 전부 제거 ( active class 중복 방지 )
+  // nav의 list를 돌면서 현재 url이 자식 a의 href를 포함하고 있다면 active class 추가
   // active 된 nav의 list중에 자식 a의 href가 project.html일경우 subList에 active class 추가
   mainListItem.forEach(item => {
     let itemChildren = item.querySelector('a');
+
+    item.classList.remove('active');
 
     if (currentUrl.includes(itemChildren.getAttribute("href"))) {
       item.classList.add('active');
 
       if (itemChildren.getAttribute("href").includes("project.html")) {
         subList.classList.add('active');
+        mobileSubNav.classList.add('active');
       }
+    }
+
+    if(currentUrl.includes("pushcomz.com")) {
+      mainListItem[0].classList.add('active');
     }
 
     if(currentUrl.includes("motion.html")) {
       subList.classList.add('active');
       motionParent.classList.add('active');
+      mobileSubNav.classList.add('active');
     }
 
   });

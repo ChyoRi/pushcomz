@@ -108,6 +108,7 @@
   }
 
   .mobile_header {
+    display: none;
     position: absolute;
     top: 0;
     left:0;
@@ -151,6 +152,7 @@
     }
 
     .mobile_header_bottom {
+      display: none;
       background-color: map-get($color, gray-02);
       .sub_menu_list {
         @include flex(center, center);
@@ -160,6 +162,9 @@
           font-size: 13px;
           font-weight: 500;
         }
+      }
+      &.active {
+        display: block;
       }
     }
 
