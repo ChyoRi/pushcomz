@@ -1,7 +1,8 @@
 export const header = () => {
   const body = document.querySelector('body');
   const pcHeader = document.querySelector('.pc_header');
-  const pcHeaderLogoImg = document.querySelector('#logo > a > img');
+  const pcHeaderDefaultLogo = document.querySelector('.pc_default_logo');
+  const pcHeaderFixedLogo = document.querySelector('.pc_fixed_logo');
   const mobileHeader = document.querySelector('.mobile_header');
   const mainListItem = document.querySelectorAll('.main_list_item');
   const subList = document.querySelector('.sub_menu_list');
@@ -31,7 +32,7 @@ export const header = () => {
       }
     }
 
-    if(currentUrl.includes("pushcomz.com")) {
+    if(currentUrl.includes("pushcomz.com") && window.location.pathname === "/") {
       mainListItem[0].classList.add('active');
     }
 
@@ -43,16 +44,28 @@ export const header = () => {
 
   });
 
+  // const navActive = (e) => {
+  //   let target = e.currentTarget;
+
+  //   mainListItem.forEach(item => {
+  //     item.classList.remove('active');
+  //   });
+
+  //   target.classList.add('active');
+  // }
+
   // 스크롤시 상단 헤더 고정
   const headerFixed = () => {
     const pageScrollTop = window.scrollY;
   
     if(window.innerWidth >= 992 && pageScrollTop >= 100) {
       pcHeader.classList.add('fixed');
-      pcHeaderLogoImg.src = '../../img/pc-header-fixed.png';
+      pcHeaderDefaultLogo.style.display = 'none';
+      pcHeaderFixedLogo.style.display = 'block';
     } else {
       pcHeader.classList.remove('fixed');
-      pcHeaderLogoImg.src = '../../img/pc-header-default.png';
+      pcHeaderDefaultLogo.style.display = 'block';
+      pcHeaderFixedLogo.style.display = 'none';
     }
   
     if (window.innerWidth <= 991 && pageScrollTop >= 100) {
@@ -90,4 +103,7 @@ export const header = () => {
   window.addEventListener('resize', resizeNavClose);
   hambergerBtn.addEventListener('click', mobileNavMenu);
   mobileNavCloseBtn.addEventListener('click', mobileNavClose);
+  // mainListItem.forEach(item => {
+  //   item.addEventListener('click', navActive);
+  // })
 }

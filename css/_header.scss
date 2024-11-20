@@ -19,6 +19,9 @@
         height: 100%;
         img {
           width: 100%;
+          &.pc_fixed_logo {
+            display: none;
+          }
         }
       }
     }

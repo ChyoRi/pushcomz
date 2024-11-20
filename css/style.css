@@ -221,6 +221,9 @@ fieldset {
 #header .pc_header #logo a img {
   width: 100%;
 }
+#header .pc_header #logo a img.pc_fixed_logo {
+  display: none;
+}
 #header .pc_header .pc_nav {
   height: 100%;
 }
