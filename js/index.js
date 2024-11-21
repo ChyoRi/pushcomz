@@ -1,6 +1,7 @@
 import { loadFile } from "./common/load.js";
 import { header } from "./common/header.js";
 import { footer } from "./common/footer.js";
+import { urlChange } from "./common/urlChange.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -8,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     header();
     footer();
   });
+
+  urlChange();
 
   // 스와이퍼 
   const swiper = new Swiper(".partners-logo-frame", {

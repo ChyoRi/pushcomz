@@ -26,7 +26,7 @@ export const header = () => {
     if (currentUrl.includes(itemChildren.getAttribute("href"))) {
       item.classList.add('active');
 
-      if (itemChildren.getAttribute("href").includes("project.html")) {
+      if (itemChildren.getAttribute("href").includes("project")) {
         subList.classList.add('active');
         mobileSubNav.classList.add('active');
       }
@@ -36,7 +36,7 @@ export const header = () => {
       mainListItem[0].classList.add('active');
     }
 
-    if(currentUrl.includes("motion.html")) {
+    if(currentUrl.includes("motion")) {
       subList.classList.add('active');
       motionParent.classList.add('active');
       mobileSubNav.classList.add('active');
