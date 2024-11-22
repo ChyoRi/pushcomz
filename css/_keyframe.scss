@@ -1,0 +1,25 @@
+/* 애니메이션 라이브러리 */
+@keyframes fadeup{
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 애니메이션 라이브러리 클래스 */
+.fadeup {
+  animation: fadeup 2s ease-in-out;
+}
+
+.fadeup_delay01 {
+  animation: fadeup 1.5s 0.5s ease-in-out forwards;
+}
+
+.fadeup_delay02 {
+  animation: fadeup 1.5s 1s ease-in-out forwards;
+}

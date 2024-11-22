@@ -44,39 +44,23 @@
               font-size: 18px;
               font-weight: 700;
               color: map-get($color, black-01);
+              &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: map-get($color, red-01);
+                scale: 0;
+                transform-origin: 50%;
+                transition: 0.3s;
+              }
             }
           }
-          .sub_menu_list {
-            display: none;
-            position: absolute;
-            height: auto;
-            width: 100%;
-            top: 100%;
-            left: 0;
-            background-color: map-get($color, gray-02);
-            gap: 5px;
-            a {
-              line-height: 18.5714px;
-              height: auto;
-              padding: 10px 12px;
-              font-family: "Montserrat", serif;
-              font-size: 13px;
-              font-weight: 500;
-              color: map-get($color, black-02);
-            }
-            &.active {
-              @include flex(center, center);
-            }
-          }
-          &.active span::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: map-get($color, red-01);
+          &:hover span::after {
+           scale: 1;
           }
         }
       }
@@ -117,60 +101,35 @@
     left:0;
     width: 100%;
     height: 48px;
+    padding: 0 10px;
     z-index: 10;
     background-color: map-get($color, white-01);
+    .hamberger_menu_wrap {
+      @include flex(center, center);
+      position: relative;
+      i {
+        font-size: 18px;
+        color: map-get($color, black-02);
+      }
+    }
 
-    .mobile_header_top {
-      @include flex(center, space-between);
-      width: 100%;
+    #logo {
+      width: 89.42px;
       height: 100%;
-      padding: 0 10px;
-      .hamberger_menu_wrap {
+      a {
         @include flex(center, center);
-        position: relative;
-        i {
-          font-size: 18px;
-          color: map-get($color, black-02);
-        }
-      }
-
-      #logo {
-        width: 89.42px;
+        width: 100%;
         height: 100%;
-        a {
-          @include flex(center, center);
+        img {
           width: 100%;
-          height: 100%;
-          img {
-            width: 100%;
-          }
         }
-      }
-  
-      div {
-        width: 15.75px;
-        height: 100%;
-      }
-  
-    }
-
-    .mobile_header_bottom {
-      display: none;
-      background-color: map-get($color, gray-02);
-      .sub_menu_list {
-        @include flex(center, center);
-        li a {
-          padding: 10px 12px;
-          font-family: "Montserrat", serif;
-          font-size: 13px;
-          font-weight: 500;
-        }
-      }
-      &.active {
-        display: block;
       }
     }
 
+    div {
+      width: 15.75px;
+      height: 100%;
+    }
 
     &.fixed {
       position: fixed;

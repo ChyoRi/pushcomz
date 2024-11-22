@@ -1,3 +1,30 @@
+.lnb_wrap {
+  .lnb_list {
+    @include flex(center, center);
+    position: absolute;
+    height: auto;
+    width: 100%;
+    top: 85px;
+    left: 0;
+    background-color: map-get($color, gray-02);
+    gap: 5px;
+    z-index: 1;
+    a {
+      line-height: 18.5714px;
+      height: auto;
+      padding: 10px 12px;
+      font-family: "Montserrat", serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: map-get($color, black-02);
+    }
+    &.fixed {
+      position: fixed;
+      top: 60px;
+    }
+  }
+}
+
 .top_btn_wrap {
   position: fixed;
   bottom: 20px;

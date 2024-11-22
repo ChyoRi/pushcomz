@@ -5,6 +5,7 @@
 @import './common.scss';
 @import './header.scss';
 @import './footer.scss';
+@import './keyframe.scss';
 
 #main {
   &.company_infomation {
@@ -54,6 +55,7 @@
             width: 41.67%;
             height: 130px;
             padding: 0 12.05px;
+            opacity: 0;
             img {
               width: 100%;
             }
@@ -61,6 +63,7 @@
           .text_box {
             width: 50%;
             border-top: 3px solid map-get($color, white-01);
+            opacity: 0;
             .hangle_text {
               line-height: 36px;
               padding: 73px 0 42px;

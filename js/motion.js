@@ -1,5 +1,6 @@
 import { loadFile } from "./common/load.js";
 import { header } from "./common/header.js";
+import { lnbFixed } from "./common/lnb.js";
 import { footer } from "./common/footer.js";
 import { urlChange } from "./common/urlChange.js";
 
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   urlChange();
+  lnbFixed();
 
   const body = document.querySelector('body');
   const lotiieWrap = document.querySelector('.grid');

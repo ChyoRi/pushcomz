@@ -20,7 +20,7 @@
       display: none;
     }
     .mobile_header {
-      display: block;
+      @include flex(center, space-between);
     }
   }
 
@@ -239,6 +239,15 @@
     }
   }
 
+  .lnb_wrap {
+    .lnb_list {
+      top: 48px;
+      &.fixed {
+        top: 48px;
+      }
+    }
+  }
+
   .modal_wrap{
     .ly_pop_wrap {
       max-width: 450px;
@@ -247,17 +256,6 @@
 }
 
 @media (max-width: 480px) {
-  #header {
-    .mobile_header {
-      .mobile_header_bottom {
-        .sub_menu_list li a {
-          font-size: 10px;
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-
   #main {
     &.company_infomation {
       #sec02 {
@@ -401,6 +399,13 @@
           }
         }
       }
+    }
+  }
+
+  .lnb_wrap {
+    .lnb_list li a {
+      font-size: 11px;
+      white-space: nowrap;
     }
   }
   

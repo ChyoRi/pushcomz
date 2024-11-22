@@ -1,44 +1,72 @@
+const getCurrentPath = () => {
+  // pathname 가져옴 ex) /g5/notice/test
+  const currentPath = window.location.pathname;
+
+  // split으로 배열로 나눔 
+  const pathParts = currentPath.split('/');
+
+  // 배열의 길이를 센다
+  const depth = pathParts.filter(part => part.length > 0).length;
+
+  // 배열의 길이만큼 ../ 을 추가  -> 이렇게 하는 이유는 경로마다 ../ 의 수가 다르기 때문
+  return '../'.repeat(depth);
+};
+
 export const loadFile = (callback) => {
   let elementsLoaded = 0;
   let totalElementsToLoad = 0;
 
-  const loadIfExists = (selector, url) => {
-    const element = document.querySelector(selector);
-    if (element) {
-      totalElementsToLoad++;
+  const loadIfExists = (selector, path) => {
+      const element = document.querySelector(selector);
+      if (element) {
+          totalElementsToLoad++;
 
-      fetch(url)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`${selector} 로딩 오류: ${response.statusText}`);
-          }
-          return response.text();
-        })
-        .then(data => {
-          // 로드된 HTML 내용을 element에 삽입
-          element.innerHTML = data;
+         
+          const basePath = getCurrentPath();
+          const fullUrl = `${basePath}${path}`;
 
-          // `unwrap`을 구현: element의 자식 노드를 element의 부모로 이동
-          const parent = element.parentNode;
-          while (element.firstChild) {
-            parent.insertBefore(element.firstChild, element);
-          }
-          parent.removeChild(element);
+          console.log('Loading URL:', fullUrl); 
 
-          checkCompletion();
-        })
-        .catch(error => console.error(error));
-    }
+          fetch(fullUrl)
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error(`${selector} 로딩 오류: ${response.statusText}`);
+                  }
+                  return response.text();
+              })
+              .then(data => {
+                  element.innerHTML = data;
+
+                  const parent = element.parentNode;
+                  while (element.firstChild) {
+                      parent.insertBefore(element.firstChild, element);
+                  }
+                  parent.removeChild(element);
+
+                  checkCompletion();
+              })
+              .catch(error => {
+                  console.error(`Failed to load ${fullUrl}:`, error);
+                  checkCompletion();
+              });
+      }
   }
 
   const checkCompletion = () => {
-    elementsLoaded++;
-    if (elementsLoaded === totalElementsToLoad && typeof callback === 'function') {
-      callback();
-    }
+      elementsLoaded++;
+      if (elementsLoaded === totalElementsToLoad && typeof callback === 'function') {
+          callback();
+      }
   }
 
-  // 필요한 파일들을 로드
-  loadIfExists('#header', '../html/include/header.html');
-  loadIfExists('#footer', '../html/include/footer.html');
+
+  loadIfExists('#header', 'section/include/header.html');
+  loadIfExists('#footer', 'section/include/footer.html');
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadFile(() => {
+      console.log('All files loaded successfully');
+  });
+});

@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainVideo = document.querySelector('.main_video');
   const mainImgWrap = document.querySelector('.img_wrap');
   const mainTextBox = document.querySelector('.text_box');
+  const mainVideoLogo = document.querySelector('.video_logo');
   const mainHangleText = document.querySelector('.hangle_text');
   const mainEnglishText = document.querySelector('.english_text');
   const topBtnWrap = document.querySelector('.top_btn_wrap');
@@ -38,8 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // mobile 해상도로 진입시 mainvideo의 한글텍스트와 영문텍스트 순서를 변경
   if(window.innerWidth <= 991) {
     mainTextBox.insertBefore(mainEnglishText, mainHangleText);
+    mainVideoLogo.classList.remove('fadeup_delay01');
+    mainVideoLogo.classList.add('fadeup_delay02');
+    mainTextBox.classList.remove('fadeup_delay02');
+    mainTextBox.classList.add('fadeup_delay01');
   } else {
     mainTextBox.insertBefore(mainHangleText, mainEnglishText);
+    mainVideoLogo.classList.remove('fadeup_delay02');
+    mainVideoLogo.classList.add('fadeup_delay01');
+    mainTextBox.classList.remove('fadeup_delay01');
+    mainTextBox.classList.add('fadeup_delay02');
   }
 
   // 스크롤시 탑버튼 Active
