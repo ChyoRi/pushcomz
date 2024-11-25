@@ -479,17 +479,66 @@ fieldset {
     transform: translateY(0);
   }
 }
+@keyframes fadeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes faderight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes arrowright {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translateX(100px);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(100px);
+  }
+  40% {
+    transform: translateX(0);
+  }
+}
 /* 애니메이션 라이브러리 클래스 */
 .fadeup {
-  animation: fadeup 2s ease-in-out;
+  animation: fadeup 0.5s ease-in-out forwards;
 }
 
 .fadeup_delay01 {
-  animation: fadeup 1.5s 0.5s ease-in-out forwards;
+  animation: fadeup 0.5s 0.3s ease-in-out forwards;
 }
 
 .fadeup_delay02 {
-  animation: fadeup 1.5s 1s ease-in-out forwards;
+  animation: fadeup 0.5s 0.8s ease-in-out forwards;
+}
+
+.fadeleft {
+  animation: fadeleft 0.5s ease-in-out forwards;
+}
+
+.faderight {
+  animation: faderight 0.5s 0.3s ease-in-out forwards;
+}
+
+.arrowright {
+  animation: arrowright 3s ease-in-out infinite;
 }
 
 #main.company_infomation #sec01 {
@@ -591,6 +640,7 @@ fieldset {
   text-align: center;
   color: #212121;
   letter-spacing: -1px;
+  opacity: 0;
 }
 #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list {
   display: flex;
@@ -601,6 +651,7 @@ fieldset {
 #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item {
   flex: 1;
   padding: 8px 8px 0 8px;
+  opacity: 0;
 }
 #main.company_infomation #sec02 .attitude_frame .attitude_wrap .attitude_list .attitude_item .attitude_title_box {
   display: flex;
@@ -665,6 +716,7 @@ fieldset {
   width: 41.67%;
   height: 1158px;
   padding-top: 24px;
+  opacity: 0;
 }
 #main.company_infomation #sec03 .works_frame .works_wrap .works_img_box img {
   width: 100%;
@@ -672,6 +724,7 @@ fieldset {
 }
 #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box {
   width: 50%;
+  opacity: 0;
 }
 #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box h3 {
   font-family: "Changa", sans-serif;
@@ -732,6 +785,7 @@ fieldset {
   font-weight: 400;
   color: #212121;
   letter-spacing: -2px;
+  opacity: 0;
 }
 #main.company_infomation #sec04 .partners_frame .partners_wrap p {
   line-height: 22.4px;
@@ -739,6 +793,7 @@ fieldset {
   font-family: "GmarketSans";
   font-size: 14px;
   font-weight: 400;
+  opacity: 0;
 }
 #main.company_infomation #sec04 .partners_frame .partners-logo-frame {
   position: absolute;

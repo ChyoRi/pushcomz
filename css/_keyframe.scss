@@ -11,15 +11,73 @@
   }
 }
 
+@keyframes fadeleft{
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes faderight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrowright {
+  0% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translateX(100px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(100px);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+}
+
 /* 애니메이션 라이브러리 클래스 */
 .fadeup {
-  animation: fadeup 2s ease-in-out;
+  animation: fadeup 0.5s ease-in-out forwards;
 }
 
 .fadeup_delay01 {
-  animation: fadeup 1.5s 0.5s ease-in-out forwards;
+  animation: fadeup 0.5s 0.3s ease-in-out forwards;
 }
 
 .fadeup_delay02 {
-  animation: fadeup 1.5s 1s ease-in-out forwards;
+  animation: fadeup 0.5s 0.8s ease-in-out forwards;
+}
+
+.fadeleft {
+  animation: fadeleft 0.5s ease-in-out forwards;
+}
+
+.faderight {
+  animation: faderight 0.5s 0.3s ease-in-out forwards;
+}
+
+.arrowright {
+  animation: arrowright 3s ease-in-out infinite;
 }

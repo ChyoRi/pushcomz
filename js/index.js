@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainVideo = document.querySelector('.main_video');
   const mainImgWrap = document.querySelector('.img_wrap');
   const mainTextBox = document.querySelector('.text_box');
-  const mainVideoLogo = document.querySelector('.video_logo');
   const mainHangleText = document.querySelector('.hangle_text');
   const mainEnglishText = document.querySelector('.english_text');
   const topBtnWrap = document.querySelector('.top_btn_wrap');
@@ -39,17 +38,67 @@ document.addEventListener('DOMContentLoaded', () => {
   // mobile 해상도로 진입시 mainvideo의 한글텍스트와 영문텍스트 순서를 변경
   if(window.innerWidth <= 991) {
     mainTextBox.insertBefore(mainEnglishText, mainHangleText);
-    mainVideoLogo.classList.remove('fadeup_delay01');
-    mainVideoLogo.classList.add('fadeup_delay02');
-    mainTextBox.classList.remove('fadeup_delay02');
-    mainTextBox.classList.add('fadeup_delay01');
   } else {
     mainTextBox.insertBefore(mainHangleText, mainEnglishText);
-    mainVideoLogo.classList.remove('fadeup_delay02');
-    mainVideoLogo.classList.add('fadeup_delay01');
-    mainTextBox.classList.remove('fadeup_delay01');
-    mainTextBox.classList.add('fadeup_delay02');
   }
+
+  const sections = document.querySelectorAll('section');
+  const goAskFrame = document.querySelector('.go_ask_frame');
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.25
+  }
+
+  const sectionActions = {
+    sec01: () => {
+      const mainVideoLogo = document.querySelector('.video_logo');
+      mainVideoLogo.classList.add('fadeup_delay01');
+      mainTextBox.classList.add('fadeup_delay02');
+    },
+    sec02: () => {
+      const attitudeTitle = document.querySelector('.attitude_wrap h3');
+      const attitudeItem = document.querySelectorAll('.attitude_item');
+      attitudeTitle.classList.add('fadeup');
+      attitudeItem.forEach(item => {
+        item.classList.add('fadeup_delay01');
+      });
+    },
+    sec03: () => {
+      const worksImgBox = document.querySelector('.works_img_box');
+      const worksTextBox = document.querySelector('.works_text_box');
+      worksImgBox.classList.add('fadeleft');
+      worksTextBox.classList.add('faderight');
+    },
+    sec04: () => {
+      const partnersTitle = document.querySelector('.partners_wrap h3');
+      const partnersText = document.querySelector('.partners_wrap p');
+      partnersTitle.classList.add('fadeup');
+      partnersText.classList.add('fadeup_delay01');
+    },
+    goAskFrame: () => {
+      goAskFrame.classList.add('arrowright');
+    }
+  }
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        console.log(`${entry.target.id || entry.target.className} is in view`);
+
+        const action = sectionActions[entry.target.id];
+        if (action) action();
+
+        // go_ask_frame 감지
+        if (entry.target.classList.contains('go_ask_frame')) {
+          sectionActions.goAskFrame();
+        }
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  sections.forEach(section => observer.observe(section));
 
   // 스크롤시 탑버튼 Active
   const topBtnShow = () => {
