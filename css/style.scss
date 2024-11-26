@@ -451,10 +451,15 @@
   &.motion {
     padding-top: 123.56px;
     #sec01 {
+      padding-top: 23.72px;
+      .motion_title {
+        @extend .project_title;
+        padding: 20px 32px 10px;
+      }
       .lottie_frame {
         max-width: 1280px;
         margin: 0 auto;
-        padding: 100px 15px;
+        padding: 0 15px 100px;
         .grid {
           .grid-item {
             margin-bottom: 15px;

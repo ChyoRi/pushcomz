@@ -10,6 +10,7 @@ export const header = () => {
   const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
   const hambergerBtn = document.querySelector('.hamberger_btn');
   const currentUrl = window.location.href;
+  let btnState = false;
   
   // nav의 list를 돌면서 active클래스를 전부 제거 ( active class 중복 방지 )
   // nav의 list를 돌면서 현재 url이 자식 a의 href를 포함하고 있다면 active class 추가
@@ -39,7 +40,7 @@ export const header = () => {
   const headerFixed = () => {
     const pageScrollTop = window.scrollY;
   
-    if(window.innerWidth >= 992 && pageScrollTop >= 100) {
+    if(pageScrollTop >= 100) {
       pcHeader.classList.add('fixed');
       pcHeaderDefaultLogo.style.display = 'none';
       pcHeaderFixedLogo.style.display = 'block';
@@ -66,22 +67,24 @@ export const header = () => {
   }
   
   // 모바일 햄버거 버튼 누를시 body에 fixed class와 네비, dimmed의 active class를 추가
-  const mobileNavMenu = () => {
-    body.classList.add('fixed');
-    dimmed.classList.add('active');
-    mobileNav.classList.add('active');
-  }
-  
-  // 모바일 X버튼 누를시 nav의 body에 fixed class와 네비, dimmed의 active class를 추가
-  const mobileNavClose = () => {
-    body.classList.remove('fixed');
-    dimmed.classList.remove('active');
-    mobileNav.classList.remove('active');
+  const mobileNavFn = () => {
+    btnState = !btnState;
+
+    if (btnState) {
+      console.log(btnState);
+      body.classList.add('fixed');
+      dimmed.classList.add('active');
+      mobileNav.classList.add('active');
+    } else {
+      console.log(btnState);
+      body.classList.remove('fixed');
+      dimmed.classList.remove('active');
+      mobileNav.classList.remove('active');
+    }
   }
   
   // Event Listener
   window.addEventListener('scroll', headerFixed);
   window.addEventListener('resize', resizeNavClose);
-  hambergerBtn.addEventListener('click', mobileNavMenu);
-  mobileNavCloseBtn.addEventListener('click', mobileNavClose);
+  hambergerBtn.addEventListener('click', mobileNavFn);
 }

@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const sections = document.querySelectorAll('section');
-  const goAskFrame = document.querySelector('.go_ask_frame');
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -53,46 +52,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const sectionActions = {
     sec01: () => {
       const mainVideoLogo = document.querySelector('.video_logo');
-      mainVideoLogo.classList.add('fadeup_delay01');
-      mainTextBox.classList.add('fadeup_delay02');
+      if (window.innerWidth <= 991) {
+        mainVideoLogo.classList.add('fadeup_delay02');
+        mainTextBox.classList.add('fadeup_delay01');
+      } else {
+        mainVideoLogo.classList.add('fadeup_delay01');
+        mainTextBox.classList.add('fadeup_delay02');
+      }
     },
     sec02: () => {
       const attitudeTitle = document.querySelector('.attitude_wrap h3');
       const attitudeItem = document.querySelectorAll('.attitude_item');
       attitudeTitle.classList.add('fadeup');
       attitudeItem.forEach(item => {
-        item.classList.add('fadeup_delay01');
+        item.classList.add('fadeup_delay03');
       });
     },
     sec03: () => {
       const worksImgBox = document.querySelector('.works_img_box');
       const worksTextBox = document.querySelector('.works_text_box');
-      worksImgBox.classList.add('fadeleft');
-      worksTextBox.classList.add('faderight');
+      const worksTitle = document.querySelector('.works_text_box h3');
+      const worksText = document.querySelector('.works_text_box p');
+      const worksList = document.querySelector('.works_list');
+      if (window.innerWidth <= 991) {
+        worksTextBox.style.opacity = '1';
+        worksTitle.style.opacity = '0';
+        worksText.style.opacity = '0';
+        worksList.style.opacity = '0';
+        worksTitle.classList.add('fadeup');
+        worksText.classList.add('fadeup_delay03');
+        worksList.classList.add('fadeup_delay04');
+      } else {
+        worksImgBox.classList.add('fadeleft');
+        worksTextBox.classList.add('faderight');
+      }
     },
     sec04: () => {
       const partnersTitle = document.querySelector('.partners_wrap h3');
       const partnersText = document.querySelector('.partners_wrap p');
       partnersTitle.classList.add('fadeup');
-      partnersText.classList.add('fadeup_delay01');
-    },
-    goAskFrame: () => {
-      goAskFrame.classList.add('arrowright');
+      partnersText.classList.add('fadeup_delay03');
     }
   }
 
   const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
-        console.log(`${entry.target.id || entry.target.className} is in view`);
+        console.log(`${entry.target.id} is in view`);
 
         const action = sectionActions[entry.target.id];
         if (action) action();
-
-        // go_ask_frame 감지
-        if (entry.target.classList.contains('go_ask_frame')) {
-          sectionActions.goAskFrame();
-        }
       }
     });
   };

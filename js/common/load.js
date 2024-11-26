@@ -17,56 +17,49 @@ export const loadFile = (callback) => {
   let totalElementsToLoad = 0;
 
   const loadIfExists = (selector, path) => {
-      const element = document.querySelector(selector);
-      if (element) {
-          totalElementsToLoad++;
+    const element = document.querySelector(selector);
+    if (element) {
+    totalElementsToLoad++;
 
-         
-          const basePath = getCurrentPath();
-          const fullUrl = `${basePath}${path}`;
+    
+    const basePath = getCurrentPath();
+    const fullUrl = `${basePath}${path}`;
 
-          console.log('Loading URL:', fullUrl); 
+    console.log('Loading URL:', fullUrl); 
 
-          fetch(fullUrl)
-              .then(response => {
-                  if (!response.ok) {
-                      throw new Error(`${selector} 로딩 오류: ${response.statusText}`);
-                  }
-                  return response.text();
-              })
-              .then(data => {
-                  element.innerHTML = data;
+    fetch(fullUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`${selector} 로딩 오류: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            element.innerHTML = data;
 
-                  const parent = element.parentNode;
-                  while (element.firstChild) {
-                      parent.insertBefore(element.firstChild, element);
-                  }
-                  parent.removeChild(element);
+            const parent = element.parentNode;
+            while (element.firstChild) {
+                parent.insertBefore(element.firstChild, element);
+            }
+            parent.removeChild(element);
 
-                  checkCompletion();
-              })
-              .catch(error => {
-                  console.error(`Failed to load ${fullUrl}:`, error);
-                  checkCompletion();
-              });
-      }
+            checkCompletion();
+        })
+        .catch(error => {
+            console.error(`Failed to load ${fullUrl}:`, error);
+            checkCompletion();
+        });
+    }
   }
 
   const checkCompletion = () => {
-      elementsLoaded++;
-      if (elementsLoaded === totalElementsToLoad && typeof callback === 'function') {
-          callback();
-      }
+    elementsLoaded++;
+    if (elementsLoaded === totalElementsToLoad && typeof callback === 'function') {
+        callback();
+    }
   }
 
 
   loadIfExists('#header', 'section/include/header.html');
   loadIfExists('#footer', 'section/include/footer.html');
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  loadFile(() => {
-      console.log('All files loaded successfully');
-  });
-});

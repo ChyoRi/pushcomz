@@ -222,8 +222,13 @@
     &.motion {
       padding-top: 84px;
       #sec01 {
+        padding-top: 3.72px;
+        .motion_title {
+          padding: 0 32px;
+          font-size: 26px;
+        }
         .lottie_frame {
-          padding: 50px 15px;
+          padding: 0 15px 50px;
           .grid {
             .grid-item {
               margin-bottom: 15px;
@@ -364,7 +369,7 @@
       padding-top: 81px;
       #sec01 {
         .lottie_frame {
-          padding: 50px 15px;
+          padding: 0 15px;
           .grid {
             .grid-item {
               margin-bottom: 15px;
