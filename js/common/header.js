@@ -7,8 +7,8 @@ export const header = () => {
   const moMainListItem = document.querySelectorAll('.mobile_nav .main_list_item');
   const dimmed = document.querySelector('.dimmed');
   const mobileNav = document.querySelector('.mobile_nav');
-  const mobileNavCloseBtn = document.querySelector('.mobile_nav_close_btn');
   const hambergerBtn = document.querySelector('.hamberger_btn');
+  const hambergerBtnSpanWrap = document.querySelector('.hamberger_btn_line_wrap');
   const currentUrl = window.location.href;
   let btnState = false;
   
@@ -74,12 +74,14 @@ export const header = () => {
       console.log(btnState);
       body.classList.add('fixed');
       dimmed.classList.add('active');
-      mobileNav.classList.add('active');
+      mobileNav.classList.add('navactive');
+      hambergerBtnSpanWrap.classList.add('active');
     } else {
       console.log(btnState);
       body.classList.remove('fixed');
       dimmed.classList.remove('active');
-      mobileNav.classList.remove('active');
+      mobileNav.classList.remove('navactive');
+      hambergerBtnSpanWrap.classList.remove('active');
     }
   }
   

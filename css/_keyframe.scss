@@ -35,6 +35,24 @@
   }
 }
 
+@keyframes navactive {
+  0% {
+    left: -280px;
+  }
+
+  50% {
+    left: 0px;
+  }
+
+  75% {
+    left: -50px;
+  }
+
+  100% {
+    left: -25px;
+  }
+}
+
 /* 애니메이션 라이브러리 클래스 */
 .fadeup {
   animation: fadeup 0.5s ease-in-out forwards;
@@ -62,4 +80,8 @@
 
 .faderight {
   animation: faderight 0.5s 0.1s ease-in-out forwards;
+}
+
+.navactive {
+  animation: navactive 0.7s ease-out forwards;
 }
