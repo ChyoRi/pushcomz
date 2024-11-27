@@ -73,14 +73,14 @@ export const header = () => {
     if (btnState) {
       console.log(btnState);
       body.classList.add('fixed');
-      dimmed.classList.add('active');
-      mobileNav.classList.add('navactive');
+      // dimmed.classList.add('active');
+      mobileNav.classList.add('active');
       hambergerBtnSpanWrap.classList.add('active');
     } else {
       console.log(btnState);
       body.classList.remove('fixed');
-      dimmed.classList.remove('active');
-      mobileNav.classList.remove('navactive');
+      // dimmed.classList.remove('active');
+      mobileNav.classList.remove('active');
       hambergerBtnSpanWrap.classList.remove('active');
     }
   }

@@ -35,53 +35,31 @@
   }
 }
 
-@keyframes navactive {
-  0% {
-    left: -280px;
-  }
-
-  50% {
-    left: 0px;
-  }
-
-  75% {
-    left: -50px;
-  }
-
-  100% {
-    left: -25px;
-  }
-}
-
 /* 애니메이션 라이브러리 클래스 */
 .fadeup {
-  animation: fadeup 0.5s ease-in-out forwards;
+  animation: fadeup 0.3s linear forwards;
 }
 
 .fadeup_delay01 {
-  animation: fadeup 0.5s 0.3s ease-in-out forwards;
+  animation: fadeup 0.3s 0.3s linear forwards;
 }
 
 .fadeup_delay02 {
-  animation: fadeup 0.5s 0.4s ease-in-out forwards;
+  animation: fadeup 0.3s 0.35s linear forwards;
 }
 
 .fadeup_delay03 {
-  animation: fadeup 0.5s 0.1s ease-in-out forwards;
+  animation: fadeup 0.3s 0.05s linear forwards;
 }
 
 .fadeup_delay04 {
-  animation: fadeup 0.5s 0.2s ease-in-out forwards;
+  animation: fadeup 0.3s 0.1s linear forwards;
 }
 
 .fadeleft {
-  animation: fadeleft 0.5s ease-in-out forwards;
+  animation: fadeleft 0.3s linear forwards;
 }
 
 .faderight {
-  animation: faderight 0.5s 0.1s ease-in-out forwards;
-}
-
-.navactive {
-  animation: navactive 0.7s ease-out forwards;
+  animation: faderight 0.3s 0.0025s linear forwards;
 }

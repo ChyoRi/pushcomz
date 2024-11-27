@@ -176,33 +176,70 @@
 
     .mobile_nav {
       @include flex(center, center);
+      flex-direction: column;
       position: fixed;
       top: 0;
-      left: -280px;
-      max-width: 255px;
-      min-width: 255px;
+      left: -100%;
+      width: 100%;
       height: 100vh;
+      padding: 0 15px;
       background-color: map-get($color, white-01);
-      transition: 0.3s;
+      transition: 0.2s;
       z-index: 99999;
       ul {
+        @include flex(center, center);
         width: 100%;
+        margin-bottom: clamp(40px, 8vw, 80px);
         li {
-          padding: 15px 50px 15px 40px;
+          margin-right: clamp(30px, 6vw, 60px);
           &.active {
-            background-color: map-get($color, white-02);
-          }
-    
-          &:last-of-type {
-            border-bottom: 1px solid map-get($color, white-03);
+            a {
+              color: map-get($color, red-01);
+            }
           }
     
           a {
-            line-height: 40px;
+            position: relative;
             font-family: "GmarketSans";
-            font-size: 18px;
+            font-size: clamp(18px, 4vw, 40px);
             font-weight: 700;
             color: map-get($color, black-03);
+            white-space: nowrap;
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              background-color: map-get($color, white-01);
+              transition: 0.3s ease-out 0.5s;
+            }
+          }
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+      .mobile_nav_text {
+        width: auto;
+        height: auto;
+        text-align: center;
+        p {
+          position: relative;
+          font-family: "Changa", sans-serif;
+          font-size: clamp(9.5px, 3vw, 30px);
+          font-weight: 400;
+          white-space: nowrap;
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: map-get($color, white-01);
+            transition: 0.3s ease-out 0.5s;
           }
         }
       }
@@ -218,23 +255,39 @@
     
       &.active {
         left: 0;
+        ul {
+          li {
+            a {
+              &::after {
+                width: 0;
+              }
+            }
+          }
+        }
+        .mobile_nav_text {
+          p {
+            &::after {
+              width: 0;
+            }
+          }
+        }
       }
     }
 
-    .dimmed {
-      position: fixed;
-      left: 0;
-      top: 0;
-      display: none;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 9999;
+    // .dimmed {
+    //   position: fixed;
+    //   left: 0;
+    //   top: 0;
+    //   display: none;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: rgba(0, 0, 0, 0.5);
+    //   z-index: 9999;
     
-      &.active {
-        display: block;
-      }
-    }
+    //   &.active {
+    //     display: block;
+    //   }
+    // }
 
     &.fixed {
       position: fixed;
