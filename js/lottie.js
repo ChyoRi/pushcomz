@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const lottieCardList = document.querySelectorAll('.lottie_card_link');
+  const lottieItems = document.querySelectorAll('.lottie_item');
   const animations = [];
 
   const animationsConfig = [
@@ -239,6 +239,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  const playAnimationWithDelay = async (anim, config) => {
+    const delay = (time) => new Promise(resolve => setTimeout(resolve, time));
+
+    const onComplete = async () => {
+      await delay(config.delayTime);
+      if (config.loopSegments) {
+        anim.playSegments(config.loopSegments, true);
+      } else if (config.playSegmentsOnce) {
+        anim.playSegments(config.playSegmentsOnce, true);
+      }
+    };
+
+    anim.removeEventListener('complete', onComplete); // 중복 방지
+    anim.addEventListener('complete', onComplete);
+
+    if (config.playSegmentsOnce) {
+      anim.playSegments(config.playSegmentsOnce, true);
+    } else {
+      anim.play();
+    }
+  };
+
   animationsConfig.forEach(config => {
     const animation = lottie.loadAnimation({
       container: document.getElementById(config.containerId),
@@ -252,39 +274,26 @@ document.addEventListener('DOMContentLoaded', () => {
     animations.push(animation);
   });
 
-  const playAnimationWithDelay = async (anim, config) => {
-    const delay = (time) => new Promise(resolve => setTimeout(resolve, time));
-
-    const onComplete = async () => {
-      await delay(config.delayTime);
-      if (config.loopSegments) {
-        anim.playSegments(config.loopSegments, true);
-      } else if (config.playSegmentsOnce) {
-        anim.playSegments(config.playSegmentsOnce, true);
-      }
-    };
-
-    anim.addEventListener('complete', onComplete);
-
-    if (config.loopSegments) {
-      anim.playSegments(config.playSegmentsOnce, true);
-    } else if (config.playSegmentsOnce) {
-      anim.playSegments(config.playSegmentsOnce, true);
-    } else {
-      anim.play();
-    }
+  const observerOptions = {
+    root: null,
+    threshold: 1.0
   };
-  
-  lottieCardList.forEach((element, index) => {
-    element.addEventListener('click', () => {
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const index = Array.from(lottieItems).indexOf(entry.target);
       const anim = animations[index];
-      const config = anim.config;
 
-      anim.stop();
-      anim.goToAndStop(0, true);
+      if (entry.isIntersecting) {
+        const lottieBox = entry.target.querySelector('.lottie');
 
-      playAnimationWithDelay(anim, config);
+        if (lottieBox && !lottieBox.classList.contains('fadeup')) {
+          lottieBox.classList.add('fadeup'); 
+          playAnimationWithDelay(anim, anim.config);
+        }
+      }
     });
-  });
-  
+  }, observerOptions);
+
+  lottieItems.forEach((item) => observer.observe(item));
 });

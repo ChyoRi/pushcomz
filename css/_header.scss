@@ -186,12 +186,20 @@
       background-color: map-get($color, white-01);
       transition: 0.2s;
       z-index: 99999;
-      ul {
+      .mabile_nav_logo {
         @include flex(center, center);
-        width: 100%;
-        margin-bottom: clamp(40px, 8vw, 80px);
+        position: absolute;
+        top: 0;
+        left: 10px;
+        height: 48px;
+        img {
+          width: 100%;
+        }
+      }
+      ul {
+        margin-bottom: 150px;
         li {
-          margin-right: clamp(30px, 6vw, 60px);
+          margin-bottom: 30px;
           &.active {
             a {
               color: map-get($color, red-01);
@@ -201,8 +209,8 @@
           a {
             position: relative;
             font-family: "GmarketSans";
-            font-size: clamp(18px, 4vw, 40px);
-            font-weight: 700;
+            font-size: 40px;
+            font-weight: 400;
             color: map-get($color, black-03);
             white-space: nowrap;
             &::after {
@@ -213,11 +221,11 @@
               width: 100%;
               height: 100%;
               background-color: map-get($color, white-01);
-              transition: 0.3s ease-out 0.5s;
+              transition: 0.3s ease-out 0.3s;
             }
           }
           &:last-of-type {
-            margin-right: 0;
+            margin-bottom: 0;
           }
         }
       }
@@ -239,17 +247,8 @@
             width: 100%;
             height: 100%;
             background-color: map-get($color, white-01);
-            transition: 0.3s ease-out 0.5s;
+            transition: 0.3s ease-out 0.3s;
           }
-        }
-      }
-    
-      .mobile_nav_close_btn {
-        position: absolute;
-        top: 9px;
-        right: -25px;
-        img {
-          filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(345deg) brightness(99%) contrast(102%);
         }
       }
     

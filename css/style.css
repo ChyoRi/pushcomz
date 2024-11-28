@@ -408,15 +408,23 @@ fieldset {
   transition: 0.2s;
   z-index: 99999;
 }
-#header .mobile_header .mobile_nav ul {
+#header .mobile_header .mobile_nav .mabile_nav_logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 48px;
+}
+#header .mobile_header .mobile_nav .mabile_nav_logo img {
   width: 100%;
-  margin-bottom: clamp(40px, 8vw, 80px);
+}
+#header .mobile_header .mobile_nav ul {
+  margin-bottom: 150px;
 }
 #header .mobile_header .mobile_nav ul li {
-  margin-right: clamp(30px, 6vw, 60px);
+  margin-bottom: 30px;
 }
 #header .mobile_header .mobile_nav ul li.active a {
   color: #fd4750;
@@ -424,8 +432,8 @@ fieldset {
 #header .mobile_header .mobile_nav ul li a {
   position: relative;
   font-family: "GmarketSans";
-  font-size: clamp(18px, 4vw, 40px);
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 400;
   color: #111111;
   white-space: nowrap;
 }
@@ -437,10 +445,10 @@ fieldset {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
-  transition: 0.3s ease-out 0.5s;
+  transition: 0.3s ease-out 0.3s;
 }
 #header .mobile_header .mobile_nav ul li:last-of-type {
-  margin-right: 0;
+  margin-bottom: 0;
 }
 #header .mobile_header .mobile_nav .mobile_nav_text {
   width: auto;
@@ -462,15 +470,7 @@ fieldset {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
-  transition: 0.3s ease-out 0.5s;
-}
-#header .mobile_header .mobile_nav .mobile_nav_close_btn {
-  position: absolute;
-  top: 9px;
-  right: -25px;
-}
-#header .mobile_header .mobile_nav .mobile_nav_close_btn img {
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(345deg) brightness(99%) contrast(102%);
+  transition: 0.3s ease-out 0.3s;
 }
 #header .mobile_header .mobile_nav.active {
   left: 0;
@@ -647,13 +647,26 @@ fieldset {
   padding: 230px 0 222px;
 }
 #main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo {
+  position: relative;
   width: 41.67%;
   height: 130px;
   padding: 0 12.05px;
-  opacity: 0;
+}
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: 0.3s ease-out 0.5s;
 }
 #main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo img {
   width: 100%;
+}
+#main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo.active::after {
+  width: 0;
 }
 #main.company_infomation #sec01 .text_box_frame .text_box_wrap .text_box {
   width: 50%;
@@ -769,14 +782,27 @@ fieldset {
   padding: 126px 0 92px;
 }
 #main.company_infomation #sec03 .works_frame .works_wrap .works_img_box {
+  position: relative;
   width: 41.67%;
   height: 1158px;
   padding-top: 24px;
-  opacity: 0;
+}
+#main.company_infomation #sec03 .works_frame .works_wrap .works_img_box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transition: 0.3s ease-out;
 }
 #main.company_infomation #sec03 .works_frame .works_wrap .works_img_box img {
   width: 100%;
   height: 100%;
+}
+#main.company_infomation #sec03 .works_frame .works_wrap .works_img_box.active::after {
+  width: 0;
 }
 #main.company_infomation #sec03 .works_frame .works_wrap .works_text_box {
   width: 50%;
@@ -1051,13 +1077,18 @@ fieldset {
   margin: 0 auto;
   padding: 0 15px 100px;
 }
-#main.motion #sec01 .lottie_frame .grid .grid-item {
-  margin-bottom: 15px;
-  width: calc((100% - 45px) / 4);
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item {
+  max-width: 50%;
+  margin-bottom: 100px;
 }
-#main.motion #sec01 .lottie_frame .grid .grid-item a img {
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie {
+  opacity: 0;
+}
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item:nth-child(2n-1) {
+  margin-left: 50%;
+}
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item a img {
   width: 100%;
-  border-radius: 20px;
 }
 
 @media (max-width: 1270px) {

@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mainVideoLogo.classList.add('fadeup_delay02');
         mainTextBox.classList.add('fadeup_delay01');
       } else {
-        mainVideoLogo.classList.add('fadeup_delay01');
-        mainTextBox.classList.add('fadeup_delay02');
+        mainVideoLogo.classList.add('active');
+        mainTextBox.classList.add('faderight');
       }
     },
     sec02: () => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         worksText.classList.add('fadeup_delay03');
         worksList.classList.add('fadeup_delay04');
       } else {
-        worksImgBox.classList.add('fadeleft');
+        worksImgBox.classList.add('active');
         worksTextBox.classList.add('faderight');
       }
     },
