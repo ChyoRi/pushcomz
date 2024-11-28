@@ -487,23 +487,34 @@
         padding: 20px 32px 10px;
       }
       .lottie_frame {
+        position: relative;
         max-width: 1280px;
         margin: 0 auto;
         padding: 0 15px 100px;
         .lottie_list {
           .lottie_item {
-            max-width: 50%;
+            margin-left: 2.5%;
+            max-width: 45%;
             margin-bottom: 100px;
             .lottie {
               opacity: 0;
             }
             &:nth-child(2n-1) {
-              margin-left: 50%;
+              margin-left: 52.5%;
             }
             a img {
               width: 100%;
             }
           }
+        }
+        .senter_line {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 2px;
+          height: 100%;
+          background-color: map-get($color, gray-01);
+          transform: translateX(-50%);
         }
       }
     }

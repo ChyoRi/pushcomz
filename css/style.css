@@ -1073,22 +1073,33 @@ fieldset {
   padding: 20px 32px 10px;
 }
 #main.motion #sec01 .lottie_frame {
+  position: relative;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 15px 100px;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item {
-  max-width: 50%;
+  margin-left: 2.5%;
+  max-width: 45%;
   margin-bottom: 100px;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie {
   opacity: 0;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item:nth-child(2n-1) {
-  margin-left: 50%;
+  margin-left: 52.5%;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item a img {
   width: 100%;
+}
+#main.motion #sec01 .lottie_frame .senter_line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: #dfe8f0;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 1270px) {
