@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainVideoLogo.classList.add('fadeup_delay02');
         mainTextBox.classList.add('fadeup_delay01');
       } else {
-        mainVideoLogo.classList.add('active');
+        mainVideoLogo.classList.add('fadeleft');
         mainTextBox.classList.add('faderight');
       }
     },

@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container: document.getElementById(config.containerId),
       renderer: 'svg',
       loop: config.loop,
-      autoplay: true,
+      autoplay: false,
       path: config.path,
     });
 
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observerOptions = {
     root: null,
-    threshold: 1.0
+    threshold: 1
   };
 
   const observer = new IntersectionObserver((entries) => {

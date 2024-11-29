@@ -5,7 +5,6 @@ export const header = () => {
   const pcHeaderFixedLogo = document.querySelector('.pc_fixed_logo');
   const mobileHeader = document.querySelector('.mobile_header');
   const moMainListItem = document.querySelectorAll('.mobile_nav .main_list_item');
-  const dimmed = document.querySelector('.dimmed');
   const mobileNav = document.querySelector('.mobile_nav');
   const hambergerBtn = document.querySelector('.hamberger_btn');
   const hambergerBtnSpanWrap = document.querySelector('.hamberger_btn_line_wrap');
@@ -61,7 +60,6 @@ export const header = () => {
   const resizeNavClose = () => {
     // resize시 PC Size로 넘어갔을경우 nav와 dim의 active class를 제거
     if(window.innerWidth >= 992) {
-      dimmed.classList.remove('active');
       mobileNav.classList.remove('active');
     }
   }

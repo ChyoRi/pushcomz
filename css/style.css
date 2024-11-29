@@ -469,7 +469,7 @@ fieldset {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #000000;
   transition: 0.3s ease-out 0.3s;
 }
 #header .mobile_header .mobile_nav.active {
@@ -1078,10 +1078,13 @@ fieldset {
   margin: 0 auto;
   padding: 0 15px 100px;
 }
+#main.motion #sec01 .lottie_frame .lottie_list {
+  padding-top: 50px;
+}
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item {
   margin-left: 2.5%;
   max-width: 45%;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie {
   opacity: 0;
