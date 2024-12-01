@@ -14,7 +14,6 @@ export const header = () => {
   // nav의 list를 돌면서 active클래스를 전부 제거 ( active class 중복 방지 )
   // nav의 list를 돌면서 현재 url이 자식 a의 href를 포함하고 있다면 active class 추가
   // active 된 nav의 list중에 자식 a의 href가 project.html일경우 subList에 active class 추가
-
   moMainListItem.forEach(item => {
     let itemChildren = item.querySelector('a');
     const itemHref = itemChildren.getAttribute("href").replace(/\.html$/, "");
@@ -71,13 +70,11 @@ export const header = () => {
     if (btnState) {
       console.log(btnState);
       body.classList.add('fixed');
-      // dimmed.classList.add('active');
       mobileNav.classList.add('active');
       hambergerBtnSpanWrap.classList.add('active');
     } else {
       console.log(btnState);
       body.classList.remove('fixed');
-      // dimmed.classList.remove('active');
       mobileNav.classList.remove('active');
       hambergerBtnSpanWrap.classList.remove('active');
     }

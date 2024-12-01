@@ -456,13 +456,15 @@ fieldset {
   text-align: center;
 }
 #header .mobile_header .mobile_nav .mobile_nav_text p {
-  position: relative;
   font-family: "Changa", sans-serif;
   font-size: clamp(9.5px, 3vw, 30px);
   font-weight: 400;
   white-space: nowrap;
 }
-#header .mobile_header .mobile_nav .mobile_nav_text p::after {
+#header .mobile_header .mobile_nav .mobile_nav_text p span {
+  position: relative;
+}
+#header .mobile_header .mobile_nav .mobile_nav_text p span::after {
   content: "";
   position: absolute;
   top: 0;
@@ -478,7 +480,7 @@ fieldset {
 #header .mobile_header .mobile_nav.active ul li a::after {
   width: 0;
 }
-#header .mobile_header .mobile_nav.active .mobile_nav_text p::after {
+#header .mobile_header .mobile_nav.active .mobile_nav_text p span::after {
   width: 0;
 }
 #header .mobile_header.fixed {
@@ -529,7 +531,6 @@ fieldset {
   padding: 3px 15px;
 }
 #footer .footer_inner .footer_nav_wrap li a {
-  width: -moz-fit-content;
   width: fit-content;
   line-height: 19.2px;
   font-family: "GmarketSans";
@@ -612,8 +613,7 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
 }
 #main.company_infomation #sec01 .img_wrap {
@@ -627,8 +627,7 @@ fieldset {
 #main.company_infomation #sec01 .img_wrap .main_image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #main.company_infomation #sec01 .img_wrap.inactive {
   display: none;
@@ -1082,15 +1081,37 @@ fieldset {
   padding-top: 50px;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item {
-  margin-left: 2.5%;
-  max-width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 150px;
 }
-#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie {
-  opacity: 0;
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
 }
-#main.motion #sec01 .lottie_frame .lottie_list .lottie_item:nth-child(2n-1) {
-  margin-left: 52.5%;
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p {
+  font-family: "GmarketSans";
+  font-size: 60px;
+}
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie {
+  position: relative;
+  max-width: 45%;
+}
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transition: 0.3s ease-out 0.3s;
+}
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie.active::after {
+  width: 0;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item a img {
   width: 100%;

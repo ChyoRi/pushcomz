@@ -494,15 +494,43 @@
         .lottie_list {
           padding-top: 50px;
           .lottie_item {
-            margin-left: 2.5%;
-            max-width: 45%;
+            @include flex(center, space-between);
             margin-bottom: 150px;
+            // .lottie {
+            //   opacity: 0;
+            // }
+            .lottie_text_wrap {
+              @include flex(center, center);
+              width: 45%;
+              p {
+                font-family: "GmarketSans";
+                font-size: 60px;
+              }
+            }
             .lottie {
-              opacity: 0;
+              position: relative;
+              max-width: 45%;
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background-color: map-get($color, white-01);
+                transition: 0.3s ease-out 0.3s;
+              }
+              &.active {
+                &::after {
+                  width: 0;
+                }
+              }
+              
             }
-            &:nth-child(2n-1) {
-              margin-left: 52.5%;
-            }
+
+            // &:nth-child(2n-1) {
+            //   margin-left: 52.5%;
+            // }
             a img {
               width: 100%;
             }

@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 64],
       loopSegments: [50, 64],
       delayTime: 2000,
+      initialVisible: true,
+      hasPlayed: false 
     },
     {
       path: '../json/today_card_fortune.json',
@@ -20,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 44],
       loopSegments: [36, 44],
       delayTime: 2000,
+      initialVisible: true,
+      hasPlayed: false 
     },
     {
       path: '../json/0926_promo_fruit.json',
@@ -29,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 36],
       loopSegments: [12, 36],
       delayTime: 2000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/are_you_having_fun.json',
@@ -38,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 48],
       loopSegments: [36, 48],
       delayTime: 1000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0311_promo_ssd.json',
@@ -47,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 48],
       loopSegments: [42, 48],
       delayTime: 2000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0103_promo_amorepacific.json',
@@ -56,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 116],
       loopSegments: [92, 116],
       delayTime: 2000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0905_promo_Chuseok.json',
@@ -65,6 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 145],
       loopSegments: [49, 145],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/1104_promo_peperoday.json',
@@ -74,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 82],
       loopSegments: [66, 82],
       delayTime: 1500,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0307_promo_WhiteDay.json',
@@ -83,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 69],
       loopSegments: [49, 69],
       delayTime: 1500,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0525_promo_end.json',
@@ -92,6 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 70],
       loopSegments: [70, 118],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0308_promo_agricultural.json',
@@ -101,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 78],
       loopSegments: [66, 78],
       delayTime: 2000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0206_promo_sul.json',
@@ -110,6 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 138],
       loopSegments: [78, 138],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/nt_weekend_coupon.json',
@@ -119,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 110],
       loopSegments: [62, 110],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/nt_customer_monitering.json',
@@ -128,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 66],
       loopSegments: [0, 66],
       delayTime: 3000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/gangsale.json',
@@ -137,6 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 64],
       loopSegments: [16, 64],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/spring_sale.json',
@@ -146,6 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 120],
       loopSegments: [0, 120],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/summer02.json',
@@ -155,6 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 168],
       loopSegments: [0, 168],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0221_promo_socks.json',
@@ -164,6 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 36],
       loopSegments: [0, 36],
       delayTime: 2000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/card_point_benefit.json',
@@ -173,6 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 50],
       loopSegments: [42, 50],
       delayTime: 2000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/1218_promo_winterfood.json',
@@ -182,6 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 80],
       loopSegments: [0, 80],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/nt_new_join_event_top.json',
@@ -191,6 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 80],
       loopSegments: [32, 80],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0731_promo_frosted-fruits.json',
@@ -200,6 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 72],
       loopSegments: [24, 72],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0903_promo_camping.json',
@@ -209,6 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 68],
       loopSegments: [20, 68],
       delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/giftbox.json',
@@ -217,7 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
       containerId: 'lottie_motion24',
       playSegmentsOnce: [0, 68],
       loopSegments: [18, 68],
-      delayTime: 0
+      delayTime: 0,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0612_promo_pulmuone.json',
@@ -227,6 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 34],
       loopSegments: [28, 34],
       delayTime: 3000,
+      initialVisible: false,
+      hasPlayed: false
     },
     {
       path: '../json/0529_promo_diet.json',
@@ -236,14 +286,20 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 21],
       loopSegments: [9, 21],
       delayTime: 3000,
+      initialVisible: false,
+      hasPlayed: false
     }
   ];
 
   const playAnimationWithDelay = async (anim, config) => {
+    if (anim.isPlaying) return;
+    
     const delay = (time) => new Promise(resolve => setTimeout(resolve, time));
 
     const onComplete = async () => {
       await delay(config.delayTime);
+      if (!anim || !anim.isLoaded) return;
+      
       if (config.loopSegments) {
         anim.playSegments(config.loopSegments, true);
       } else if (config.playSegmentsOnce) {
@@ -251,14 +307,49 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    anim.removeEventListener('complete', onComplete); // 중복 방지
+    anim.removeEventListener('complete', onComplete);
     anim.addEventListener('complete', onComplete);
 
+    anim.goToAndStop(0, true);
+    
     if (config.playSegmentsOnce) {
       anim.playSegments(config.playSegmentsOnce, true);
     } else {
       anim.play();
     }
+  };
+
+  const checkInitialVisibility = () => {
+    lottieItems.forEach((item, index) => {
+      // 위치 확인 로직 추가
+      const textWrap = item.querySelector('.lottie_text_wrap');
+      const lottie = item.querySelector('.lottie');
+      if (textWrap && lottie) {
+        const position = textWrap.compareDocumentPosition(lottie);
+        if (position & Node.DOCUMENT_POSITION_FOLLOWING) {
+          console.log(`Item ${index + 1}: lottie_text_wrap이 lottie보다 앞에 있습니다.`);
+        } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
+          console.log(`Item ${index + 1}: lottie_text_wrap이 lottie보다 뒤에 있습니다.`);
+        }
+      }
+      
+      const rect = item.getBoundingClientRect();
+      const isVisible = (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+
+      if (isVisible && animations[index] && animations[index].isLoaded) {
+        const lottieBox = item.querySelector('.lottie');
+        if (lottieBox && !lottieBox.classList.contains('fadeup')) {
+          lottieBox.classList.add('fadeup');
+          lottieBox.classList.add('active');
+          playAnimationWithDelay(animations[index], animations[index].config);
+        }
+      }
+    });
   };
 
   animationsConfig.forEach(config => {
@@ -270,30 +361,62 @@ document.addEventListener('DOMContentLoaded', () => {
       path: config.path,
     });
 
-    animation.config = config;  // 애니메이션 객체에 설정 저장
+    animation.addEventListener('DOMLoaded', () => {
+      animation.isLoaded = true;
+      if (config.initialVisible) {
+        const container = document.getElementById(config.containerId);
+        if (container) {
+          const lottieBox = container.closest('.lottie');
+          if (lottieBox) {
+            lottieBox.classList.add('active');
+            config.hasPlayed = true;
+            playAnimationWithDelay(animation, config);
+          }
+        }
+      }
+    });
+
+    animation.config = config;
     animations.push(animation);
   });
 
   const observerOptions = {
     root: null,
-    threshold: 1
+    threshold: 0.5
   };
-
+  function isElementPartiallyVisible(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+    // 요소가 화면에 조금이라도 보이는지 확인
+    return (
+      (rect.top <= windowHeight && rect.bottom >= 0) ||
+      (rect.bottom >= 0 && rect.top <= windowHeight)
+    );
+  }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const index = Array.from(lottieItems).indexOf(entry.target);
       const anim = animations[index];
 
-      if (entry.isIntersecting) {
-        const lottieBox = entry.target.querySelector('.lottie');
+      if (!anim || !anim.isLoaded|| anim.config.hasPlayed) return;
 
-        if (lottieBox && !lottieBox.classList.contains('fadeup')) {
-          lottieBox.classList.add('fadeup'); 
-          playAnimationWithDelay(anim, anim.config);
+      if (entry.isIntersecting || isElementPartiallyVisible(entry.target)) {
+        const lottieBox = entry.target.querySelector('.lottie');
+        
+        if (lottieBox && !lottieBox.classList.contains('active')) {
+          lottieBox.classList.add('active');
+          anim.config.hasPlayed = true;
+          setTimeout(() => {
+            playAnimationWithDelay(anim, anim.config);
+          }, 100);
         }
       }
     });
   }, observerOptions);
 
+  
   lottieItems.forEach((item) => observer.observe(item));
+  
+  setTimeout(checkInitialVisibility, 100);
 });
