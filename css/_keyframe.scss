@@ -63,3 +63,11 @@
 .faderight {
   animation: faderight 0.3s 0.0025s linear forwards;
 }
+
+.lottie_fade_left {
+  animation: fadeleft 0.3s 0.2s linear forwards;
+}
+
+.lottie_fade_right {
+  animation: faderight 0.3s 0.2s linear forwards;
+}

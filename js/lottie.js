@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 64],
       loopSegments: [50, 64],
       delayTime: 2000,
-      initialVisible: true,
+      initialVisible: false,
       hasPlayed: false 
     },
     {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       playSegmentsOnce: [0, 44],
       loopSegments: [36, 44],
       delayTime: 2000,
-      initialVisible: true,
+      initialVisible: false,
       hasPlayed: false 
     },
     {
@@ -321,6 +321,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const checkInitialVisibility = () => {
     lottieItems.forEach((item, index) => {
+      const anim = animations[index];
+      const config = anim?.config;
+
+      // 애니메이션 로드 상태와 실행 여부를 확인
+      if (!anim || !anim.isLoaded || config?.hasPlayed) return;
+
       // 위치 확인 로직 추가
       const textWrap = item.querySelector('.lottie_text_wrap');
       const lottie = item.querySelector('.lottie');
@@ -341,12 +347,25 @@ document.addEventListener('DOMContentLoaded', () => {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
       );
 
-      if (isVisible && animations[index] && animations[index].isLoaded) {
-        const lottieBox = item.querySelector('.lottie');
-        if (lottieBox && !lottieBox.classList.contains('fadeup')) {
-          lottieBox.classList.add('fadeup');
-          lottieBox.classList.add('active');
-          playAnimationWithDelay(animations[index], animations[index].config);
+      if (isVisible) {
+        // 요소의 위치 관계를 비교하여 클래스 추가
+        const position = textWrap.compareDocumentPosition(lottie);
+        const textElement = textWrap.querySelector('p');
+
+        if (position & Node.DOCUMENT_POSITION_FOLLOWING) {
+          textElement?.classList.add('lottie_fade_left');
+          // lottie ::after 스타일 변경
+          lottie.style.setProperty('--lottie-after-right', 'auto');
+          lottie.style.setProperty('--lottie-after-left', '0');
+        } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
+          textElement?.classList.add('lottie_fade_right');
+        }
+
+        // 애니메이션 활성화 및 실행
+        if (!lottie.classList.contains('active')) {
+          lottie.classList.add('active');
+          playAnimationWithDelay(anim, config);
+          config.hasPlayed = true; // 실행 상태 업데이트
         }
       }
     });
@@ -415,10 +434,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting || isElementPartiallyVisible(item)) {
         if (position & Node.DOCUMENT_POSITION_FOLLOWING) {
           // lottie가 textWrap 뒤에 있는 경우
-          textElement.classList.add('fadeleft');
+          textElement.classList.add('lottie_fade_left');
+          // lottie ::after 스타일 변경
+          lottie.style.setProperty('--lottie-after-right', 'auto');
+          lottie.style.setProperty('--lottie-after-left', '0');
         } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
           // lottie가 textWrap 앞에 있는 경우
-          textElement.classList.add('faderight');
+          textElement.classList.add('lottie_fade_right');
         }
   
         if (!lottie.classList.contains('active')) {
