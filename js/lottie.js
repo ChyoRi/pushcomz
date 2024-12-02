@@ -398,14 +398,31 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry) => {
       const index = Array.from(lottieItems).indexOf(entry.target);
       const anim = animations[index];
+      const currentIndex = index + 1;
+      console.log(currentIndex);
 
       if (!anim || !anim.isLoaded|| anim.config.hasPlayed) return;
 
-      if (entry.isIntersecting || isElementPartiallyVisible(entry.target)) {
-        const lottieBox = entry.target.querySelector('.lottie');
-        
-        if (lottieBox && !lottieBox.classList.contains('active')) {
-          lottieBox.classList.add('active');
+      const item = entry.target;
+      const textWrap = item.querySelector('.lottie_text_wrap');
+      const lottie = item.querySelector('.lottie');
+      const textElement = textWrap ? textWrap.querySelector('p') : null;
+
+      if (!textWrap || !lottie) return;
+
+      const position = textWrap.compareDocumentPosition(lottie);
+
+      if (entry.isIntersecting || isElementPartiallyVisible(item)) {
+        if (position & Node.DOCUMENT_POSITION_FOLLOWING) {
+          // lottie가 textWrap 뒤에 있는 경우
+          textElement.classList.add('fadeleft');
+        } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
+          // lottie가 textWrap 앞에 있는 경우
+          textElement.classList.add('faderight');
+        }
+  
+        if (!lottie.classList.contains('active')) {
+          lottie.classList.add('active');
           anim.config.hasPlayed = true;
           setTimeout(() => {
             playAnimationWithDelay(anim, anim.config);
