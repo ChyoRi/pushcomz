@@ -1,5 +1,31 @@
+// 요소 재정렬 함수
+const lottieItems = document.querySelectorAll('.lottie_item');
+
+const rearrangeElements = () => {
+  const isSmallScreen = window.innerWidth <= 480;
+
+  lottieItems.forEach((item, index) => {
+    const textWrap = item.querySelector('.lottie_text_wrap');
+    const lottieWrap = item.querySelector('.lottie_wrap');
+
+    if (textWrap && lottieWrap) {
+      if (isSmallScreen) {
+        // 480 이하일 때 textWrap이 lottieWrap 뒤에 위치해야 함
+        item.insertBefore(lottieWrap, textWrap);
+      } else {
+        if (index % 2 !== 0) {
+          item.insertBefore(textWrap, lottieWrap);
+        } else {
+          // 인덱스를 2로 나누었을 때 나머지가 없는 경우
+          // 원래 순서대로 textWrap이 lottieWrap 앞에 있어야 함
+          item.insertBefore(lottieWrap, textWrap);
+        }
+      }
+    }
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-  const lottieItems = document.querySelectorAll('.lottie_item');
   const animations = [];
 
   const animationsConfig = [
@@ -291,6 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  rearrangeElements();
+
   const playAnimationWithDelay = async (anim, config) => {
     if (anim.isPlaying) return;
     
@@ -458,4 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
   lottieItems.forEach((item) => observer.observe(item));
   
   setTimeout(checkInitialVisibility, 100);
+
+  //resize 이벤트 연결
+  window.addEventListener('resize', rearrangeElements);
 });

@@ -370,15 +370,18 @@
       #sec01 {
         .lottie_frame {
           padding: 0 15px;
-          .grid {
-            .grid-item {
+          .lottie_list {
+            .lottie_item {
+              align-items: flex-start;
+              flex-direction: column;
               margin-bottom: 15px;
-              width: calc((100% - 15px) / 2);
-              a img {
+              .lottie_wrap {
                 width: 100%;
-                border-radius: 20px;
               }
             }
+          }
+          .senter_line {
+            display: none;
           }
         }
       }
