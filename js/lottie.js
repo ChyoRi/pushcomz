@@ -347,57 +347,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const checkInitialVisibility = () => {
-    lottieItems.forEach((item, index) => {
-      const anim = animations[index];
-      const config = anim?.config;
 
-      // 애니메이션 로드 상태와 실행 여부를 확인
-      if (!anim || !anim.isLoaded || config?.hasPlayed) return;
 
-      // 위치 확인 로직 추가
-      const textWrap = item.querySelector('.lottie_text_wrap');
-      const lottie = item.querySelector('.lottie');
-      if (textWrap && lottie) {
-        const position = textWrap.compareDocumentPosition(lottie);
-        if (position & Node.DOCUMENT_POSITION_FOLLOWING) {
-          console.log(`Item ${index + 1}: lottie_text_wrap이 lottie보다 앞에 있습니다.`);
-        } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
-          console.log(`Item ${index + 1}: lottie_text_wrap이 lottie보다 뒤에 있습니다.`);
+    // 초기 화면에 보이는 요소들 체크 함수
+    const checkInitialVisibleElements = () => {
+      lottieItems.forEach((item, index) => {
+        const anim = animations[index];
+        if (!anim || !anim.isLoaded || anim.config.hasPlayed) return;
+
+        const rect = item.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const elementHeight = rect.height;
+        const elementMiddle = rect.top + (elementHeight / 3);
+        
+        // 요소의 중간 지점이 화면 안에 있는지 확인
+        const isHalfVisible = (
+          elementMiddle >= 0 &&
+          elementMiddle <= windowHeight
+        );
+
+        if (isHalfVisible) {
+          const textWrap = item.querySelector('.lottie_text_wrap');
+          const lottie = item.querySelector('.lottie');
+          const textElement = textWrap?.querySelector('p');
+
+          if (textWrap && lottie && textElement) {
+            textElement.classList.add('active');
+            lottie.classList.add('active');
+            anim.config.hasPlayed = true;
+            
+            setTimeout(() => {
+              playAnimationWithDelay(anim, anim.config);
+            }, 100);
+          }
         }
-      }
-      
-      const rect = item.getBoundingClientRect();
-      const isVisible = (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-
-      if (isVisible) {
-        // 요소의 위치 관계를 비교하여 클래스 추가
-        const position = textWrap.compareDocumentPosition(lottie);
-        const textElement = textWrap.querySelector('p');
-
-        if (position & Node.DOCUMENT_POSITION_FOLLOWING) {
-          textElement?.classList.add('lottie_fade_left');
-          // lottie ::after 스타일 변경
-          lottie.style.setProperty('--lottie-after-right', 'auto');
-          lottie.style.setProperty('--lottie-after-left', '0');
-        } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
-          textElement?.classList.add('lottie_fade_right');
-        }
-
-        // 애니메이션 활성화 및 실행
-        if (!lottie.classList.contains('active')) {
-          lottie.classList.add('active');
-          playAnimationWithDelay(anim, config);
-          config.hasPlayed = true; // 실행 상태 업데이트
-        }
-      }
-    });
-  };
+      });
+    };
 
   animationsConfig.forEach(config => {
     const animation = lottie.loadAnimation({
@@ -429,64 +414,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observerOptions = {
     root: null,
+    rootMargin: '-20% 0px',
     threshold: 0.5
   };
-  function isElementPartiallyVisible(el) {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    
-    // 요소가 화면에 조금이라도 보이는지 확인
-    return (
-      (rect.top <= windowHeight && rect.bottom >= 0) ||
-      (rect.bottom >= 0 && rect.top <= windowHeight)
-    );
-  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const index = Array.from(lottieItems).indexOf(entry.target);
       const anim = animations[index];
-      const currentIndex = index + 1;
-      console.log(currentIndex);
 
-      if (!anim || !anim.isLoaded|| anim.config.hasPlayed) return;
+      if (!anim || !anim.isLoaded || anim.config.hasPlayed) return;
 
       const item = entry.target;
       const textWrap = item.querySelector('.lottie_text_wrap');
       const lottie = item.querySelector('.lottie');
-      const textElement = textWrap ? textWrap.querySelector('p') : null;
+      const textElement = textWrap?.querySelector('p');
 
-      if (!textWrap || !lottie) return;
+      if (!textWrap || !lottie || !textElement) return;
 
-      const position = textWrap.compareDocumentPosition(lottie);
-
-      if (entry.isIntersecting || isElementPartiallyVisible(item)) {
-        if (position & Node.DOCUMENT_POSITION_FOLLOWING) {
-          // lottie가 textWrap 뒤에 있는 경우
-          textElement.classList.add('lottie_fade_left');
-          // lottie ::after 스타일 변경
-          lottie.style.setProperty('--lottie-after-right', 'auto');
-          lottie.style.setProperty('--lottie-after-left', '0');
-        } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
-          // lottie가 textWrap 앞에 있는 경우
-          textElement.classList.add('lottie_fade_right');
-        }
-  
-        if (!lottie.classList.contains('active')) {
-          lottie.classList.add('active');
-          anim.config.hasPlayed = true;
-          setTimeout(() => {
-            playAnimationWithDelay(anim, anim.config);
-          }, 100);
-        }
+      if (entry.isIntersecting && entry.intersectionRatio >= 1) {
+        textElement.classList.add('active');
+        lottie.classList.add('active');
+        anim.config.hasPlayed = true;
+        
+        setTimeout(() => {
+          playAnimationWithDelay(anim, anim.config);
+        }, 100);
       }
     });
   }, observerOptions);
 
-  
-  lottieItems.forEach((item) => observer.observe(item));
-  
-  setTimeout(checkInitialVisibility, 100);
+  // 요소 관찰 시작
+  lottieItems.forEach(item => observer.observe(item));
 
-  //resize 이벤트 연결
+  // 초기 화면에 보이는 요소들 체크
+  window.addEventListener('load', () => {
+    checkInitialVisibleElements();
+  });
+
+  // 스크롤 이벤트에서도 체크 (추가 안전장치)
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(checkInitialVisibleElements, 100);
+  }, { passive: true });
+
+  // resize 이벤트 연결
   window.addEventListener('resize', rearrangeElements);
 });

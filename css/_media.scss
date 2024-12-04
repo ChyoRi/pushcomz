@@ -377,6 +377,13 @@
               margin-bottom: 15px;
               .lottie_wrap {
                 width: 100%;
+                margin-bottom: 30px;
+              }
+              .lottie_text_wrap {
+                justify-content: flex-start;
+                p {
+                  font-size: 34px;
+                }
               }
             }
           }
