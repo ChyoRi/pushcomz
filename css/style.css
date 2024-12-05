@@ -1111,7 +1111,17 @@ fieldset {
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p {
   position: relative;
   font-family: "GmarketSans";
-  font-size: 60px;
+}
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p em {
+  display: block;
+  margin-bottom: 10px;
+  font-size: clamp(16px, 2.6vw, 26px);
+  white-space: nowrap;
+}
+#main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p span {
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: #777777;
+  white-space: nowrap;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p::after {
   content: "";
@@ -1144,7 +1154,6 @@ fieldset {
   position: absolute;
   top: 0;
   right: var(--lottie-after-right, 0);
-  left: var(--lottie-after-left, auto);
   width: 100%;
   height: 100%;
   background-color: #ffffff;
@@ -1456,20 +1465,30 @@ fieldset {
   #main.motion #sec01 .lottie_frame {
     padding: 0 15px;
   }
+  #main.motion #sec01 .lottie_frame .lottie_list {
+    padding-top: 0;
+  }
   #main.motion #sec01 .lottie_frame .lottie_list .lottie_item {
     align-items: flex-start;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_wrap {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap {
     justify-content: flex-start;
   }
-  #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p {
-    font-size: 34px;
+  #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p em {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p span {
+    font-size: 18px;
+    white-space: nowrap;
   }
   #main.motion #sec01 .lottie_frame .senter_line {
     display: none;

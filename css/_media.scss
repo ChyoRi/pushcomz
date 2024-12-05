@@ -371,18 +371,28 @@
         .lottie_frame {
           padding: 0 15px;
           .lottie_list {
+            padding-top: 0;
             .lottie_item {
               align-items: flex-start;
               flex-direction: column;
-              margin-bottom: 15px;
+              margin-bottom: 20px;
               .lottie_wrap {
                 width: 100%;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
               }
               .lottie_text_wrap {
                 justify-content: flex-start;
                 p {
-                  font-size: 34px;
+                  em {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-size: 20px;
+                    white-space: nowrap;
+                  }
+                  span {
+                    font-size: 18px;
+                    white-space: nowrap;
+                  }
                 }
               }
             }
