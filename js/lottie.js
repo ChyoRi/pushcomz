@@ -26,6 +26,7 @@ const rearrangeElements = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  
   const animations = [];
 
   const animationsConfig = [
@@ -449,7 +450,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 초기 화면에 보이는 요소들 체크
   window.addEventListener('load', () => {
-    checkInitialVisibleElements();
+    setTimeout(() => {
+      checkInitialVisibleElements();
+    }, 500);
+
   });
 
   // 스크롤 이벤트에서도 체크 (추가 안전장치)

@@ -532,7 +532,6 @@ fieldset {
   padding: 3px 15px;
 }
 #footer .footer_inner .footer_nav_wrap li a {
-  width: -moz-fit-content;
   width: fit-content;
   line-height: 19.2px;
   font-family: "GmarketSans";
@@ -627,8 +626,7 @@ fieldset {
 #main.company_infomation #sec01 .video_wrap video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
 }
 #main.company_infomation #sec01 .img_wrap {
@@ -642,8 +640,7 @@ fieldset {
 #main.company_infomation #sec01 .img_wrap .main_image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #main.company_infomation #sec01 .img_wrap.inactive {
   display: none;
