@@ -350,40 +350,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 초기 화면에 보이는 요소들 체크 함수
-    const checkInitialVisibleElements = () => {
-      lottieItems.forEach((item, index) => {
-        const anim = animations[index];
-        if (!anim || !anim.isLoaded || anim.config.hasPlayed) return;
+  // 초기 화면에 보이는 요소들 체크 함수
+  const checkInitialVisibleElements = () => {
+    lottieItems.forEach((item, index) => {
+      const anim = animations[index];
+      if (!anim || !anim.isLoaded || anim.config.hasPlayed) return;
 
-        const rect = item.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const elementHeight = rect.height;
-        const elementMiddle = rect.top + (elementHeight / 3);
-        
-        // 요소의 중간 지점이 화면 안에 있는지 확인
-        const isHalfVisible = (
-          elementMiddle >= 0 &&
-          elementMiddle <= windowHeight
-        );
+      const rect = item.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const elementHeight = rect.height;
+      const elementMiddle = rect.top + (elementHeight / 3);
+      
+      // 요소의 중간 지점이 화면 안에 있는지 확인
+      const isHalfVisible = (
+        elementMiddle >= 0 &&
+        elementMiddle <= windowHeight
+      );
 
-        if (isHalfVisible) {
-          const textWrap = item.querySelector('.lottie_text_wrap');
-          const lottie = item.querySelector('.lottie');
-          const textElement = textWrap?.querySelector('p');
+      if (isHalfVisible) {
+        const textWrap = item.querySelector('.lottie_text_wrap');
+        const lottie = item.querySelector('.lottie');
+        const titleElement = textWrap?.querySelector('.lottie_text_title');
+        const textElement = textWrap?.querySelectorAll('.lottie_text');
 
-          if (textWrap && lottie && textElement) {
-            textElement.classList.add('active');
-            lottie.classList.add('active');
-            anim.config.hasPlayed = true;
-            
-            setTimeout(() => {
-              playAnimationWithDelay(anim, anim.config);
-            }, 100);
-          }
+        if (textWrap && lottie && titleElement && textElement) {
+          titleElement.classList.add('active');
+          textElement.forEach((textElement) => textElement.classList.add('active'));
+          lottie.classList.add('active');
+          anim.config.hasPlayed = true;
+          
+          setTimeout(() => {
+            playAnimationWithDelay(anim, anim.config);
+          }, 100);
         }
-      });
-    };
+      }
+    });
+  };
+
+  const startTime = Date.now();
 
   animationsConfig.forEach(config => {
     const animation = lottie.loadAnimation({
@@ -395,6 +399,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     animation.addEventListener('DOMLoaded', () => {
+      const endTime = performance.now(); // 종료 시간 기록
+      const loadTime = endTime - startTime; // 로드 시간 계산
+      console.log(`SVG loaded in ${loadTime.toFixed(2)} ms`);
       animation.isLoaded = true;
       if (config.initialVisible) {
         const container = document.getElementById(config.containerId);
@@ -429,12 +436,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = entry.target;
       const textWrap = item.querySelector('.lottie_text_wrap');
       const lottie = item.querySelector('.lottie');
-      const textElement = textWrap?.querySelector('p');
+      const titleElement = textWrap?.querySelector('.lottie_text_title');
+      const textElement = textWrap?.querySelectorAll('.lottie_text');
 
-      if (!textWrap || !lottie || !textElement) return;
+      if (!textWrap || !lottie || !titleElement || !textElement) return;
 
       if (entry.isIntersecting && entry.intersectionRatio >= 1) {
-        textElement.classList.add('active');
+        titleElement.classList.add('active');
+        textElement.forEach((textElement) => textElement.classList.add('active'));
         lottie.classList.add('active');
         anim.config.hasPlayed = true;
         

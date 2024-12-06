@@ -375,7 +375,7 @@
             .lottie_item {
               align-items: flex-start;
               flex-direction: column;
-              margin-bottom: 20px;
+              margin-bottom: 50px;
               .lottie_wrap {
                 width: 100%;
                 margin-bottom: 20px;
@@ -383,14 +383,14 @@
               .lottie_text_wrap {
                 justify-content: flex-start;
                 p {
-                  em {
+                  .lottie_text_title {
                     display: block;
-                    margin-bottom: 5px;
-                    font-size: 20px;
+                    margin-bottom: 10px;
+                    font-size: 18px;
                     white-space: nowrap;
                   }
-                  span {
-                    font-size: 18px;
+                  .lottie_text {
+                    font-size: 16px;
                     white-space: nowrap;
                   }
                 }
