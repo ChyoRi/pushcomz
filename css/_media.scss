@@ -382,6 +382,7 @@
               }
               .lottie_text_wrap {
                 justify-content: flex-start;
+                width: 100%;
                 p {
                   .lottie_text_title {
                     display: block;
@@ -390,7 +391,7 @@
                     white-space: nowrap;
                   }
                   .lottie_text {
-                    font-size: 16px;
+                    font-size: 12px;
                     white-space: nowrap;
                   }
                 }

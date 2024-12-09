@@ -666,6 +666,7 @@ fieldset {
   width: 41.67%;
   height: 130px;
   padding: 0 12.05px;
+  opacity: 0;
 }
 #main.company_infomation #sec01 .text_box_frame .text_box_wrap .video_logo::after {
   content: "";
@@ -1494,6 +1495,7 @@ fieldset {
   }
   #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap {
     justify-content: flex-start;
+    width: 100%;
   }
   #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p .lottie_text_title {
     display: block;
@@ -1502,7 +1504,7 @@ fieldset {
     white-space: nowrap;
   }
   #main.motion #sec01 .lottie_frame .lottie_list .lottie_item .lottie_text_wrap p .lottie_text {
-    font-size: 16px;
+    font-size: 12px;
     white-space: nowrap;
   }
   #main.motion #sec01 .lottie_frame .senter_line {
