@@ -19,38 +19,42 @@ export const loadFile = (callback) => {
   const loadIfExists = (selector, path) => {
     const element = document.querySelector(selector);
     if (element) {
-    totalElementsToLoad++;
+      totalElementsToLoad++;
 
-    
-    const basePath = getCurrentPath();
-    const fullUrl = `${basePath}${path}`;
+      const basePath = getCurrentPath();
+      const fullUrl = `${basePath}${path}`;
 
-    console.log('Loading URL:', fullUrl); 
-
-    fetch(fullUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`${selector} 로딩 오류: ${response.statusText}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            element.innerHTML = data;
-
-            const parent = element.parentNode;
-            while (element.firstChild) {
-                parent.insertBefore(element.firstChild, element);
-            }
-            parent.removeChild(element);
-
-            checkCompletion();
-        })
-        .catch(error => {
-            console.error(`Failed to load ${fullUrl}:`, error);
-            checkCompletion();
-        });
+      // "motion" 포함 시 2초 딜레이
+      if (selector === '#footer' && window.location.pathname.includes('motion')) {
+        setTimeout(() => fetchAndLoad(fullUrl, element), 2000);
+      } else {
+        fetchAndLoad(fullUrl, element);
+      }
     }
   }
+
+  const fetchAndLoad = (url, element) => {
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Error loading ${url}: ${response.statusText}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        element.innerHTML = data;
+        const parent = element.parentNode;
+        while (element.firstChild) {
+          parent.insertBefore(element.firstChild, element);
+        }
+        parent.removeChild(element);
+        checkCompletion();
+      })
+      .catch(error => {
+        console.error(`Failed to load ${url}:`, error);
+        checkCompletion();
+      });
+  };
 
   const checkCompletion = () => {
     elementsLoaded++;

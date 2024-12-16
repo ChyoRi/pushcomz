@@ -317,6 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hasPlayed: false
     }
   ];
+  let loadedAnimations = 0; // 로드된 애니메이션 수를 추적
 
   rearrangeElements();
 
@@ -387,8 +388,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const startTime = Date.now();
-
   animationsConfig.forEach(config => {
     const animation = lottie.loadAnimation({
       container: document.getElementById(config.containerId),
@@ -399,10 +398,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     animation.addEventListener('DOMLoaded', () => {
-      const endTime = performance.now(); // 종료 시간 기록
-      const loadTime = endTime - startTime; // 로드 시간 계산
-      console.log(`SVG loaded in ${loadTime.toFixed(2)} ms`);
       animation.isLoaded = true;
+      loadedAnimations++;
+
+      // 모든 애니메이션 로드 완료 시 lottie_item 표시
+      if (loadedAnimations === animationsConfig.length) {
+        lottieItems.forEach(item => {
+          item.style.display = 'flex';
+        });
+      }
+
       if (config.initialVisible) {
         const container = document.getElementById(config.containerId);
         if (container) {

@@ -495,11 +495,11 @@
         .lottie_list {
           padding-top: 50px;
           .lottie_item {
-            @include flex(center, space-between);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            // @include flex(center, space-between);
             margin-bottom: 150px;
-            // .lottie {
-            //   opacity: 0;
-            // }
             .lottie_text_wrap {
               @include flex(center, center);
               width: 45%;

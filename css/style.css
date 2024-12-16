@@ -1098,7 +1098,7 @@ fieldset {
   padding-top: 50px;
 }
 #main.motion #sec01 .lottie_frame .lottie_list .lottie_item {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 150px;
