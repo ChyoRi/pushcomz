@@ -411,19 +411,24 @@
       flex-direction: column;
       .company_info_wrap {
         width: 100%;
+        order: 3;
         .copyright_box {
           padding-bottom: 20px;
         }
       }
       .footer_nav_wrap {
         width: 100%;
-        margin-bottom: 10px;
+        margin: 15px 0 10px;
+        order: 2;
         ul > li {
           padding: 3px 0;
           a {
             font-size: 13px;
           }
         }
+      }
+      .footer_banner_wrap {
+        order: 1;
       }
     }
   }

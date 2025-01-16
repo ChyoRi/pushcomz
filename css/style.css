@@ -213,6 +213,28 @@ fieldset {
   display: block;
 }
 
+.modal {
+  position: fixed;
+  top: 16%;
+  right: 3%;
+  z-index: 99;
+}
+.modal .modal_close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.modal .modal_close_btn img {
+  width: 2vw;
+}
+.modal .modal_content_img {
+  width: 41vw;
+  height: 100%;
+}
+.modal.deactivate {
+  display: none;
+}
+
 .blind {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -529,6 +551,8 @@ fieldset {
   flex-grow: 1;
 }
 #footer .footer_inner .footer_nav_wrap li {
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 3px 15px;
 }
 #footer .footer_inner .footer_nav_wrap li a {
@@ -538,6 +562,10 @@ fieldset {
   font-family: "GmarketSans";
   font-size: 13px;
   font-weight: 400;
+  white-space: nowrap;
+}
+#footer .footer_inner .footer_banner_wrap .footer_banner img {
+  max-width: 100%;
 }
 
 /* 애니메이션 라이브러리 */
@@ -1515,19 +1543,24 @@ fieldset {
   }
   #footer .footer_inner .company_info_wrap {
     width: 100%;
+    order: 3;
   }
   #footer .footer_inner .company_info_wrap .copyright_box {
     padding-bottom: 20px;
   }
   #footer .footer_inner .footer_nav_wrap {
     width: 100%;
-    margin-bottom: 10px;
+    margin: 15px 0 10px;
+    order: 2;
   }
   #footer .footer_inner .footer_nav_wrap ul > li {
     padding: 3px 0;
   }
   #footer .footer_inner .footer_nav_wrap ul > li a {
     font-size: 13px;
+  }
+  #footer .footer_inner .footer_banner_wrap {
+    order: 1;
   }
   .lnb_wrap .lnb_list li a {
     font-size: 11px;

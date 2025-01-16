@@ -36,6 +36,7 @@
     .footer_nav_wrap {
       flex-grow: 1;
       li {
+        width: fit-content;
         padding: 3px 15px;
         a {
           width: fit-content;
@@ -43,8 +44,12 @@
           font-family: "GmarketSans";
           font-size: 13px;
           font-weight: 400;
+          white-space: nowrap;
         }
       }
+    }
+    .footer_banner_wrap .footer_banner img {
+      max-width: 100%;
     }
   }
 }

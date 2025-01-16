@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainEnglishText = document.querySelector('.english_text');
   const topBtnWrap = document.querySelector('.top_btn_wrap');
   const topBtn = document.querySelector('.top_btn');
+  const modalBtn = document.querySelector('.modal_close_btn');
 
   // mobile 해상도로 진입시 mainvideo의 한글텍스트와 영문텍스트 순서를 변경
   if(window.innerWidth <= 991) {
@@ -137,6 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const modalClose = () => {
+    const modal = document.querySelector('.modal');
+    modal.classList.add('deactivate');
+  }
+
   // Event Listener
   window.addEventListener('scroll', topBtnShow);
   window.addEventListener('resize', resizeTextBox);
@@ -144,4 +150,5 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImgWrap.classList.add('inactive');
   });
   topBtn.addEventListener('click', goTop);
+  modalBtn.addEventListener('click', modalClose);
 });
